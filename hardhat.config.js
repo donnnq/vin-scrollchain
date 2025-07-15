@@ -1,21 +1,34 @@
-require("@nomicfoundation/hardhat-toolbox");
+// scripts/deploy.js
+async function main() {
+  const [deployer] = await ethers.getSigners();
+  console.log('Deploying with ➜', deployer.address);
 
-module.exports = {
-  solidity: {
-    version: "0.8.28",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      },
-      viaIR: true
-    }
-  },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    scripts: "./scripts",
-    cache: "./cache",
-    artifacts: "./artifacts"
+  const modules = [
+    'ScrollAuditLayer',
+    'ScrollCelebrationVault',
+    'ScrollEventCalendar',
+    'ScrollSyndicate',
+    'ScrollYoujiTube',
+    'ScrollMart',
+    'ScrollChannelHub',
+    'ScrollScratchIt',
+    'ScrollLucky2',
+    'ScrollBindEngine',
+    'ScrollBitForkTab',
+    'ScrollSigilStamp'
+  ];
+
+  for (const name of modules) {
+    const Factory = await ethers.getContractFactory(name);
+    const instance = await Factory.deploy();
+    await instance.deployed();
+    console.log(`↪ ${name} deployed to:`, instance.address);
   }
-};
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });

@@ -14,7 +14,7 @@ contract ScrollVaultTest is Test {
         vault = new VinScrollVault();
     }
 
-    function testInitialState() public {
+    function testInitialState() public view {
         assertTrue(address(vault).code.length > 0, "Vault should be deployed");
     }
 
