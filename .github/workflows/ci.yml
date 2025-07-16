@@ -1,0 +1,27 @@
+name: “Sigil Audit CI”
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          foundryup
+      - name: Install solhint
+        run: npm install --global solhint
+      - name: Lint contracts
+        run: solhint "contracts/**/*.sol"
+      - name: Forge fmt check
+        run: forge fmt --check
+      - name: Compile & test
+        run: |
+          forge clean
+          forge build
+          forge test --ci --gas-report
