@@ -34,7 +34,7 @@ contract DiplomaticBalancer {
         require(!isInCooldown(entity), "Entity is in cooldown.");
         if (auraLevel[entity] < 5) {
             auraLevel[entity] += 1;
-            emit AuraCalibrated(entity, "Tampal (symbolic 😆)", auraLevel[entity]);
+            emit AuraCalibrated(entity, unicode"Tampal (symbolic 😆)", auraLevel[entity]);
         } else {
             emit AuraCalibrated(entity, "Talked it out", auraLevel[entity]);
         }
