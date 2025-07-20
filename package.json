@@ -1,7 +1,7 @@
 {
   "name": "vin-scrollchain",
   "version": "1.0.0",
-  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**",
+  "description": "**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development**",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -9,6 +9,9 @@
     "test": "test"
   },
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,12 +21,14 @@
     "@nomicfoundation/hardhat-toolbox": "^6.0.0",
     "@types/node": "^24.0.10",
     "hardhat": "^2.25.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "vite": "^5.0.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "5.4.0",
     "@sentry/node": "^9.38.0",
-    "cookie": "^0.7.2"
+    "cookie": "^0.7.2",
+    "vue": "^3.4.0"
   },
   "resolutions": {
     "cookie": "^0.7.2"
