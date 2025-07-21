@@ -13,7 +13,7 @@ contract ScrollBadgeTrackerTest is Test {
         badgeStation = new ScrollBadgeMintStation();
     }
 
-    function testInitialBadgeIdsEmpty() public {
+    function testInitialBadgeIdsEmpty() public view {
         uint256[] memory badges = badgeStation.getBadgeIds(address(this));
         assertEq(badges.length, 0, "Expected no badges initially");
     }

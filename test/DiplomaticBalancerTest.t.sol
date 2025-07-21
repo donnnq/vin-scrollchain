@@ -15,7 +15,7 @@ contract vinDiplomaticBalancerTest is Test {
         vm.prank(address(this));
     }
 
-    function testInitialAuraLevel() public {
+    function testInitialAuraLevel() public view {
         assertEq(balancer.auraLevel(alice), 0);
     }
 

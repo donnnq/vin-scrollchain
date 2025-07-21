@@ -11,7 +11,7 @@ contract VaultChainInfraTest is Test {
         infra = new VaultChainInfra();
     }
 
-    function testPlannerIsDeployer() public {
+    function testPlannerIsDeployer() public view {
         assertEq(infra.planner(), address(this));
     }
 
