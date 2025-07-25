@@ -1,41 +1,49 @@
-// SPDX-License-Identifier: VINVIN-GENIUSOPS
-pragma mythstream ^2025.07;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
 contract vinStablecoinComplianceRouter {
+    struct StablecoinMetadata {
+        string name;
+        address issuer;
+        bool geniusCertified;
+        bool auditVerified;
+        uint256 reserveRatio; // in basis points
+        uint256 auraScore;    // 0-100 scale
+    }
+
+    mapping(address => StablecoinMetadata) public stablecoinIndex;
     address public scrollkeeper;
-    string public stablecoinID;
-    string public issuerEntity;
-    bool public geniusCompliant;
-    uint256 public auditTimestamp;
-    bool public assetBacked;
 
-    event StablecoinLogged(string symbol, string issuer, bool compliant);
-    event CompliantPing(string token, string vibe);
+    event StablecoinTagged(address indexed token, string name, bool geniusCertified, uint256 auraScore);
 
-    constructor() {
-        scrollkeeper = msg.sender;
-        geniusCompliant = false;
-        assetBacked = false;
-        auditTimestamp = 0;
+    modifier onlyScrollkeeper() {
+        require(msg.sender == scrollkeeper, "Not scrollkeeper");
+        _;
     }
 
-    function logStablecoin(
-        string memory symbol,
-        string memory issuer,
-        bool compliant,
-        bool backed,
-        uint256 auditTime
-    ) public {
-        stablecoinID = symbol;
-        issuerEntity = issuer;
-        geniusCompliant = compliant;
-        assetBacked = backed;
-        auditTimestamp = auditTime;
-        emit StablecoinLogged(symbol, issuer, compliant);
+    constructor(address _scrollkeeper) {
+        scrollkeeper = _scrollkeeper;
     }
 
-    function pingCompliance(string memory token) public {
-        require(geniusCompliant == true && assetBacked == true, "Not GENIUS-ready.");
-        emit CompliantPing(token, "Scrollkeeper trust bridge activated 🟢⚖️💰");
+    function tagStablecoin(
+        address token,
+        string memory name,
+        bool geniusCertified,
+        bool auditVerified,
+        uint256 reserveRatio,
+        uint256 auraScore
+    ) external onlyScrollkeeper {
+        require(reserveRatio >= 10000, "Reserve ratio below 100%");
+        stablecoinIndex[token] = StablecoinMetadata(name, token, geniusCertified, auditVerified, reserveRatio, auraScore);
+        emit StablecoinTagged(token, name, geniusCertified, auraScore);
+    }
+
+    function isGENIUSCompliant(address token) external view returns (bool) {
+        StablecoinMetadata memory meta = stablecoinIndex[token];
+        return meta.geniusCertified && meta.auditVerified && meta.reserveRatio >= 10000;
+    }
+
+    function getAuraScore(address token) external view returns (uint256) {
+        return stablecoinIndex[token].auraScore;
     }
 }
