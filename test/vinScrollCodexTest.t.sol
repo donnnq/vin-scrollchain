@@ -13,10 +13,7 @@ contract vinScrollCodexTest is Test {
 
     function testRegisterScroll() public {
         codex.registerScroll(
-            "vin-scrollinfra-traffic",
-            "Chain zoning protocol with emotional crosswalks",
-            "infra",
-            address(0x123)
+            "vin-scrollinfra-traffic", "Chain zoning protocol with emotional crosswalks", "infra", address(0x123)
         );
 
         vinScrollCodex.Scroll memory s = codex.getScroll(0);

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import { VinScrollVault } from "contracts/core/vin-scrollvault.sol";
+import {VinScrollVault} from "contracts/core/vin-scrollvault.sol";
 
 contract ScrollVaultTest is Test {
     VinScrollVault vault;

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
-import { VinScrollVeilV2, IERC1155 } from "contracts/core/vin-scrollveil-v2.sol";
+import {VinScrollVeilV2, IERC1155} from "contracts/core/vin-scrollveil-v2.sol";
 
 // Minimal mock ERC1155 to simulate scroll transfers
 contract MockERC1155 is IERC1155 {
