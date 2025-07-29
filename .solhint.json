@@ -1,0 +1,35 @@
+{
+  "extends": "solhint:recommended",
+  "plugins": [],
+  "rules": {
+    // Formatting
+    "indent": ["error", 4],
+    "max-line-length": ["warn", 120],
+    "quotes": ["error", "double"],
+
+    // Visibility & Structure
+    "func-visibility": ["error", { "ignoreConstructors": true }],
+    "constructor-name-case": "error",
+    "contract-name-camelcase": ["warn"],
+    "private-vars-leading-underscore": ["warn"],
+
+    // Style & Naming
+    "no-empty-blocks": "warn",
+    "no-unused-vars": "warn",
+    "ordering": "warn",
+
+    // Safety & Gas Optimizations
+    "no-inline-assembly": "warn",
+    "reason-string": ["warn", { "maxLength": 64 }],
+    "not-rely-on-time": "warn",
+    "avoid-low-level-calls": "error",
+    "avoid-sha3": "error",
+    "gas-custom-errors": "warn",
+    "gas-small-strings": "warn",
+    "gas-indexed-events": "warn",
+
+    // Documentation (Natspec)
+    "use-natspec": "warn",
+    "compiler-version": ["error", "^0.8.24"]
+  }
+}
