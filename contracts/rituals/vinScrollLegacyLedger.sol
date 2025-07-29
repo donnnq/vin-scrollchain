@@ -18,8 +18,18 @@ contract vinScrollLegacyLedger {
 
     event ScrollLogged(string scrollName, string essence, uint256 creationTimestamp, string impactEcho);
 
-    function logScroll(string memory scrollName, string memory essence, string memory impactEcho) public {
-        ledger.push(ScrollEntry(scrollName, essence, block.timestamp, impactEcho));
+    function logScroll(
+        string memory scrollName,
+        string memory essence,
+        string memory impactEcho
+    ) public {
+        ledger.push(ScrollEntry({
+            scrollName: scrollName,
+            essence: essence,
+            creationTimestamp: block.timestamp,
+            impactEcho: impactEcho
+        }));
+
         emit ScrollLogged(scrollName, essence, block.timestamp, impactEcho);
     }
 
