@@ -1,34 +1,49 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 /// @title vinScrollMirror.sol
-/// @notice Logs ancestral resonance to inform sovereign migration
+/// @notice Reflects civic rituals, symbolic transitions, and public healing events.
 
 contract vinScrollMirror {
-    struct AncestralEcho {
-        address soul;
-        string lineage;
-        string previousMigration;
-        string spiritualLesson;
+    address public scrollsmith;
+
+    struct CivicEvent {
+        string eventType;
+        string theme;
+        address location;
+        uint256 timestamp;
+        string impactStatement;
     }
 
-    mapping(address => AncestralEcho) public echoes;
-    address public mirrorScribe;
+    CivicEvent[] public mirrorLedger;
 
-    modifier onlyScribe() {
-        require(msg.sender == mirrorScribe, "Unauthorized");
+    event EventReflected(string eventType, string theme, address indexed location, string impact);
+
+    constructor() {
+        scrollsmith = msg.sender;
+    }
+
+    modifier onlyScrollsmith() {
+        require(msg.sender == scrollsmith, "Unauthorized scrollsmith");
         _;
     }
 
-    constructor() {
-        mirrorScribe = msg.sender;
+    function reflectEvent(
+        string memory eventType,
+        string memory theme,
+        address location,
+        string memory impactStatement
+    ) public onlyScrollsmith {
+        mirrorLedger.push(CivicEvent(eventType, theme, location, block.timestamp, impactStatement));
+        emit EventReflected(eventType, theme, location, impactStatement);
     }
 
-    function inscribeEcho(address soul, string memory lineage, string memory previousMigration, string memory lesson) public onlyScribe {
-        echoes[soul] = AncestralEcho(soul, lineage, previousMigration, lesson);
+    function viewEvent(uint index) public view returns (CivicEvent memory) {
+        require(index < mirrorLedger.length, "Mirror out of bounds");
+        return mirrorLedger[index];
     }
 
-    function revealMirror(address soul) public view returns (AncestralEcho memory) {
-        return echoes[soul];
+    function ledgerLength() public view returns (uint) {
+        return mirrorLedger.length;
     }
 }
