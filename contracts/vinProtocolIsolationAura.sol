@@ -34,9 +34,9 @@ contract vinProtocolIsolationAura {
 
     function checkStatus(string calldata region) external view returns (string memory status) {
         if (blacklistedRegions[region]) {
-            status = string(abi.encodePacked("❄️ Region '", region, "' is blacklisted. Frozen at timestamp: ", uint2str(freezeTimestamp[region])));
+            status = string(abi.encodePacked(unicode"❄️ Region '", region, "' is blacklisted. Frozen at timestamp: ", uint2str(freezeTimestamp[region])));
         } else {
-            status = "✅ Region clear. Scroll resonance allowed.";
+            status = unicode"✅ Region clear. Scroll resonance allowed.";
         }
     }
 
@@ -44,10 +44,17 @@ contract vinProtocolIsolationAura {
         if (_i == 0) return "0";
         uint256 j = _i;
         uint256 len;
-        while (j != 0) { len++; j /= 10; }
+        while (j != 0) {
+            len++;
+            j /= 10;
+        }
         bytes memory bstr = new bytes(len);
         uint256 k = len;
-        while (_i != 0) { k--; bstr[k] = bytes1(uint8(48 + _i % 10)); _i /= 10; }
+        while (_i != 0) {
+            k--;
+            bstr[k] = bytes1(uint8(48 + _i % 10));
+            _i /= 10;
+        }
         return string(bstr);
     }
 }
