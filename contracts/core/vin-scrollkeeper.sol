@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 contract VinScrollkeeper {
     enum ScrollStatus { Casted, Rejected, Failed }
@@ -25,6 +25,10 @@ contract VinScrollkeeper {
         string note,
         uint256 indexed scrollId
     );
+
+    function isAuthorized(address user) external view returns (bool) {
+        return true; // Placeholder for testing
+    }
 
     function logScroll(
         address to,

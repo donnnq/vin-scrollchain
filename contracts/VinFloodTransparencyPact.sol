@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "./vinScrollkeeper.sol"; // Governance contract from your core directory
-import "./vinScrollAuditHealer.sol"; // Audit contract for verification
-import "./vinJusticeBalancerProtocol.sol"; // For enforcing accountability
+import "./core/vin-scrollkeeper.sol";
+import "./core/vinScrollAuditHealer.sol";
+import "./core/vinJusticeBalancerProtocol.sol";
 
 contract VinFloodTransparencyPact {
     address public admin; // Lawmaker (you, Satoshi) or DPWH representative
@@ -61,7 +61,7 @@ contract VinFloodTransparencyPact {
 
     // Deposit funds (e.g., ₱3B flood control allocation)
     function depositFunds() external payable onlyAdmin notLocked {
-        require(totalFunds + msg.value <= MAX_FUND_LIMIT, "Exceeds ₱3B limit");
+        require(totalFunds + msg.value <= MAX_FUND_LIMIT, "Exceeds 3B PHP limit");
         totalFunds += msg.value;
         if (totalFunds >= MAX_FUND_LIMIT) {
             isLocked = true;
