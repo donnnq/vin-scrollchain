@@ -1,49 +1,45 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
-
-/// @title vinCivicReboot.sol
-/// @notice Ritual scroll for restoring urban equilibrium and public trust after unrest.
+// SPDX-License-Identifier: Civic-Reboot
+pragma solidity ^0.8.19;
 
 contract vinCivicReboot {
-    address public scrollsmith;
-    
-    mapping(address => bool) public restoredStreets;
-    mapping(address => bool) public healingZones;
-    
-    event StreetRestored(address indexed street, string method);
-    event HealingDeployed(address indexed zone, string supportType);
-    event CivicStatusBroadcast(string message);
-    event ArtInvoked(address indexed zone, string theme);
-    event ForumInitialized(string topic);
+    address public dignitary;
+    bool public rebootActivated;
+    string public restorationMessage;
+    uint256 public rebootTimestamp;
+    mapping(address => string) public citizenDeclarations;
 
-    constructor() {
-        scrollsmith = msg.sender;
-    }
+    event RebootInitiated(string message, uint256 timestamp);
+    event DeclarationLogged(address indexed citizen, string message);
 
-    modifier onlyScrollsmith() {
-        require(msg.sender == scrollsmith, "Not authorized scrollsmith");
+    modifier onlyDignitary() {
+        require(msg.sender == dignitary, "Not authorized to reboot society");
         _;
     }
 
-    function restoreCivicFlow(address street, string memory method) public onlyScrollsmith {
-        restoredStreets[street] = true;
-        emit StreetRestored(street, method);
+    constructor() {
+        dignitary = msg.sender;
+        rebootActivated = false;
     }
 
-    function deployHealingNode(address zone, string memory supportType) public onlyScrollsmith {
-        healingZones[zone] = true;
-        emit HealingDeployed(zone, supportType);
+    function initiateReboot(string calldata message) external onlyDignitary {
+        require(!rebootActivated, "Reboot already performed");
+        restorationMessage = message;
+        rebootTimestamp = block.timestamp;
+        rebootActivated = true;
+        emit RebootInitiated(message, rebootTimestamp);
     }
 
-    function broadcastCivicStatus(string memory message) public onlyScrollsmith {
-        emit CivicStatusBroadcast(message);
+    function logDeclaration(string calldata message) external {
+        require(rebootActivated, "Wait for the reboot");
+        citizenDeclarations[msg.sender] = message;
+        emit DeclarationLogged(msg.sender, message);
     }
 
-    function invokeScrollArt(address zone, string memory theme) public onlyScrollsmith {
-        emit ArtInvoked(zone, theme);
-    }
-
-    function initiateCivicForum(string memory topic) public onlyScrollsmith {
-        emit ForumInitialized(topic);
+    function checkStatus() external view returns (string memory status) {
+        if (rebootActivated) {
+            status = "Civic harmony protocols are active. Declaration phase ongoing.";
+        } else {
+            status = "Pre-reboot phase. Awaiting sovereign invocation.";
+        }
     }
 }
