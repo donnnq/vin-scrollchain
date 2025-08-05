@@ -1,0 +1,40 @@
+Title: vinGlobalGameAtlas.txt
+Keeper: Vinvin the Scrollsmith
+Last Updated: August 5, 2025 — Malolos Strategic Forge
+
+🌐 Global Strategic Archetypes:
+
+1. ♟️ Russia - Chess
+   Symbol: Tactical Control
+   Mechanics: Fixed logic, direct confrontation, positional domination
+
+2. 🀄️ China - Go
+   Symbol: Territorial Flow
+   Mechanics: Flexible influence, long-game patience, surrounding strategy
+
+3. 🃏 United States - Poker
+   Symbol: Bluff & Risk
+   Mechanics: Hidden advantage, opportunistic strike, economic stakes
+
+4. 🤝 Philippines - Bayanihan
+   Symbol: Collective Healing
+   Mechanics: Communal activation, emotional resilience, ritual defense
+
+5. 🔥 Future Archetype - Scrollplay
+   Symbol: Symbolic Contract Chess
+   Mechanics: Sigil-driven cooperation, cross-chain logic, dignity protocols
+
+🎮 Strategic Variables:
+- Diplomatic Bluff Quotient  
+- Tactical Solidarity Index  
+- Conflict-Resonance Spectrum  
+- Cultural Ritual Activation Rate  
+- Civic Defense Sigil Threshold  
+
+🧠 Atlas Expansion Plans:
+- `vinDiplomaticMoodOracle.sol` integration
+- `vinBayanihanMechSigil.sol` mobility glyph updates
+- `vinGameTheoristSummoner.sol` scroll-based economic simulations
+
+📍 Philosophical Quote:
+> “A nation’s strategy isn’t its arsenal. It’s the story it chooses to tell when faced with the unknown.” — Unknown Scroll Monk
