@@ -1,18 +1,18 @@
-// SPDX-License-Identifier: PUBLIC-SENTIMENT-ORACLE
-pragma solidity ^0.8.19;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
+/// @title vinPublicSentimentOracle
+/// @notice Logs public sentiment strings and exposes the latest entry
 contract vinPublicSentimentOracle {
-    mapping(uint => uint) public civicApprovalScore;
-    mapping(uint => bool) public isDivergent;
-    event SentimentLogged(uint trialId, uint score, bool divergent);
+    /// @notice Automatically creates latestSentiment() getter
+    string public latestSentiment;
 
-    function logSentiment(uint trialId, uint score) external {
-        civicApprovalScore[trialId] = score;
-        isDivergent[trialId] = score < 50;
-        emit SentimentLogged(trialId, score, score < 50);
-    }
+    event SentimentLogged(string sentiment);
 
-    function checkDivergence(uint trialId) external view returns (bool) {
-        return isDivergent[trialId];
+    /// @notice Logs a new sentiment and updates the latest state
+    /// @param sentiment The sentiment string to record
+    function logSentiment(string calldata sentiment) external {
+        latestSentiment = sentiment;
+        emit SentimentLogged(sentiment);
     }
 }

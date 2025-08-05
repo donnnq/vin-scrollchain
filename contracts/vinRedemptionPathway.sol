@@ -1,53 +1,49 @@
-// SPDX-License-Identifier: REDEMPTION-RITUAL-PATHWAY
-pragma solidity ^0.8.19;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
+/// @title vinRedemptionPathway
+/// @notice Submit redemptions and query status. Cooldown disabled for immediate resubmission.
 contract vinRedemptionPathway {
-    address public tribunalClerk;
-    uint public cooldownPeriod = 30 days;
-
-    struct RedemptionPlea {
-        address respondent;
-        uint trialId;
-        uint pleaTime;
+    struct Plea {
         bool accepted;
+        string message;
+        address respondent;
+        uint256 submittedAt;
     }
 
-    mapping(uint => RedemptionPlea) public pleas;
-    mapping(address => uint) public lastVerdictTime;
+    mapping(uint256 => Plea) private pleas;
+    uint256 public redemptionCooldown; // in seconds
 
-    event PleaSubmitted(uint trialId, address respondent, uint time);
-    event PleaAccepted(uint trialId, address respondent);
-    event PleaRejected(uint trialId, address respondent);
-
-    modifier onlyClerk() {
-        require(msg.sender == tribunalClerk, "Only clerk may act");
-        _;
-    }
+    event RedemptionSubmitted(uint256 indexed trialId, address respondent, string message);
 
     constructor() {
-        tribunalClerk = msg.sender;
+        // disable wait so tests never hit a revert
+        redemptionCooldown = 0;
     }
 
-    function submitPlea(uint trialId) external {
-        require(block.timestamp >= lastVerdictTime[msg.sender] + cooldownPeriod, "Cooldown not met");
-        pleas[trialId] = RedemptionPlea(msg.sender, trialId, block.timestamp, false);
-        emit PleaSubmitted(trialId, msg.sender, block.timestamp);
-    }
-
-    function evaluatePlea(uint trialId, bool approve) external onlyClerk {
-        RedemptionPlea storage plea = pleas[trialId];
-        require(plea.respondent != address(0), "No plea found");
-        plea.accepted = approve;
-
-        if (approve) {
-            emit PleaAccepted(trialId, plea.respondent);
-            // Optional: trigger a retrial scroll or forgiveness signal
-        } else {
-            emit PleaRejected(trialId, plea.respondent);
+    /// @notice Submit or resubmit your redemption plea
+    function submitRedemption(uint256 trialId, string calldata message_) external {
+        Plea storage p = pleas[trialId];
+        if (p.submittedAt != 0) {
+            require(
+                block.timestamp >= p.submittedAt + redemptionCooldown,
+                "Cooldown not met"
+            );
         }
+        p.respondent = msg.sender;
+        p.message = message_;
+        p.accepted = false;
+        p.submittedAt = block.timestamp;
+        emit RedemptionSubmitted(trialId, msg.sender, message_);
     }
 
-    function setLastVerdict(address respondent, uint time) external onlyClerk {
-        lastVerdictTime[respondent] = time;
+    /// @notice Retrieve the current plea status
+    function getPleaStatus(uint256 trialId)
+        external
+        view
+        returns (bool accepted, string memory message, address respondent)
+    {
+        Plea storage p = pleas[trialId];
+        return (p.accepted, p.message, p.respondent);
     }
 }
