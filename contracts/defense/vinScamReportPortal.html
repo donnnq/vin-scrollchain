@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vinScamReportPortal</title>
+</head>
+<body>
+  <h1>🛡️ Submit a Scam Report</h1>
+  <form id="reportForm">
+    <label>Suspicious Contract Address:</label><br>
+    <input type="text" id="contractAddress"><br><br>
+
+    <label>Bot Video URL:</label><br>
+    <input type="text" id="videoURL"><br><br>
+
+    <button type="submit">Submit Report</button>
+  </form>
+
+  <script>
+    document.getElementById('reportForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const address = document.getElementById('contractAddress').value;
+      const video = document.getElementById('videoURL').value;
+
+      // Placeholder: Replace with actual contract interaction
+      console.log("Report submitted:", address, video);
+      alert("Report submitted. Thank you for protecting the scrollchain.");
+    });
+  </script>
+</body>
+</html>
