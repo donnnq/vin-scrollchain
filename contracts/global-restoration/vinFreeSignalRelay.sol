@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-/// @title vinFreeSignalRelay
+/// @title vinFreeSignalRelay — Global Edition
 /// @author Vinvin
-/// @notice A global media transparency and dignity relay contract
-/// @dev Used to broadcast verified civic/emotional signals across nations
+/// @notice Broadcasts verified civic, emotional, and restoration signals across nations
+/// @dev Supports multi-nation logging and global resonance tracking
 
 contract vinFreeSignalRelay {
     address public signalCaster;
@@ -18,6 +18,7 @@ contract vinFreeSignalRelay {
     }
 
     mapping(uint256 => Signal) public signals;
+    mapping(string => uint256[]) public nationSignals;
 
     event SignalBroadcasted(
         uint256 indexed id,
@@ -49,6 +50,8 @@ contract vinFreeSignalRelay {
             timestamp: block.timestamp
         });
 
+        nationSignals[_nation].push(signalCount);
+
         emit SignalBroadcasted(
             signalCount,
             _nation,
@@ -66,5 +69,15 @@ contract vinFreeSignalRelay {
 
     function getSignal(uint256 _id) public view returns (Signal memory) {
         return signals[_id];
+    }
+
+    function getNationSignalIds(string memory _nation) public view returns (uint256[] memory) {
+        return nationSignals[_nation];
+    }
+
+    function getNationLatestSignal(string memory _nation) public view returns (Signal memory) {
+        uint256[] memory ids = nationSignals[_nation];
+        require(ids.length > 0, "No signals for this nation");
+        return signals[ids[ids.length - 1]];
     }
 }
