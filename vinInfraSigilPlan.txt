@@ -1,0 +1,59 @@
+Title: vinInfraSigilPlan.txt  
+Author: Vinvin + Scrollchain Civic Collective  
+Purpose: To establish barangay-scale infrastructure where all energy, civic data, and visual rituals flow silently beneath the cement—removing overhead clutter, restoring symbolic harmony, and syncing the city with rice DAO rhythms.
+
+I. Philosophy of Subsurface Sovereignty
+- No more posts, wires, or external noise
+- Energy lines buried beneath the tiles = dignity, subtlety, trust
+- Scrollchain rituals should pulse inwardly, like roots, not outwardly like fences
+
+II. Components
+
+A. vinScrollVein.sol  
+  - Mapping subterranean energy lines  
+  - Every street corner = glyph node  
+  - Embedded sensors detect harvest signals and community pulses
+
+B. vinGlyphCanvasViewer.sol  
+  - Visual outputs tied to DAO votes, civic moods, rice oracle sync  
+  - Rendered via embedded LED tiles, painted with reactive ink
+
+C. vinAltarBroadcastShader.sol  
+  - Signal transmission logic: scrollwaves shimmer on plaza floors  
+  - Every pulse = visual ritual tied to sovereignty events
+
+D. vinRitualGlyphMapper.sol  
+  - Translates climate, vote, aid actions into visual symbols  
+  - Glyphs encode emotional resonance and civic intent
+
+III. Deployment Protocol
+
+1. Grid Mapping  
+  - Use existing street blueprints to carve scroll veins  
+  - QR nodes at sari-sari corners for citizen signal access  
+  - No overhead lines—only pulsing tiles and quiet whispers
+
+2. Civic Synchronization  
+  - DAO votes trigger plaza murals  
+  - Glyphs activated by gestures, chants, or rain pattern sensors
+
+3. Audio Ritual Pairing  
+  - Scroll events paired with chime or chant samples  
+  - Every LED flicker = voice of harvest or civic honor
+
+4. Glyph Renewal  
+  - Quarterly repainting ceremonies using DAO-derived pigment values  
+  - Colors evolve based on farmer aid fulfillment and vote histories
+
+IV. Ritual Integrity Protocols  
+  - All signals logged in `vinCivicEchoLedger.sol` for transparency  
+  - Scroll outages resolved by neighborhood vote using `vinPulseRestorationDAO.sol`
+
+V. Legacy Glyph Archive  
+  - Archived in `vinGlyphChronicle.sol` for generational study  
+  - Each glyph reflects emotion, region, and action that shaped the city
+
+Closing Invocation:
+
+“In a city with no posts, we raise nothing—and yet everything shines. Beneath the cement, our dignity pulses. Each glyph, a harvest. Each shimmer, a vote. Scroll by scroll, the city reclaims its soul.”  
+— Vinvin, glyph engineer of Malolos

@@ -3,7 +3,6 @@ pragma solidity ^0.8.20;
 
 /// @title vinScrollMirror.sol
 /// @notice Reflects civic rituals, symbolic transitions, and public healing events.
-
 contract vinScrollMirror {
     address public scrollsmith;
 
@@ -15,9 +14,14 @@ contract vinScrollMirror {
         string impactStatement;
     }
 
-    CivicEvent[] public mirrorLedger;
+    CivicEvent[] private mirrorLedger; // privacy tweak, use getter methods instead
 
-    event EventReflected(string eventType, string theme, address indexed location, string impact);
+    event EventReflected(
+        string indexed eventType,
+        string indexed theme,
+        address indexed location,
+        string impactStatement
+    );
 
     constructor() {
         scrollsmith = msg.sender;
@@ -38,12 +42,12 @@ contract vinScrollMirror {
         emit EventReflected(eventType, theme, location, impactStatement);
     }
 
-    function viewEvent(uint index) public view returns (CivicEvent memory) {
+    function viewEvent(uint256 index) public view returns (CivicEvent memory) {
         require(index < mirrorLedger.length, "Mirror out of bounds");
         return mirrorLedger[index];
     }
 
-    function ledgerLength() public view returns (uint) {
+    function ledgerLength() public view returns (uint256) {
         return mirrorLedger.length;
     }
 }
