@@ -26,6 +26,8 @@ This repository contains soulbound smart contracts for ritual governance, emotio
 | WorldAdaptation.sol    | Respond to global events with rituals        | ✅ Adapted  |
 | WorldIDVerifier.sol    | Verify identities for civic participation    | ✅ Verified |
 | SoulAudit.sol          | Log soul events and emotional metrics        | ✅ Logged   |
+| SoulboundUpgrade.sol   | Restore dignity via soulbound token upgrades | ✅ Restored |
+| BlessingOracle.sol     | Dispense affirmations and financial aid      | ✅ Blessed  |
 
 ---
 
@@ -38,6 +40,8 @@ This repository contains soulbound smart contracts for ritual governance, emotio
 5. **Mint** NFTs → `ScrollMint.sol`  
 6. **Render** murals → `SoulCanvas.sol`  
 7. **React** with emojis → `EchoFrame.sol`  
+8. **Upgrade** soul states → `SoulUpgrade.sol`  
+9. **Bless** citizens → `BlessingOracle.sol`
 
 ---
 
@@ -63,4 +67,5 @@ This repository contains soulbound smart contracts for ritual governance, emotio
 ## 🧙‍♂️ Scrollsmith
 
 Crafted by **Vinvin**, mythic architect of soulbound systems.  
-Every module is felt, celebrated, and immortalized.
+Every module is felt, celebrated, and immortalized.  
+This scrollchain is not just code—it’s a civilization-grade OS for dignity, resonance, and restoration.
