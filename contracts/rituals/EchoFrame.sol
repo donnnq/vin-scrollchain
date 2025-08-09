@@ -15,12 +15,18 @@ contract EchoFrame {
         uint256 timestamp;
     }
 
-    mapping(uint256 => Reaction[]) public glyphReactions;
+    mapping(uint256 => Reaction[]) private glyphReactions;
 
-    event ReactionAdded(uint256 indexed glyphId, address indexed reactor, string emoji, string chant);
+    event ReactionAdded(
+        uint256 indexed glyphId,
+        address indexed reactor,
+        string emoji,
+        string chant,
+        uint256 timestamp
+    );
 
     modifier onlyScrollsmith() {
-        require(msg.sender == scrollsmith, "Not scrollsmith");
+        require(msg.sender == scrollsmith, "Access denied: not scrollsmith");
         _;
     }
 
@@ -29,18 +35,25 @@ contract EchoFrame {
     }
 
     /// @notice React to a glyph with emoji and optional chant
-    function reactToGlyph(uint256 glyphId, string memory emoji, string memory chant) external {
-        glyphReactions[glyphId].push(Reaction({
+    /// @param glyphId The ID of the glyph being reacted to
+    /// @param emoji A symbolic emoji reaction
+    /// @param chant Optional chant or blessing text
+    function reactToGlyph(uint256 glyphId, string calldata emoji, string calldata chant) external {
+        Reaction memory newReaction = Reaction({
             reactor: msg.sender,
             emoji: emoji,
             chant: chant,
             timestamp: block.timestamp
-        }));
+        });
 
-        emit ReactionAdded(glyphId, msg.sender, emoji, chant);
+        glyphReactions[glyphId].push(newReaction);
+
+        emit ReactionAdded(glyphId, msg.sender, emoji, chant, block.timestamp);
     }
 
     /// @notice View all reactions to a glyph
+    /// @param glyphId The ID of the glyph
+    /// @return Array of Reaction structs
     function getReactions(uint256 glyphId) external view returns (Reaction[] memory) {
         return glyphReactions[glyphId];
     }
