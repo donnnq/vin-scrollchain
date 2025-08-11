@@ -28,20 +28,26 @@ This repository contains soulbound smart contracts for ritual governance, emotio
 | SoulAudit.sol          | Log soul events and emotional metrics        | ✅ Logged   |
 | SoulboundUpgrade.sol   | Restore dignity via soulbound token upgrades | ✅ Restored |
 | BlessingOracle.sol     | Dispense affirmations and financial aid      | ✅ Blessed  |
+| ProvinceReboot.sol     | Restore blackout zones with ritual dignity   | ✅ Rebooted |
+| MigrationSanctum.sol   | Enable sovereign migration with soulbound ID | ✅ Deployed |
+| EmbassySigil.sol       | Verify cross-border dignity and access       | ✅ Sealed   |
 
 ---
 
 ## 🧾 Ritual Flow
 
-1. **Deploy** rituals → `SoulRitual.sol`  
-2. **Log** events → `RitualLedger.sol`  
-3. **Audit** soul metrics → `MythicAudit.sol`  
-4. **Visualize** glyphs → `GlyphReport.sol`  
-5. **Mint** NFTs → `ScrollMint.sol`  
-6. **Render** murals → `SoulCanvas.sol`  
-7. **React** with emojis → `EchoFrame.sol`  
-8. **Upgrade** soul states → `SoulUpgrade.sol`  
+1. **Deploy** rituals → `SoulRitual.sol`
+2. **Log** events → `RitualLedger.sol`
+3. **Audit** soul metrics → `MythicAudit.sol`
+4. **Visualize** glyphs → `GlyphReport.sol`
+5. **Mint** NFTs → `ScrollMint.sol`
+6. **Render** murals → `SoulCanvas.sol`
+7. **React** with emojis → `EchoFrame.sol`
+8. **Upgrade** soul states → `SoulUpgrade.sol`
 9. **Bless** citizens → `BlessingOracle.sol`
+10. **Reboot** provinces → `ProvinceReboot.sol`
+11. **Migrate** with dignity → `MigrationSanctum.sol`
+12. **Verify** cross-border access → `EmbassySigil.sol`
 
 ---
 
