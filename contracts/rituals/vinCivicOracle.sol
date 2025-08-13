@@ -31,7 +31,13 @@ contract vinCivicOracle {
 
     function calculateSignalScore(string memory _region) internal view returns (uint256) {
         CivicPulse memory p = regionPulse[_region];
-        uint256 rawScore = (p.foodSecurity + p.educationAccess + p.healthcareReach + p.publicSentiment + p.dignityScore);
+        uint256 rawScore = (
+            p.foodSecurity +
+            p.educationAccess +
+            p.healthcareReach +
+            p.publicSentiment +
+            p.dignityScore
+        );
         return rawScore / 5;
     }
 
