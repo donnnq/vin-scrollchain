@@ -59,6 +59,6 @@ contract LocalEconomyManifest {
     }
 
     function manifest() public pure returns (string memory) {
-        return "📜 Local Economy Manifest: All modules linked. Barangay resurrection initiated.";
+        return unicode"📜 Local Economy Manifest: All modules linked. Barangay resurrection initiated.";
     }
 }
