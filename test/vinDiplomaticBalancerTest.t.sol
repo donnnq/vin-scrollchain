@@ -12,7 +12,7 @@ contract vinDiplomaticBalancerTest is Test {
         mediationActive = false;
     }
 
-    function testInitialAuraLevel() public {
+    function testInitialAuraLevel() public view {
         assertEq(auraLevel, 0);
     }
 

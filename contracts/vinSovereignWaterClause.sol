@@ -1,4 +1,6 @@
 /// @title vinSovereignWaterClause — Notice of Trespass and Consequence
+pragma solidity ^0.8.30;
+
 contract vinSovereignWaterClause {
     event TrespassWarningIssued(string nation, string reason);
     event ConsequenceMarked(string nation);

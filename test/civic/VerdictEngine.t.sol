@@ -11,7 +11,7 @@ contract VerdictEngineTest is Test {
         engine = new vinCivicVerdictEngine();
     }
 
-    function testInitialVerdictState() public {
+    function testInitialVerdictState() public view {
         assertEq(engine.getVerdictStatus(), 0);
     }
 
