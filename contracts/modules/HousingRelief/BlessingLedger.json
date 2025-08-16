@@ -1,0 +1,20 @@
+[
+  {
+    "recipientName": "Aling Nena",
+    "region": "Bulacan",
+    "originalRate": 6.5,
+    "newRate": 0.5,
+    "blessingMessage": "Scrollchain blesses your home. May your shelter be soulbound to peace, not interest.",
+    "rateAdjusted": true,
+    "timestamp": "2025-08-16T21:24:00Z"
+  },
+  {
+    "recipientName": "Mang Cardo",
+    "region": "Quezon City",
+    "originalRate": 7.2,
+    "newRate": 0.5,
+    "blessingMessage": "Your roof is now a relic of mercy. Scrollchain honors your legacy.",
+    "rateAdjusted": true,
+    "timestamp": "2025-08-16T21:25:00Z"
+  }
+]
