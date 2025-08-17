@@ -24,7 +24,6 @@ node_modules/
 /typechain-types
 
 # 📚 Docs & Logs
-docs/
 *.log
 
 # 🖥️ IDE and OS clutter
