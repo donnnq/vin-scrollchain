@@ -1,0 +1,5 @@
+Source ID,Type,Location,Capacity (MW),Status
+SRC001,Solar,San Pablo,5,Active
+SRC002,Wind,San Vicente,3,Inactive
+SRC003,Hydro,Tikay River,8,Active
+SRC004,Biomass,Catmon,2,Active
