@@ -1,0 +1,6 @@
+Household ID,Head of Household,Barangay,Monthly Income (₱),Blessing Status,Discount Rate (%)
+HH001,Maria Santos,Tikay,8500,Blessed,20
+HH002,Juan Dela Cruz,San Pablo,7200,Blessed,20
+HH003,Ana Reyes,San Vicente,9500,Blessed,20
+HH004,Pedro Luna,San Agustin,12000,Not Blessed,0
+HH005,Liza Mendoza,Catmon,6800,Blessed,20
