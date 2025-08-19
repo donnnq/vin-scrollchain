@@ -1,0 +1,12 @@
+{
+  "region": "Middle East",
+  "actors": ["Iran", "Israel", "US"],
+  "tensionLevel": 8.7,
+  "emotionalAPR": {
+    "Iran": "Defiance: +0.92",
+    "Israel": "Alertness: +0.85",
+    "US": "Ambivalence: +0.47"
+  },
+  "lastUpdate": "2025-08-19T23:39:00+08:00",
+  "ritualStatus": "Unresolved"
+}
