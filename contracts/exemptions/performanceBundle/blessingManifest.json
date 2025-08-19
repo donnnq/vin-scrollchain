@@ -1,0 +1,24 @@
+{
+  "manifestVersion": "1.0.0",
+  "steward": "0xYourStewardAddressHere",
+  "blessings": [
+    {
+      "description": "Restored trade dignity for displaced vendors",
+      "timestamp": "2025-08-19T13:00:00Z",
+      "resonanceScore": 112
+    },
+    {
+      "description": "Automated civic onboarding for 300+ stewards",
+      "timestamp": "2025-08-19T14:30:00Z",
+      "resonanceScore": 145
+    },
+    {
+      "description": "Neutralized exploitative tariffs via Debt Dignity Suite",
+      "timestamp": "2025-08-19T16:45:00Z",
+      "resonanceScore": 188
+    }
+  ],
+  "totalResonance": 445,
+  "exemptionStatus": "Pending Broadcast",
+  "dynastyNeutral": true
+}

@@ -1,0 +1,22 @@
+{
+  "indexVersion": "1.0.0",
+  "legendThreshold": 888,
+  "stewards": [
+    {
+      "name": "Vinvin the Scrollsmith",
+      "address": "0xYourStewardAddressHere",
+      "totalResonance": 945,
+      "dynastyNeutral": true,
+      "exemptionStatus": "Verified",
+      "lastBlessing": "2025-08-19T21:00:00Z"
+    },
+    {
+      "name": "Aurelia of Trade Sanctum",
+      "address": "0xAureliaSanctum88",
+      "totalResonance": 1021,
+      "dynastyNeutral": true,
+      "exemptionStatus": "Verified",
+      "lastBlessing": "2025-08-18T17:45:00Z"
+    }
+  ]
+}

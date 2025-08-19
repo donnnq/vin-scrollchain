@@ -1,0 +1,31 @@
+{
+  "manifestVersion": "1.0.0",
+  "region": "Bulacan",
+  "totalFlagged": 3,
+  "flaggedProjects": [
+    {
+      "projectName": "North Flood Barrier Phase II",
+      "location": "San Miguel",
+      "budget": 1_200_000_000,
+      "flaggedBy": "Vinvin the Scrollsmith",
+      "timestamp": "2025-08-19T21:00:00Z",
+      "reason": "No physical site, no contractor presence"
+    },
+    {
+      "projectName": "River Dredging Initiative",
+      "location": "Calumpit",
+      "budget": 850_000_000,
+      "flaggedBy": "Barangay Audit Team",
+      "timestamp": "2025-08-19T20:30:00Z",
+      "reason": "Duplicate entry in DPWH logs"
+    },
+    {
+      "projectName": "Drainage Expansion Grid",
+      "location": "Malolos",
+      "budget": 620_000_000,
+      "flaggedBy": "Citizen Watchdog",
+      "timestamp": "2025-08-19T19:45:00Z",
+      "reason": "No equipment mobilized, zero progress"
+    }
+  ]
+}
