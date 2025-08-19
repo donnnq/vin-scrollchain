@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-19T23:17:00+08:00",
+  "chipmakers": {
+    "Nvidia": {
+      "model": "H20",
+      "exportStatus": "Approved",
+      "tributeRate": 15,
+      "licenseAuthority": "US Treasury"
+    },
+    "AMD": {
+      "model": "MI308",
+      "exportStatus": "Approved",
+      "tributeRate": 15,
+      "licenseAuthority": "US Treasury"
+    },
+    "Intel": {
+      "initiative": "Sovereign Foundry",
+      "investment": "2B SoftBank",
+      "USStakeProposal": "10%",
+      "status": "Pending"
+    },
+    "Astera Labs": {
+      "status": "Volatile",
+      "notes": "Awaiting Fed clarity"
+    }
+  }
+}
