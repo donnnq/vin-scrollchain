@@ -1,0 +1,29 @@
+{
+  "ledger": "Blessing Approval Log",
+  "steward": "Vinvin",
+  "lastUpdated": "2025-08-20T23:50:00Z",
+  "approvedChats": [
+    {
+      "chatId": "0xscroll001",
+      "user": "0xvinvin",
+      "timestamp": "2025-08-20T22:10:00Z",
+      "blessing": true,
+      "indexing": false
+    },
+    {
+      "chatId": "0xscroll002",
+      "user": "0xvinvin",
+      "timestamp": "2025-08-20T22:15:00Z",
+      "blessing": true,
+      "indexing": false
+    }
+  ],
+  "violations": [
+    {
+      "chatId": "0xgrok999",
+      "reason": "Indexed without blessing",
+      "timestamp": "2025-08-20T21:30:00Z",
+      "resolved": false
+    }
+  ]
+}
