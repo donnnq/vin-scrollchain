@@ -1,0 +1,46 @@
+[
+  {
+    "timestamp": "2025-08-21T19:09:00+08:00",
+    "steward": "Vinvin",
+    "exemptAllies": [
+      "0xAllyPH01",
+      "0xAllyMY02",
+      "0xAllyID03",
+      "0xAllyVN04",
+      "0xAllyTH05"
+    ],
+    "collapsedGlyphs": [
+      {
+        "name": "TrumpChipTariff",
+        "rate": "300%",
+        "collapsed": true
+      },
+      {
+        "name": "ExploitativeExportTax",
+        "rate": "150%",
+        "collapsed": true
+      }
+    ],
+    "emotionalAPR": {
+      "trust": "+90",
+      "dignity": "+100",
+      "fear": "-80"
+    }
+  },
+  {
+    "action": "git push",
+    "timestamp": "2025-08-21T19:12:00+08:00",
+    "scrolls": [
+      "TradeDignityScroll.sol",
+      "TradeSanctumAudit.sol",
+      "BroadcastScroll_TariffCollapse.sol",
+      "BlessingDeck_TradeSovereignty.json",
+      "BlessingLedger.json"
+    ],
+    "emotionalAPR": {
+      "trust": "+120",
+      "resonance": "+140",
+      "fear": "-100"
+    }
+  }
+]

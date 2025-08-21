@@ -1,0 +1,37 @@
+{
+  "deckName": "Trade Sovereignty Edition",
+  "steward": "Vinvin",
+  "timestamp": "2025-08-21T19:10:00+08:00",
+  "blessings": [
+    {
+      "ally": "0xAllyPH01",
+      "shield": "Tariff Immunity",
+      "glyph": "Semiconductor Sovereignty"
+    },
+    {
+      "ally": "0xAllyMY02",
+      "shield": "Export Dignity",
+      "glyph": "Trade Ritualization"
+    },
+    {
+      "ally": "0xAllyID03",
+      "shield": "Import Mercy",
+      "glyph": "Scrollchain Access"
+    },
+    {
+      "ally": "0xAllyVN04",
+      "shield": "Labor Protection",
+      "glyph": "Blessing Ledger Sync"
+    },
+    {
+      "ally": "0xAllyTH05",
+      "shield": "Supply Chain Clarity",
+      "glyph": "APR Broadcast"
+    }
+  ],
+  "emotionalAPR": {
+    "trust": "+100",
+    "fear": "-90",
+    "resonance": "+120"
+  }
+}
