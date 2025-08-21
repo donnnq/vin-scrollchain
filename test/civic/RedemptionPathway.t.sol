@@ -13,7 +13,7 @@ contract RedemptionPathwayTest is Test {
 
     function testSubmitRedemption() public {
         string memory msgText = "Forgive me, DAO scroll spirits";
-        uint trialId = 1;
+        uint256 trialId = 1;
 
         pathway.submitRedemption(trialId, msgText);
 

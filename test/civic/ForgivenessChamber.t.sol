@@ -12,7 +12,7 @@ contract ForgivenessChamberTest is Test {
     }
 
     function testSubmitAndVote() public {
-        uint trialId = 1;
+        uint256 trialId = 1;
         string memory plea = "Forgive me, scroll spirits";
 
         chamber.submitForgivenessRite(trialId, plea);
@@ -20,6 +20,6 @@ contract ForgivenessChamberTest is Test {
 
         // Check status — optional depending on your expectations
         vinForgivenessChamber.ForgivenessStatus status = chamber.getRiteStatus(trialId);
-        assertEq(uint(status), uint(vinForgivenessChamber.ForgivenessStatus.AwaitingVote));
+        assertEq(uint256(status), uint256(vinForgivenessChamber.ForgivenessStatus.AwaitingVote));
     }
 }
