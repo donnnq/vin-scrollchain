@@ -1,0 +1,29 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "sanctum": "Sierra Madre Reforestation Zone",
+        "status": "Active",
+        "blessing": "Native tree ritual, glyph propagation"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[121.0, 16.0], [121.2, 16.0], [121.2, 16.2], [121.0, 16.2], [121.0, 16.0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sanctum": "Cordillera Biodiversity Haven",
+        "status": "Protected",
+        "blessing": "Seed chants, elder invocation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [120.9, 16.5]
+      }
+    }
+  ]
+}

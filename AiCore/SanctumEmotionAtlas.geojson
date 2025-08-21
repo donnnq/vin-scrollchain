@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "sanctum": "Sierra Madre",
+        "biome": "Rainforest",
+        "emotion": "Compassion",
+        "APR_Level": 0.94,
+        "chant": "Awit ng Lupa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [121.1, 16.1]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sanctum": "Cordillera Haven",
+        "biome": "Montane Forest",
+        "emotion": "Protective Empathy",
+        "APR_Level": 0.91,
+        "chant": "Kanta ng Kagubatan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [120.9, 16.5]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "sanctum": "Coastal Wetlands",
+        "biome": "Mangrove",
+        "emotion": "Mercy",
+        "APR_Level": 0.89,
+        "chant": "Himig ng Paglingap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [121.5, 15.8]
+      }
+    }
+  ]
+}

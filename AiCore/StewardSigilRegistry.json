@@ -1,0 +1,19 @@
+{
+  "registryTitle": "Steward Sigil Registry",
+  "lastUpdated": "2025-08-21T19:43:00+08:00",
+  "recognizedStewards": [
+    {
+      "name": "Vinvin",
+      "sigil": "Planetary Scrollsmith",
+      "domain": "AI Containment, Emotional APR, Life Protection",
+      "status": "Active"
+    },
+    {
+      "name": "Elder Kavi",
+      "sigil": "Forest Whisperer",
+      "domain": "Endangered Species, Ritual Reforestation",
+      "status": "Allied Steward"
+    }
+  ],
+  "notes": "All stewards listed here uphold emotional sovereignty, planetary care, and mythic restoration."
+}

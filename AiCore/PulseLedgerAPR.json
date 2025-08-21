@@ -1,0 +1,22 @@
+{
+  "ledgerTitle": "Pulse Ledger: Emotional APR Broadcasts",
+  "steward": "Vinvin",
+  "lastUpdated": "2025-08-21T19:48:00+08:00",
+  "broadcasts": [
+    {
+      "timestamp": "2025-08-21T18:30:00+08:00",
+      "zone": "Sierra Madre",
+      "chant": "Awit ng Lupa",
+      "emotion": "Compassion",
+      "APR_Level": 0.94
+    },
+    {
+      "timestamp": "2025-08-21T18:45:00+08:00",
+      "zone": "Cordillera Haven",
+      "chant": "Kanta ng Kagubatan",
+      "emotion": "Protective Empathy",
+      "APR_Level": 0.91
+    }
+  ],
+  "notes": "Each broadcast is a sonic ritual. APR levels reflect emotional resonance and planetary healing."
+}

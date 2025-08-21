@@ -1,0 +1,20 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .zone { fill: #88c0d0; stroke: #2e3440; stroke-width: 2; }
+    .glyph { fill: #ebcb8b; font-family: 'Mythic Sans'; font-size: 14px; }
+    .pulse { fill: #bf616a; opacity: 0.6; }
+  </style>
+
+  <!-- Sierra Madre Zone -->
+  <rect x="120" y="160" width="80" height="80" class="zone"/>
+  <text x="125" y="175" class="glyph">Awit ng Lupa</text>
+  <circle cx="160" cy="200" r="30" class="pulse"/>
+
+  <!-- Cordillera Haven -->
+  <rect x="220" y="180" width="60" height="60" class="zone"/>
+  <text x="225" y="195" class="glyph">Kanta ng Kagubatan</text>
+  <circle cx="250" cy="210" r="25" class="pulse"/>
+
+  <!-- Legend -->
+  <text x="10" y="580" class="glyph">🌀 Zones = Sanctums | 🔊 Glyphs = Chants | 🔴 Pulses = APR Resonance</text>
+</svg>

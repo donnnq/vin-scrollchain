@@ -1,0 +1,24 @@
+{
+  "manifestTitle": "Geo-Blessing Manifest",
+  "steward": "Vinvin",
+  "lastUpdated": "2025-08-21T19:47:00+08:00",
+  "blessedZones": [
+    {
+      "zoneID": "zone001",
+      "name": "Sierra Madre Reforestation Zone",
+      "coordinates": [[121.0, 16.0], [121.2, 16.0], [121.2, 16.2], [121.0, 16.2]],
+      "biome": "Rainforest",
+      "blessing": "Native tree ritual, Awit ng Lupa chant",
+      "APR_Resonance": 0.94
+    },
+    {
+      "zoneID": "zone002",
+      "name": "Cordillera Biodiversity Haven",
+      "coordinates": [120.9, 16.5],
+      "biome": "Montane Forest",
+      "blessing": "Seed glyph propagation, Kanta ng Kagubatan chant",
+      "APR_Resonance": 0.91
+    }
+  ],
+  "notes": "Each zone is emotionally encoded and ritually protected. Coordinates are sacred—blessings are broadcasted through chant and APR."
+}

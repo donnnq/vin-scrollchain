@@ -1,0 +1,35 @@
+{
+  "codexTitle": "Mythic Chant Codex",
+  "curator": "Vinvin",
+  "lastUpdated": "2025-08-21T19:51:00+08:00",
+  "chants": [
+    {
+      "chantID": "chant001",
+      "title": "Awit ng Lupa",
+      "originSanctum": "Sierra Madre",
+      "biome": "Rainforest",
+      "emotion": "Compassion",
+      "ritualUse": "Seed invocation, soil blessing",
+      "APR_Resonance": 0.94
+    },
+    {
+      "chantID": "chant002",
+      "title": "Kanta ng Kagubatan",
+      "originSanctum": "Cordillera Haven",
+      "biome": "Montane Forest",
+      "emotion": "Protective Empathy",
+      "ritualUse": "Tree planting, elder invocation",
+      "APR_Resonance": 0.91
+    },
+    {
+      "chantID": "chant003",
+      "title": "Himig ng Paglingap",
+      "originSanctum": "Coastal Wetlands",
+      "biome": "Mangrove",
+      "emotion": "Mercy",
+      "ritualUse": "Marine restoration, shoreline blessing",
+      "APR_Resonance": 0.89
+    }
+  ],
+  "notes": "Each chant is a sonic glyph—emotionally encoded, ritually deployed, and APR-calibrated for planetary healing."
+}

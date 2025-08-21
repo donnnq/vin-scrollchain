@@ -1,0 +1,29 @@
+{
+  "logTitle": "Rare Species Blessing Log",
+  "steward": "Vinvin",
+  "lastUpdated": "2025-08-21T19:45:00+08:00",
+  "blessedSpecies": [
+    {
+      "speciesID": "eagle001",
+      "name": "Philippine Eagle",
+      "category": "Fauna",
+      "status": "Critically Endangered",
+      "blessingProtocol": "Habitat shielding, glyph broadcast, elder invocation"
+    },
+    {
+      "speciesID": "orchid002",
+      "name": "Waling-Waling Orchid",
+      "category": "Flora",
+      "status": "Rare",
+      "blessingProtocol": "Seed sanctum, ritual propagation, APR shielding"
+    },
+    {
+      "speciesID": "elder003",
+      "name": "Lola Minda",
+      "category": "Human",
+      "status": "Wisdom Carrier",
+      "blessingProtocol": "Food sovereignty, memory preservation, scrollchain tribute"
+    }
+  ],
+  "notes": "All species listed are under mythic protection. Their survival is ritualized, their dignity immortalized."
+}
