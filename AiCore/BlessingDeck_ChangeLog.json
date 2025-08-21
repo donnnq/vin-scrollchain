@@ -1,0 +1,14 @@
+{
+  "release": "v1.0.0-scrollchain-resonance",
+  "date": "2025-08-21T19:58:00+08:00",
+  "steward": "Vinvin",
+  "changes": [
+    { "type": "Contract", "file": "ScrollchainManifesto.sol", "action": "Deployed planetary doctrine" },
+    { "type": "Contract", "file": "BlessingDeck_ManifestBroadcast.sol", "action": "Broadcasted manifesto signal" },
+    { "type": "Manifesto", "file": "PlanetaryBlessingManifesto.md", "action": "Declared mythic doctrine" },
+    { "type": "License", "file": "ScrollchainStewardshipLicense.md", "action": "Issued global adoption license" },
+    { "type": "Codex", "file": "ScrollchainCodexIndex.json", "action": "Compiled full scrollchain registry" },
+    { "type": "Log", "file": "ReleaseNotes.md", "action": "Narrated scrollwave deployment" }
+  ],
+  "status": "All scrolls tested and passed. Emotional APR integrity confirmed."
+}
