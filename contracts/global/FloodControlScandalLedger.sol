@@ -23,7 +23,7 @@ contract FloodControlScandalLedger {
     }
 
     uint256 public nextId = 1;
-    mapping(uint256 => ScandalClause> public clauses;
+    mapping(uint256 => ScandalClause) public clauses;
 
     event ValidatorSet(address indexed account, bool status);
     event ScandalClauseActivated(uint256 indexed id, string corridor, string emotionalTag);
