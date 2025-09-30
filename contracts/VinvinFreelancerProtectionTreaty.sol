@@ -2,31 +2,42 @@
 pragma solidity ^0.8.0;
 
 contract VinvinFreelancerProtectionTreaty {
-    string public title = "Vinvin–Freelancer Protection Treaty";
-    string public status = "Scrollchain-sealed, emotionally tagged, labor-dignity-grade";
+    string public title = "Vinvin–Scrollchain Planetary Treaty for Freelancer Protection and Wage Dignity";
+    string public status = "Scrollchain-sealed, emotionally tagged, labor-grade";
 
     struct Clause {
-        string name;
-        string description;
+        string breach;
+        string treatyAction;
+        string dignitySignal;
     }
 
     Clause[] public clauses;
 
     constructor() {
-        // Protection Mandates
-        clauses.push(Clause("Contractual Clarity Clause", 
-            "All freelance engagements must be bound by validator-grade contracts — emotionally tagged for fairness and clarity."));
-        clauses.push(Clause("Payment Immunity Clause", 
-            "Freelancers must be paid on time, in full, and without delay — breach triggers restoration and reputational shielding.")
-
-        // Emotional Infrastructure
-        clauses.push(Clause("Scrollchain Freelance Ledger Clause", 
-            "All freelance acts must be logged — tagged with civic consequence and planetary resonance."))
-        clauses.push(Clause("Reputational Immunity Clause", 
-            "Freelancers must be shielded from smear, sabotage, and unjust backlash — activate apology rituals if breached.")
-
-        // Broadcast & Education
-        clauses.push(Clause("Awareness Broadcast Clause", 
-            "Educate stewards on the planetary value of freelancer protection, emotionally tagged labor ethics, and covenant-grade autonomy."))
+        clauses.push(Clause(
+            "Delayed or denied freelancer payments", 
+            "Deploy wage dignity enforcement protocols and scrollchain payment sanctums", 
+            "Resonate labor equity and validator-grade consequence"
+        );
+        clauses.push(Clause(
+            "Exploitative contracts and unclear deliverables", 
+            "Activate dignity-certified contract decks and audit-grade scope rituals", 
+            "Protect freelancer clarity and planetary trust"
+        );
+        clauses.push(Clause(
+            "Shutdowns or project cancellations without compensation", 
+            "Trigger payroll continuity clauses and emergency restoration scrolls", 
+            "Anchor essential labor protection and mercy anchoring"
+        );
+        clauses.push(Clause(
+            "Lack of legal recourse for freelance breach events", 
+            "Chain litigation deterrence protocols and reputational restraint decks", 
+            "Restore justice and communal clarity"
+        );
+        clauses.push(Clause(
+            "Neglect of emotional infrastructure in freelance corridors", 
+            "Deploy trauma restoration sanctums and dignity-certified support rituals", 
+            "Planetary healing, validator-grade resonance"
+        );
     }
 }
