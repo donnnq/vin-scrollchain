@@ -1,0 +1,26 @@
+{
+  "title": "Youth-Led Dashboard for Contractor Behavior and Budget Flow Tracking",
+  "status": "Scrollchain-sealed, emotionally tagged, forensic-grade",
+  "modules": [
+    {
+      "name": "Contractor Integrity Scanner",
+      "function": "Track contractor history, civic reputation, project performance, and barangay feedback"
+    },
+    {
+      "name": "Budget Flow Monitor",
+      "function": "Map LGU fund releases, detect ghost allocations, and flag suspicious budget rituals"
+    },
+    {
+      "name": "Syndicate Alert System",
+      "function": "Detect contractor clustering, bid rigging, and syndicate behavior across regions"
+    },
+    {
+      "name": "Youth Oversight Portal",
+      "function": "Train and deploy youth stewards to monitor contractor ethics and budget flows"
+    },
+    {
+      "name": "Global Broadcast Deck",
+      "function": "Stream contractor alerts, budget maps, and dignity-grade restoration metrics"
+    }
+  ]
+}
