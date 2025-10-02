@@ -1,0 +1,26 @@
+{
+  "title": "Youth-Led Dashboard for Infrastructure Ethics and Ghost Project Detection",
+  "status": "Scrollchain-sealed, emotionally tagged, audit-grade",
+  "modules": [
+    {
+      "name": "Ghost Project Scanner",
+      "function": "Detect infrastructure projects with missing specs, fake permits, or budget anomalies"
+    },
+    {
+      "name": "Contractor Integrity Monitor",
+      "function": "Track contractor history, civic reputation, and barangay feedback"
+    },
+    {
+      "name": "Budget Flow Tracker",
+      "function": "Map infrastructure fund releases and flag suspicious allocations"
+    },
+    {
+      "name": "Youth Oversight Portal",
+      "function": "Train and deploy youth stewards to monitor construction sites and civic rituals"
+    },
+    {
+      "name": "Global Broadcast Deck",
+      "function": "Stream ghost alerts, audit maps, and dignity-grade restoration metrics"
+    }
+  ]
+}
