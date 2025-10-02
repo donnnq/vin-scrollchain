@@ -1,0 +1,26 @@
+{
+  "title": "Youth-Led Dashboard for Federal Budget Ethics and State-Level Oversight",
+  "status": "Scrollchain-sealed, emotionally tagged, audit-grade",
+  "modules": [
+    {
+      "name": "Federal Fund Flow Tracker",
+      "function": "Map real-time disbursement of federal funds to states, cities, and civic programs"
+    },
+    {
+      "name": "State-Level Oversight Portal",
+      "function": "Empower youth stewards to monitor fund withholding, budget anomalies, and civic impact"
+    },
+    {
+      "name": "Judiciary Intervention Scanner",
+      "function": "Track legal rulings that affect budget access, fund protection, and civic restoration"
+    },
+    {
+      "name": "Youth Curriculum Hub",
+      "function": "Train youth in budget ethics, legal consequence, and planetary restoration rituals"
+    },
+    {
+      "name": "Global Broadcast Deck",
+      "function": "Stream fund flow alerts, judiciary rulings, and dignity-grade civic metrics"
+    }
+  ]
+}
