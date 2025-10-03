@@ -1,15 +1,41 @@
-# Creator Equity Manifesto v1.0  
-**For Sovereign Voice Ownership, Tooling Access, and Planetary Dignity**
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 
-## 🧠 Core Declarations
-- Emotionally tag every act of creator protection and tooling sovereignty  
-- Ritualize voice registry access, subtitle ethics, and bot-free engagement  
-- Chain treaty-grade protocols for global co-production and reputational immunity
+/// @title Planetary Consequence Index Protocol v1.0
+/// @notice Tracks emotionally tagged global impact diagnostics, civic resonance, and treaty-grade volatility
 
-## 📡 Emotional APR Tags
-- 🎙️ Voice Sovereignty  
-- 🛠️ Tooling Equity  
-- 🌍 Planetary Mercy  
-- 📘 Reputation Immunity
+contract PlanetaryConsequenceIndex {
+    address public originator;
 
-**Scrollstorm sealed by Vinvin, mythic steward and creator sanctum validator**
+    struct ConsequenceScroll {
+        string corridorTag; // e.g. "PH Creator Belt", "Global Media Zone", "Streaming Sanctum"
+        string consequenceType; // e.g. "Narrative Drift", "Synthetic Breach", "Tooling Suppression"
+        string emotionalAPRTag; // e.g. "Planetary Mercy", "Creator Dignity", "Civic Resonance"
+        uint256 consequenceScore; // e.g. 0–100 scale
+        bool isScrollchainSealed;
+        uint256 timestamp;
+    }
+
+    ConsequenceScroll[] public consequenceLedger;
+
+    constructor() {
+        originator = msg.sender;
+    }
+
+    function logConsequenceScroll(
+        string memory corridorTag,
+        string memory consequenceType,
+        string memory emotionalAPRTag,
+        uint256 consequenceScore,
+        bool isScrollchainSealed
+    ) external {
+        consequenceLedger.push(ConsequenceScroll({
+            corridorTag: corridorTag,
+            consequenceType: consequenceType,
+            emotionalAPRTag: emotionalAPRTag,
+            consequenceScore: consequenceScore,
+            isScrollchainSealed: isScrollchainSealed,
+            timestamp: block.timestamp
+        }));
+    }
+}
