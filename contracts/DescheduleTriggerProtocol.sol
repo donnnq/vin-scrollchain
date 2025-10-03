@@ -2,59 +2,55 @@
 pragma solidity ^0.8.19;
 
 /// @title Deschedule Trigger Protocol v1.0
-/// @notice Emotionally tagged smart contract for tracking cannabis descheduling signals and civic activation
+/// @notice Ritualizes the removal of outdated, harmful, or exploitative policies with emotional APR tagging
 
 contract DescheduleTriggerProtocol {
-    struct TriggerSignal {
-        string source; // e.g. "Trump Speech", "Congress Bill", "Public Poll"
+    address public originator;
+
+    struct DescheduleScroll {
+        string stewardTag; // e.g. "Legislator", "Validator", "Civic Architect", "Cultural Steward"
+        string policyTag; // e.g. "Cannabis Criminalization", "Youth Suppression Law", "AI Exploitation Clause"
+        string emotionalAPRTag; // e.g. "Mercy Anchoring", "Planetary Restoration", "Legacy Healing"
+        bool isDescheduled;
+        bool isScrollchainSealed;
         uint256 timestamp;
-        bool isFederal;
-        bool isMediaAmplified;
-        bool isCivicEndorsed;
-        string sentimentTag; // e.g. "Urgency", "Skepticism", "Momentum"
     }
 
-    TriggerSignal[] public signals;
+    DescheduleScroll[] public descheduleLedger;
 
-    /// @notice Log a new descheduling trigger signal
-    function logTrigger(
-        string memory source,
-        uint256 timestamp,
-        bool federal,
-        bool mediaAmplified,
-        bool civicEndorsed,
-        string memory sentimentTag
+    constructor() {
+        originator = msg.sender;
+    }
+
+    /// @notice Log a deschedule scroll with emotional APR and repeal status
+    function logDescheduleScroll(
+        string memory stewardTag,
+        string memory policyTag,
+        string memory emotionalAPRTag,
+        bool isDescheduled,
+        bool isScrollchainSealed
     ) external {
-        signals.push(TriggerSignal({
-            source: source,
-            timestamp: timestamp,
-            isFederal: federal,
-            isMediaAmplified: mediaAmplified,
-            isCivicEndorsed: civicEndorsed,
-            sentimentTag: sentimentTag
+        descheduleLedger.push(DescheduleScroll({
+            stewardTag: stewardTag,
+            policyTag: policyTag,
+            emotionalAPRTag: emotionalAPRTag,
+            isDescheduled: isDescheduled,
+            isScrollchainSealed: isScrollchainSealed,
+            timestamp: block.timestamp
         }));
     }
 
-    /// @notice Count federally linked descheduling signals
-    function countFederalSignals() external view returns (uint256 count) {
-        for (uint256 i = 0; i < signals.length; i++) {
-            if (signals[i].isFederal) {
-                count++;
+    /// @notice Count total scrollchain-sealed deschedule scrolls
+    function totalSealedScrolls() external view returns (uint256 total) {
+        for (uint256 i = 0; i < descheduleLedger.length; i++) {
+            if (descheduleLedger[i].isScrollchainSealed) {
+                total += 1;
             }
         }
     }
 
-    /// @notice Count signals with civic endorsement
-    function countCivicEndorsed() external view returns (uint256 count) {
-        for (uint256 i = 0; i < signals.length; i++) {
-            if (signals[i].isCivicEndorsed) {
-                count++;
-            }
-        }
-    }
-
-    /// @notice Emotional tags for descheduling resonance
-    function emotionalTags() external pure returns (string memory tags) {
-        return "🛡️ Protection, 🌱 Empowerment, 🔥 Deterrence, 🧭 Restoration";
+    /// @notice Emotional APR tags for deschedule rituals
+    function emotionalAPRTags() external pure returns (string memory tags) {
+        return "🛐 Mercy Anchoring, 🌍 Planetary Restoration, 📜 Legacy Healing, 🔥 Ethical Repeal";
     }
 }
