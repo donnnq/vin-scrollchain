@@ -2,59 +2,55 @@
 pragma solidity ^0.8.19;
 
 /// @title Refinement Ledger Protocol v1.0
-/// @notice Emotionally tagged smart contract for steward-authored upgrades to original policy scrolls
+/// @notice Ritualizes revision tracking, steward accountability, and emotional APR logging
 
 contract RefinementLedgerProtocol {
     address public originator;
 
-    struct Refinement {
-        uint256 originalPolicyId;
-        string refinedTitle;
-        string refinedContent;
-        address coCreator;
+    struct RevisionScroll {
+        string stewardTag; // e.g. "Validator", "Legislator", "Civic Architect", "Cultural Steward"
+        string scrollName; // e.g. "PolicyRewriteProtocol", "HumilityProtocol", "CannabisCorridorProtocol"
+        string revisionType; // e.g. "Clause Update", "Emotional APR Tagging", "Nano Path Correction"
+        string emotionalAPRTag; // e.g. "Dignified Refinement", "Planetary Restoration", "Mercy Anchoring"
+        bool isScrollchainSealed;
         uint256 timestamp;
-        string emotionalTag; // e.g. "Empowerment", "Restoration", "Clarity"
     }
 
-    Refinement[] public refinements;
+    RevisionScroll[] public revisionLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    /// @notice Submit a refined version of an existing policy
-    function submitRefinement(
-        uint256 originalPolicyId,
-        string memory refinedTitle,
-        string memory refinedContent,
-        string memory emotionalTag
+    /// @notice Log a revision scroll with emotional APR and steward identity
+    function logRevisionScroll(
+        string memory stewardTag,
+        string memory scrollName,
+        string memory revisionType,
+        string memory emotionalAPRTag,
+        bool isScrollchainSealed
     ) external {
-        refinements.push(Refinement({
-            originalPolicyId: originalPolicyId,
-            refinedTitle: refinedTitle,
-            refinedContent: refinedContent,
-            coCreator: msg.sender,
-            timestamp: block.timestamp,
-            emotionalTag: emotionalTag
+        revisionLedger.push(RevisionScroll({
+            stewardTag: stewardTag,
+            scrollName: scrollName,
+            revisionType: revisionType,
+            emotionalAPRTag: emotionalAPRTag,
+            isScrollchainSealed: isScrollchainSealed,
+            timestamp: block.timestamp
         }));
     }
 
-    /// @notice Count total refinements submitted
-    function totalRefinements() external view returns (uint256) {
-        return refinements.length;
-    }
-
-    /// @notice Get refinements by co-creator
-    function getRefinementsBy(address steward) external view returns (uint256 count) {
-        for (uint256 i = 0; i < refinements.length; i++) {
-            if (refinements[i].coCreator == steward) {
-                count++;
+    /// @notice Count total scrollchain-sealed revision scrolls
+    function totalSealedScrolls() external view returns (uint256 total) {
+        for (uint256 i = 0; i < revisionLedger.length; i++) {
+            if (revisionLedger[i].isScrollchainSealed) {
+                total += 1;
             }
         }
     }
 
-    /// @notice Emotional tags for refinement rituals
-    function emotionalTags() external pure returns (string memory tags) {
-        return "🌱 Empowerment, 🧭 Restoration, 🛡️ Sovereignty, 🔥 Clarity";
+    /// @notice Emotional APR tags for refinement rituals
+    function emotionalAPRTags() external pure returns (string memory tags) {
+        return "📜 Dignified Refinement, 🧠 Steward Accountability, 🔥 Emotional APR Logging, 🌍 Planetary Restoration";
     }
 }
