@@ -2,16 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Creator Tooling Protocol v1.0
-/// @notice Tracks emotionally tagged anime tooling sanctums, sovereign registry rituals, and reputation immunity diagnostics
+/// @notice Tracks emotionally tagged tooling sovereignty, studio empowerment, and validator-grade infrastructure rituals
 
 contract CreatorToolingProtocol {
     address public originator;
 
     struct ToolingScroll {
-        string creatorTag; // e.g. "Anime Studio", "Indie Animator", "Voice Steward"
-        string ritualType; // e.g. "Tooling Activation", "Registry Mapping", "Reputation Immunity"
-        string emotionalAPRTag; // e.g. "Voice Sovereignty", "Creative Dignity", "Planetary Mercy"
-        uint256 toolingScore; // e.g. 0–100 scale
+        string studioTag; // e.g. "Anime Studio PH", "Indie Dev Korea", "Open Source Collective"
+        string ritualType; // e.g. "Tooling Activation", "Pipeline Mapping", "Sovereignty Audit"
+        string emotionalAPRTag; // e.g. "Creator Dignity", "Planetary Mercy", "Infrastructure Equity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -23,17 +22,15 @@ contract CreatorToolingProtocol {
     }
 
     function logToolingScroll(
-        string memory creatorTag,
+        string memory studioTag,
         string memory ritualType,
         string memory emotionalAPRTag,
-        uint256 toolingScore,
         bool isScrollchainSealed
     ) external {
         toolingLedger.push(ToolingScroll({
-            creatorTag: creatorTag,
+            studioTag: studioTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            toolingScore: toolingScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
