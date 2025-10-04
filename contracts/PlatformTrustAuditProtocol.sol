@@ -2,15 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Platform Trust Audit Protocol v1.0
-/// @notice Tracks emotionally tagged platform diagnostics, user immunity, and ethical tooling corridors
+/// @notice Tracks emotionally tagged platform diagnostics, bot immunity rituals, and sovereign trust restoration
 
 contract PlatformTrustAuditProtocol {
     address public originator;
 
     struct TrustScroll {
-        string corridorTag; // e.g. "User Sanctum", "Tooling Corridor", "Platform Sovereignty Zone"
-        string ritualType; // e.g. "Trust Audit", "Tooling Ethics Mapping", "User Immunity Diagnostic"
-        string emotionalAPRTag; // e.g. "Digital Sovereignty", "Planetary Mercy", "Platform Dignity"
+        string corridorTag; // e.g. "Commenting Sanctum", "Bot-Free Zone", "Platform Integrity Corridor"
+        string ritualType; // e.g. "Trust Audit", "Bot Immunity Activation", "Saturation Diagnostic"
+        string emotionalAPRTag; // e.g. "Narrative Integrity", "Planetary Mercy", "User Sovereignty"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
