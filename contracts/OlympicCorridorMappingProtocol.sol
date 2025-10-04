@@ -2,38 +2,35 @@
 pragma solidity ^0.8.19;
 
 /// @title Olympic Corridor Mapping Protocol v1.0
-/// @notice Tracks emotionally tagged infrastructure diagnostics, athlete legacy rituals, and sovereign activation scrolls
+/// @notice Tracks emotionally tagged Olympic diagnostics, athlete equity rituals, and performance sanctum restoration
 
 contract OlympicCorridorMappingProtocol {
     address public originator;
 
-    struct CorridorScroll {
-        string corridorTag; // e.g. "Olympic Belt", "Youth Sanctum Zone", "Athlete Legacy Grid"
-        string mappingType; // e.g. "Facility Audit", "Sanctum Activation", "Equity Ritual"
-        string emotionalAPRTag; // e.g. "Athlete Dignity", "Planetary Mercy", "Youth Empowerment"
-        uint256 mappingScore; // e.g. 0–100 scale
+    struct OlympicScroll {
+        string corridorTag; // e.g. "Olympic Sanctum", "Youth Athlete Zone", "Performance Corridor"
+        string ritualType; // e.g. "Equity Mapping", "Sanctum Activation", "Diagnostics Deployment"
+        string emotionalAPRTag; // e.g. "Athlete Sovereignty", "Planetary Mercy", "Olympic Dignity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CorridorScroll[] public mappingLedger;
+    OlympicScroll[] public olympicLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logCorridorScroll(
+    function logOlympicScroll(
         string memory corridorTag,
-        string memory mappingType,
+        string memory ritualType,
         string memory emotionalAPRTag,
-        uint256 mappingScore,
         bool isScrollchainSealed
     ) external {
-        mappingLedger.push(CorridorScroll({
+        olympicLedger.push(OlympicScroll({
             corridorTag: corridorTag,
-            mappingType: mappingType,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            mappingScore: mappingScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
