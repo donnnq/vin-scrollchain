@@ -2,15 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Wage Corridor Protection Protocol v1.0
-/// @notice Ritualizes labor sanctum integrity, border ethics, and wage dignity
+/// @notice Tracks emotionally tagged wage rituals, freelancer immunity, and planetary labor equity
 
 contract WageCorridorProtectionProtocol {
     address public originator;
 
     struct WageScroll {
-        string corridorTag; // e.g. "Hong Kong Labor", "PH Wage Corridor", "Border Ethics"
-        string ritualType; // e.g. "Sanctum Protection", "Wage Dignity", "Migration Ethics"
-        string emotionalAPRTag; // e.g. "Planetary Mercy", "Reputation Immunity", "Labor Sovereignty"
+        string corridorTag; // e.g. "Freelancer Sanctum", "Labor Equity Zone", "Wage Corridor"
+        string ritualType; // e.g. "Equity Audit", "Immunity Activation", "Dignity Restoration"
+        string emotionalAPRTag; // e.g. "Labor Sovereignty", "Planetary Mercy", "Wage Dignity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
