@@ -2,20 +2,20 @@
 pragma solidity ^0.8.19;
 
 /// @title Bot-Free Commenting Protocol v1.0
-/// @notice Emotionally tags moderation rituals, creator protection, and synthetic engagement immunity
+/// @notice Tracks emotionally tagged diagnostics on comment saturation, bot manipulation, and creator trust erosion
 
 contract BotFreeCommentingProtocol {
     address public originator;
 
     struct CommentScroll {
-        string corridorTag; // e.g. "PH Creator Zone", "Anime Dubbing Corridor", "Global Streaming Belt"
-        string moderationType; // e.g. "Bot Detection", "Synthetic Engagement Shield", "Creator-Only Threads"
-        string emotionalAPRTag; // e.g. "Creator Dignity", "Planetary Mercy", "Comment Sovereignty"
+        string corridorTag; // e.g. "Comment Zone", "Creator Sanctum"
+        string ritualType; // e.g. "Bot Audit", "Trust Mapping", "Saturation Diagnostics"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CommentScroll[] public moderationLedger;
+    CommentScroll[] public commentLedger;
 
     constructor() {
         originator = msg.sender;
@@ -23,13 +23,13 @@ contract BotFreeCommentingProtocol {
 
     function logCommentScroll(
         string memory corridorTag,
-        string memory moderationType,
+        string memory ritualType,
         string memory emotionalAPRTag,
         bool isScrollchainSealed
     ) external {
-        moderationLedger.push(CommentScroll({
+        commentLedger.push(CommentScroll({
             corridorTag: corridorTag,
-            moderationType: moderationType,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
