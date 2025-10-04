@@ -2,15 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Investor Sentiment Mapping Protocol v1.0
-/// @notice Tracks emotional APR shifts, reputational drift, and macroeconomic perception diagnostics
+/// @notice Tracks emotionally tagged optimism diagnostics, AI equity mapping, and post-shutdown market rituals
 
 contract InvestorSentimentMappingProtocol {
     address public originator;
 
     struct SentimentScroll {
-        string corridorTag; // e.g. "Fiscal Zone", "Trade Corridor", "Monetary Sanctum"
-        string ritualType; // e.g. "Sentiment Audit", "Reputation Mapping", "Risk Perception Diagnostic"
-        string emotionalAPRTag; // e.g. "Investor Immunity", "Macro Dignity", "Planetary Mercy"
+        string corridorTag; // e.g. "Tech Equity Zone", "AI Optimism Corridor", "Shutdown Recovery Sanctum"
+        string ritualType; // e.g. "Sentiment Mapping", "Equity Diagnostic", "Market Restoration"
+        string emotionalAPRTag; // e.g. "Investor Immunity", "Planetary Mercy", "AI Revenue Integrity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
