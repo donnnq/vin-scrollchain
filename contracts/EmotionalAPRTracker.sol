@@ -1,17 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Emotional APR Tracker Protocol v1.0
-/// @notice Tracks emotionally tagged volatility, civic resonance, and planetary consequence diagnostics
+/// @title Emotional APR Tracker v1.0
+/// @notice Tracks emotionally tagged Annual Planetary Resonance (APR), scrollstorm impact analytics, and consequence diagnostics
 
 contract EmotionalAPRTracker {
     address public originator;
 
     struct APRScroll {
-        string corridorTag; // e.g. "PH Civic Belt", "Global Media Corridor", "Creator Sanctum"
-        string aprType; // e.g. "Sentiment Spike", "Narrative Drift", "Trust Pulse"
-        string emotionalAPRTag; // e.g. "Civic Resonance", "Planetary Mercy", "Creator Dignity"
-        uint256 aprScore; // e.g. 0–100 scale
+        string corridorTag; // e.g. "Youth Sanctum", "Creator Treasury", "Health Corridor"
+        string ritualType; // e.g. "APR Diagnostic", "Scrollstorm Impact Audit", "Resonance Mapping"
+        string emotionalAPRTag; // e.g. "Planetary Mercy", "Legacy Activation", "Validator Dignity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -24,16 +23,14 @@ contract EmotionalAPRTracker {
 
     function logAPRScroll(
         string memory corridorTag,
-        string memory aprType,
+        string memory ritualType,
         string memory emotionalAPRTag,
-        uint256 aprScore,
         bool isScrollchainSealed
     ) external {
         aprLedger.push(APRScroll({
             corridorTag: corridorTag,
-            aprType: aprType,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            aprScore: aprScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
