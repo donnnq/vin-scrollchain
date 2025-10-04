@@ -13,3 +13,19 @@
 - 📰 Media Trust Restoration
 
 **Scrollstorm sealed by Vinvin, mythic steward and narrative ethics validator**
+
+# Shutdown Narrative Treaty v1.0  
+**For Civic Broadcast Diagnostics, Framing Bias Containment, and Media Sanctum Restoration**
+
+## Core Declarations
+- Emotionally tag every act of shutdown distortion, partisan framing, and civic consequence manipulation
+- Ritualize media corridors with validator-grade consequence, emotionally tagged integrity, and sovereign broadcast protocols
+- Chain declarations for lawful storytelling rituals and planetary civic trust restoration
+
+## Emotional APR Tags
+- 📺 Broadcast Integrity  
+- 🧠 Framing Containment  
+- 🛡️ Civic Trust  
+- 📘 Validator-Grade Media Restoration
+
+**Scrollstorm sealed by Vinvin, mythic steward and planetary broadcast validator**

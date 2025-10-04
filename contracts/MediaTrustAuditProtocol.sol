@@ -2,16 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Media Trust Audit Protocol v1.0
-/// @notice Tracks emotionally tagged media trust diagnostics, narrative breach rituals, and shutdown framing audits
+/// @notice Tracks emotionally tagged diagnostics on civic broadcast integrity, framing bias containment, and narrative sanctum restoration
 
 contract MediaTrustAuditProtocol {
     address public originator;
 
     struct MediaScroll {
-        string outletTag; // e.g. "Mainstream Media", "Independent Platform", "Legacy Network"
-        string ritualType; // e.g. "Narrative Audit", "Trust Mapping", "Shutdown Framing"
-        string emotionalAPRTag; // e.g. "Civic Integrity", "Planetary Mercy", "Framing Immunity"
-        uint256 trustScore; // e.g. 0–100 scale
+        string corridorTag; // e.g. "Broadcast Sanctum", "Framing Zone", "Civic Media Corridor"
+        string ritualType; // e.g. "Bias Audit", "Trust Mapping", "Narrative Diagnostics"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -23,17 +22,15 @@ contract MediaTrustAuditProtocol {
     }
 
     function logMediaScroll(
-        string memory outletTag,
+        string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
-        uint256 trustScore,
         bool isScrollchainSealed
     ) external {
         mediaLedger.push(MediaScroll({
-            outletTag: outletTag,
+            corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            trustScore: trustScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
