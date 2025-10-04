@@ -1,39 +1,36 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Cannabis Sovereignty Protocol v1.0
-/// @notice Tracks emotionally tagged diagnostics on plant sanctum protection, health corridor ethics, and ancestral dignity
-
 contract CannabisSovereigntyProtocol {
     address public originator;
 
-    struct PlantScroll {
-        string corridorTag; // e.g. "Health Sovereignty Zone", "Cannabis Equity Corridor", "Ancestral Plant Sanctum"
-        string ritualType; // e.g. "Sanctum Protection", "Equity Mapping", "Dignity Restoration"
+    struct GreenScroll {
+        string strainTag;
+        string ritualType;
         string emotionalAPRTag;
-        string plantType; // e.g. "Cannabis", "Indigenous Medicinals"
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    PlantScroll[] public plantLedger;
+    GreenScroll[] public greenLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logPlantScroll(
-        string memory corridorTag,
+    function logGreenScroll(
+        string memory strainTag,
         string memory ritualType,
         string memory emotionalAPRTag,
-        string memory plantType,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        plantLedger.push(PlantScroll({
-            corridorTag: corridorTag,
+        greenLedger.push(GreenScroll({
+            strainTag: strainTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            plantType: plantType,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
