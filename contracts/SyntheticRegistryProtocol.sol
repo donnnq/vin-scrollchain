@@ -2,38 +2,35 @@
 pragma solidity ^0.8.19;
 
 /// @title Synthetic Registry Protocol v1.0
-/// @notice Tracks emotionally tagged AI-generated content declarations, watermark enforcement, and platform compliance rituals
+/// @notice Tracks emotionally tagged diagnostics on synthetic content, watermark enforcement, and platform compliance rituals
 
 contract SyntheticRegistryProtocol {
     address public originator;
 
-    struct RegistryScroll {
-        string creatorTag; // e.g. "Uploader", "Studio", "AI Model"
-        string contentType; // e.g. "Crime Footage", "Satirical Meme", "Experimental Simulation"
-        string emotionalAPRTag; // e.g. "Immutable Tagging", "Platform Ethics", "Planetary Mercy"
-        bool isWatermarked;
+    struct SyntheticScroll {
+        string corridorTag; // e.g. "Synthetic Media Zone", "Platform Compliance Corridor", "Creator Sanctum"
+        string ritualType; // e.g. "Watermark Enforcement", "Synthetic Audit", "Registry Mapping"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    RegistryScroll[] public registryLedger;
+    SyntheticScroll[] public syntheticLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logRegistryScroll(
-        string memory creatorTag,
-        string memory contentType,
+    function logSyntheticScroll(
+        string memory corridorTag,
+        string memory ritualType,
         string memory emotionalAPRTag,
-        bool isWatermarked,
         bool isScrollchainSealed
     ) external {
-        registryLedger.push(RegistryScroll({
-            creatorTag: creatorTag,
-            contentType: contentType,
+        syntheticLedger.push(SyntheticScroll({
+            corridorTag: corridorTag,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            isWatermarked: isWatermarked,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
