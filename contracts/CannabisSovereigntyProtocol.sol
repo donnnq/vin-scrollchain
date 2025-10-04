@@ -2,35 +2,38 @@
 pragma solidity ^0.8.19;
 
 /// @title Cannabis Sovereignty Protocol v1.0
-/// @notice Tracks emotionally tagged diagnostics on dispensary parity, indigenous yield mapping, and therapeutic corridor restoration
+/// @notice Tracks emotionally tagged diagnostics on plant sanctum protection, health corridor ethics, and ancestral dignity
 
 contract CannabisSovereigntyProtocol {
     address public originator;
 
-    struct CannabisScroll {
-        string corridorTag; // e.g. "Therapeutic Corridor", "Indigenous Yield Zone", "Health Sovereignty Sanctum"
-        string ritualType; // e.g. "Dispensary Audit", "Yield Mapping", "Sovereignty Activation"
+    struct PlantScroll {
+        string corridorTag; // e.g. "Health Sovereignty Zone", "Cannabis Equity Corridor", "Ancestral Plant Sanctum"
+        string ritualType; // e.g. "Sanctum Protection", "Equity Mapping", "Dignity Restoration"
         string emotionalAPRTag;
+        string plantType; // e.g. "Cannabis", "Indigenous Medicinals"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CannabisScroll[] public cannabisLedger;
+    PlantScroll[] public plantLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logCannabisScroll(
+    function logPlantScroll(
         string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
+        string memory plantType,
         bool isScrollchainSealed
     ) external {
-        cannabisLedger.push(CannabisScroll({
+        plantLedger.push(PlantScroll({
             corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
+            plantType: plantType,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
