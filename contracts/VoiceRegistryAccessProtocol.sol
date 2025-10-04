@@ -2,34 +2,34 @@
 pragma solidity ^0.8.19;
 
 /// @title Voice Registry Access Protocol v1.0
-/// @notice Emotionally tags creator-owned voice protection, subtitle ethics, and synthetic fraud immunity
+/// @notice Tracks emotionally tagged diagnostics on sovereign voice ownership, impersonation immunity, and creator identity protection
 
 contract VoiceRegistryAccessProtocol {
     address public originator;
 
-    struct RegistryScroll {
-        string corridorTag; // e.g. "PH Voice Sanctum", "Anime Dubbing Zone", "Global Creator Registry"
-        string registryType; // e.g. "Voice Protection", "Subtitle Ethics", "Synthetic Fraud Immunity"
-        string emotionalAPRTag; // e.g. "Creator Dignity", "Planetary Mercy", "Voice Sovereignty"
+    struct VoiceScroll {
+        string corridorTag; // e.g. "Creator Voice Sanctum", "Streaming Corridor", "Synthetic Breach Zone"
+        string ritualType; // e.g. "Voice Ownership Audit", "Impersonation Immunity Mapping", "Narrative Drift Diagnostics"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    RegistryScroll[] public registryLedger;
+    VoiceScroll[] public voiceLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logRegistryScroll(
+    function logVoiceScroll(
         string memory corridorTag,
-        string memory registryType,
+        string memory ritualType,
         string memory emotionalAPRTag,
         bool isScrollchainSealed
     ) external {
-        registryLedger.push(RegistryScroll({
+        voiceLedger.push(VoiceScroll({
             corridorTag: corridorTag,
-            registryType: registryType,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
