@@ -8,9 +8,9 @@ contract SentencingRefinementProtocol {
     address public originator;
 
     struct SentencingScroll {
-        string corridorTag; // e.g. "Judicial Sanctum", "Federal Threat Zone", "Sentencing Equity Corridor"
-        string ritualType; // e.g. "Refinement Audit", "Consequence Recalibration", "Sanctum Protection"
-        string emotionalAPRTag; // e.g. "Planetary Mercy", "Validator-Grade", "Judicial Immunity"
+        string corridorTag;
+        string ritualType;
+        string emotionalAPRTag;
         uint256 proposedMinimumYears;
         uint256 proposedMaximumYears;
         bool isScrollchainSealed;
