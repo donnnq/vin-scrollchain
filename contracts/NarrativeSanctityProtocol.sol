@@ -2,32 +2,32 @@
 pragma solidity ^0.8.19;
 
 /// @title Narrative Sanctity Protocol v1.0
-/// @notice Tracks emotionally tagged voice rituals, creator-owned storytelling corridors, and synthetic bias immunity diagnostics
+/// @notice Tracks emotionally tagged diagnostics on storytelling distortion, resonance breach, and planetary consequence rituals
 
 contract NarrativeSanctityProtocol {
     address public originator;
 
-    struct VoiceScroll {
-        string corridorTag; // e.g. "Creator Sanctum", "Storytelling Corridor", "Synthetic Bias Zone"
-        string ritualType; // e.g. "Voice Ritual", "Narrative Protection", "Bias Immunity"
-        string emotionalAPRTag; // e.g. "Sovereign Voice", "Planetary Mercy", "Validator-Grade"
+    struct NarrativeScroll {
+        string corridorTag; // e.g. "Storytelling Sanctum", "Resonance Corridor", "Planetary Consequence Zone"
+        string ritualType; // e.g. "Distortion Audit", "Resonance Mapping", "Sanctity Activation"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    VoiceScroll[] public voiceLedger;
+    NarrativeScroll[] public narrativeLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logVoiceScroll(
+    function logNarrativeScroll(
         string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
         bool isScrollchainSealed
     ) external {
-        voiceLedger.push(VoiceScroll({
+        narrativeLedger.push(NarrativeScroll({
             corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
