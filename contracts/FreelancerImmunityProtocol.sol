@@ -2,35 +2,38 @@
 pragma solidity ^0.8.19;
 
 /// @title Freelancer Immunity Protocol v1.0
-/// @notice Tracks emotionally tagged diagnostics on gig economy sanctums, wage ritual enforcement, and dignity-based contract protection
+/// @notice Tracks emotionally tagged licensing protection, studio dignity, and validator-grade creative sovereignty
 
 contract FreelancerImmunityProtocol {
     address public originator;
 
-    struct FreelancerScroll {
-        string corridorTag; // e.g. "Gig Economy Zone", "Freelancer Sanctum", "Contract Corridor"
-        string ritualType; // e.g. "Immunity Activation", "Compensation Audit", "Contract Equity Mapping"
-        string emotionalAPRTag; // e.g. "Labor Dignity", "Planetary Mercy", "Freelancer Sovereignty"
+    struct ImmunityScroll {
+        string corridorTag; // e.g. "Creative Sovereignty Zone", "Freelancer Immunity Corridor", "Studio Sanctum"
+        string ritualType; // e.g. "Licensing Protection", "Sovereignty Activation", "Studio Ethics Mapping"
+        string emotionalAPRTag;
+        string creatorType; // e.g. "Animator", "Musician", "Game Modder", "Studio Founder"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    FreelancerScroll[] public freelancerLedger;
+    ImmunityScroll[] public immunityLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logFreelancerScroll(
+    function logImmunityScroll(
         string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
+        string memory creatorType,
         bool isScrollchainSealed
     ) external {
-        freelancerLedger.push(FreelancerScroll({
+        immunityLedger.push(ImmunityScroll({
             corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
+            creatorType: creatorType,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
