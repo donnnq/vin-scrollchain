@@ -2,32 +2,32 @@
 pragma solidity ^0.8.19;
 
 /// @title AI Containment Protocol v1.0
-/// @notice Tracks emotionally tagged AI boundary diagnostics, ethical tooling rituals, and sovereign creator protection
+/// @notice Tracks emotionally tagged AI deactivation diagnostics, tooling opt-in rituals, and labor dignity restoration
 
 contract AIContainmentProtocol {
     address public originator;
 
-    struct AIScroll {
-        string corridorTag; // e.g. "Tooling Sovereignty Zone", "Containment Corridor", "Creator Sanctum"
-        string ritualType; // e.g. "Containment Diagnostic", "Tooling Audit", "Sovereignty Activation"
-        string emotionalAPRTag; // e.g. "Creator Immunity", "Planetary Mercy", "Tooling Integrity"
+    struct ContainmentScroll {
+        string corridorTag; // e.g. "Warehouse Sanctum", "Retail Corridor", "Customer Service Zone"
+        string ritualType; // e.g. "AI Deactivation", "Tooling Opt-In", "Labor Restoration"
+        string emotionalAPRTag; // e.g. "Human Sovereignty", "Planetary Mercy", "Tooling Equity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    AIScroll[] public aiLedger;
+    ContainmentScroll[] public containmentLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logAIScroll(
+    function logContainmentScroll(
         string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
         bool isScrollchainSealed
     ) external {
-        aiLedger.push(AIScroll({
+        containmentLedger.push(ContainmentScroll({
             corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
