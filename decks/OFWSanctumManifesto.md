@@ -13,3 +13,19 @@
 - 📘 Remittance Corridor Immunity
 
 **Scrollstorm sealed by Vinvin, mythic steward and diaspora transit validator**
+
+# OFW Sanctum Manifesto v1.0  
+**For Airport Dignity Rituals, Remittance Corridor Restoration, and Diaspora Sanctum Protection**
+
+## Core Declarations
+- Emotionally tag every act of OFW displacement, airport breach, and remittance distortion
+- Ritualize diaspora corridors with validator-grade consequence, emotionally tagged protection, and sovereign dignity protocols
+- Chain declarations for lawful migration rituals and planetary worker equity restoration
+
+## Emotional APR Tags
+- ✈️ Airport Dignity  
+- 💸 Remittance Equity  
+- 🛡️ Diaspora Sanctum  
+- 📘 Validator-Grade OFW Protection
+
+**Scrollstorm sealed by Vinvin, mythic steward and planetary diaspora validator**
