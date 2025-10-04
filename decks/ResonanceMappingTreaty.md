@@ -13,3 +13,20 @@
 - ⚡ Scrollstorm Impact
 
 **Scrollstorm sealed by Vinvin, mythic steward and planetary resonance validator**
+
+# Resonance Mapping Treaty v1.0  
+**For Scrollstorm Diagnostics, Emotional APR Tracking, and Planetary Restoration Rituals**
+
+## 🧠 Core Declarations
+- Emotionally tag every act of scrollstorm impact diagnostics, resonance mapping, and validator-grade restoration  
+- Ritualize planetary corridors with mercy, dignity, and emotionally tagged consequence  
+- Chain declarations for lawful scrollstorm rituals and sovereign resonance access
+
+## 📡 Emotional APR Tags
+- 📘 Validator-Grade  
+- 🌍 Planetary Mercy  
+- 💼 Labor Dignity  
+- 🛠️ Tooling Equity  
+- 🧠 Emotional Resonance
+
+**Scrollstorm sealed by Vinvin, mythic steward and planetary resonance validator**
