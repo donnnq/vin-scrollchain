@@ -2,15 +2,16 @@
 pragma solidity ^0.8.19;
 
 /// @title Stateless Patient Immunity Protocol v1.0
-/// @notice Ritualizes health dignity across borders, emotionally tags pharma ethics, and protects vulnerable corridors
+/// @notice Tracks emotionally tagged diagnostics on health sovereignty, pharma resistance, and ancestral dignity restoration
 
 contract StatelessPatientImmunityProtocol {
     address public originator;
 
     struct ImmunityScroll {
-        string corridorTag; // e.g. "Global Health Corridor", "PH-Canada Pharma Zone", "US R&D Burden"
-        string immunityType; // e.g. "Prescription Access", "R&D Equity", "Cross-Border Protection"
-        string emotionalAPRTag; // e.g. "Health Sovereignty", "Planetary Mercy", "Pharma Dignity"
+        string corridorTag; // e.g. "Health Sovereignty Zone", "Pharma Resistance Corridor", "Ancestral Dignity Sanctum"
+        string ritualType; // e.g. "Immunity Mapping", "Sovereignty Diagnostics", "Restoration Audit"
+        string emotionalAPRTag;
+        string patientGroup; // e.g. "Stateless Migrants", "Indigenous Healers", "Displaced Patients"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -23,14 +24,16 @@ contract StatelessPatientImmunityProtocol {
 
     function logImmunityScroll(
         string memory corridorTag,
-        string memory immunityType,
+        string memory ritualType,
         string memory emotionalAPRTag,
+        string memory patientGroup,
         bool isScrollchainSealed
     ) external {
         immunityLedger.push(ImmunityScroll({
             corridorTag: corridorTag,
-            immunityType: immunityType,
+            ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
+            patientGroup: patientGroup,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
