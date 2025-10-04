@@ -2,15 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Stateless Patient Protocol v1.0
-/// @notice Tracks emotionally tagged patient immunity rituals, pharma audit diagnostics, and health corridor restoration
+/// @notice Tracks emotionally tagged diagnostics on patient immunity, pharma audit restoration, and health corridor sovereignty
 
 contract StatelessPatientProtocol {
     address public originator;
 
     struct PatientScroll {
-        string corridorTag; // e.g. "Health Sovereignty Zone", "Pharma Audit Corridor", "Patient Immunity Sanctum"
-        string ritualType; // e.g. "Immunity Activation", "Audit Deployment", "Corridor Restoration"
-        string emotionalAPRTag; // e.g. "Ancestral Dignity", "Planetary Mercy", "Stateless Protection"
+        string corridorTag; // e.g. "Health Sovereignty Zone", "Pharma Audit Corridor", "Stateless Patient Sanctum"
+        string ritualType; // e.g. "Immunity Mapping", "Audit Diagnostics", "Sovereignty Activation"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
