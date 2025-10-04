@@ -2,32 +2,32 @@
 pragma solidity ^0.8.19;
 
 /// @title Ancestral Dignity Protocol v1.0
-/// @notice Ritualizes indigenous empowerment, health sovereignty, and digital access
+/// @notice Tracks emotionally tagged heritage protection rituals, cultural sanctum equity, and sovereign storytelling corridors
 
 contract AncestralDignityProtocol {
     address public originator;
 
-    struct AncestralScroll {
-        string corridorTag; // e.g. "Aeta Farmers", "Medical Mission", "Starlink Deployment"
-        string ritualType; // e.g. "Health Restoration", "Education Equity", "Digital Sovereignty"
-        string emotionalAPRTag; // e.g. "Ancestral Dignity", "Stateless Protection", "Planetary Mercy"
+    struct DignityScroll {
+        string corridorTag; // e.g. "Cultural Sanctum", "Heritage Corridor", "Storytelling Zone"
+        string ritualType; // e.g. "Dignity Restoration", "Sanctum Activation", "Narrative Protection"
+        string emotionalAPRTag; // e.g. "Ancestral Sovereignty", "Planetary Mercy", "Cultural Immunity"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    AncestralScroll[] public dignityLedger;
+    DignityScroll[] public dignityLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logAncestralScroll(
+    function logDignityScroll(
         string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
         bool isScrollchainSealed
     ) external {
-        dignityLedger.push(AncestralScroll({
+        dignityLedger.push(DignityScroll({
             corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
