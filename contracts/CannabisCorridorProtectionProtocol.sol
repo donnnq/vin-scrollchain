@@ -2,38 +2,35 @@
 pragma solidity ^0.8.19;
 
 /// @title Cannabis Corridor Protection Protocol v1.0
-/// @notice Tracks emotionally tagged hemp integration rituals, dispensary parity diagnostics, and regulatory sanctum mapping
+/// @notice Tracks emotionally tagged diagnostics on plant dignity, health sovereignty, and stateless immunity rituals
 
 contract CannabisCorridorProtectionProtocol {
     address public originator;
 
-    struct CorridorScroll {
-        string regionTag; // e.g. "California", "Hemp-Derived THC", "Dispensary Market"
-        string ritualType; // e.g. "Integration Activation", "Regulatory Parity", "Sanctum Consolidation"
-        string emotionalAPRTag; // e.g. "Cannabis Sovereignty", "Planetary Mercy", "Market Integrity"
-        uint256 protectionScore; // e.g. 0–100 scale
+    struct CannabisScroll {
+        string corridorTag; // e.g. "Health Sovereignty Zone", "Cannabis Sanctum", "Stateless Immunity Corridor"
+        string ritualType; // e.g. "Dignity Mapping", "Corridor Audit", "Sovereignty Diagnostics"
+        string emotionalAPRTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CorridorScroll[] public corridorLedger;
+    CannabisScroll[] public cannabisLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logCorridorScroll(
-        string memory regionTag,
+    function logCannabisScroll(
+        string memory corridorTag,
         string memory ritualType,
         string memory emotionalAPRTag,
-        uint256 protectionScore,
         bool isScrollchainSealed
     ) external {
-        corridorLedger.push(CorridorScroll({
-            regionTag: regionTag,
+        cannabisLedger.push(CannabisScroll({
+            corridorTag: corridorTag,
             ritualType: ritualType,
             emotionalAPRTag: emotionalAPRTag,
-            protectionScore: protectionScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
