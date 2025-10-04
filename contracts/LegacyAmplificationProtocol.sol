@@ -2,15 +2,15 @@
 pragma solidity ^0.8.19;
 
 /// @title Legacy Amplification Protocol v1.0
-/// @notice Tracks emotionally tagged heritage rituals, creator lineage protection, and mythic resonance mapping
+/// @notice Tracks emotionally tagged heritage rituals, ancestral dignity mapping, and validator-grade mythic consequence
 
 contract LegacyAmplificationProtocol {
     address public originator;
 
     struct LegacyScroll {
-        string corridorTag; // e.g. "Ancestral Sanctum", "Creator Lineage Zone", "Heritage Corridor"
-        string ritualType; // e.g. "Legacy Audit", "Resonance Mapping", "Lineage Protection"
-        string emotionalAPRTag; // e.g. "Ancestral Dignity", "Planetary Mercy", "Mythic Resonance"
+        string corridorTag; // e.g. "Ancestral Sanctum", "Heritage Corridor", "Mythic Resonance Zone"
+        string ritualType; // e.g. "Legacy Ritual", "Dignity Mapping", "Consequence Amplification"
+        string emotionalAPRTag; // e.g. "Ancestral Dignity", "Planetary Mercy", "Validator-Grade"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
