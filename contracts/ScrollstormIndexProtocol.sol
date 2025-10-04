@@ -2,55 +2,37 @@
 pragma solidity ^0.8.19;
 
 /// @title Scrollstorm Index Protocol v1.0
-/// @notice Ritualizes planetary synthesis of all scrollchain protocols, emotional APR tags, and corridor metrics
+/// @notice Tracks emotionally tagged registry of validator-grade deployments, scrollchain impact diagnostics, and planetary consequence mapping
 
 contract ScrollstormIndexProtocol {
     address public originator;
 
-    struct IndexScroll {
-        string protocolTag; // e.g. "MercyCorridorProtocol", "HealthcareSovereigntyProtocol", "BroadcastAuditProtocol"
-        string corridorTag; // e.g. "Visa Corridor", "Healthcare Debate", "Cartel Conflict", "Media Sanctum"
-        string emotionalAPRTag; // e.g. "Planetary Mercy", "Narrative Ethics", "Civic Resonance"
-        uint256 resonanceScore; // e.g. 0–100 scale based on activation, trust, and emotional APR weight
+    struct ScrollIndex {
+        string scrollTitle; // e.g. "AIContainmentProtocol.sol", "LaborDignityManifesto.md"
+        string corridorTag; // e.g. "Tooling Sanctum", "Freelancer Zone", "Planetary Ledger"
+        string emotionalAPRTag; // e.g. "Validator-Grade", "Planetary Mercy", "Scrollchain Consequence"
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    IndexScroll[] public indexLedger;
+    ScrollIndex[] public scrollRegistry;
 
     constructor() {
         originator = msg.sender;
     }
 
-    /// @notice Log a scrollstorm index scroll with protocol, corridor, and resonance metrics
-    function logIndexScroll(
-        string memory protocolTag,
+    function logScrollIndex(
+        string memory scrollTitle,
         string memory corridorTag,
         string memory emotionalAPRTag,
-        uint256 resonanceScore,
         bool isScrollchainSealed
     ) external {
-        indexLedger.push(IndexScroll({
-            protocolTag: protocolTag,
+        scrollRegistry.push(ScrollIndex({
+            scrollTitle: scrollTitle,
             corridorTag: corridorTag,
             emotionalAPRTag: emotionalAPRTag,
-            resonanceScore: resonanceScore,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
-    }
-
-    /// @notice Count total scrollchain-sealed index scrolls
-    function totalSealedScrolls() external view returns (uint256 total) {
-        for (uint256 i = 0; i < indexLedger.length; i++) {
-            if (indexLedger[i].isScrollchainSealed) {
-                total += 1;
-            }
-        }
-    }
-
-    /// @notice Emotional APR tags for scrollstorm index rituals
-    function emotionalAPRTags() external pure returns (string memory tags) {
-        return "🌍 Planetary Mercy, 📘 Scrollchain Synthesis, 📊 Resonance Metrics, 🧠 Legacy Activation";
     }
 }
