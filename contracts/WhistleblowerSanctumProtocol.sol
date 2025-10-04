@@ -1,39 +1,36 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Whistleblower Sanctum Protocol v1.0
-/// @notice Tracks emotionally tagged civic protection rituals, breach exposure diagnostics, and legislative consequence mapping
-
 contract WhistleblowerSanctumProtocol {
     address public originator;
 
-    struct SanctumScroll {
-        string corridorTag; // e.g. "Congressional Zone", "Oversight Belt", "Youth Bloc"
-        string protectionType; // e.g. "Breach Exposure", "Sanctum Shielding", "Transparency Ritual"
-        string emotionalAPRTag; // e.g. "Civic Resonance", "Planetary Mercy", "Lawful Dignity"
-        uint256 protectionScore; // e.g. 0–100 scale
+    struct TestimonyScroll {
+        string regionTag;
+        string issueType;
+        string emotionalAPRTag;
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    SanctumScroll[] public sanctumLedger;
+    TestimonyScroll[] public testimonyLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logSanctumScroll(
-        string memory corridorTag,
-        string memory protectionType,
+    function logTestimonyScroll(
+        string memory regionTag,
+        string memory issueType,
         string memory emotionalAPRTag,
-        uint256 protectionScore,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        sanctumLedger.push(SanctumScroll({
-            corridorTag: corridorTag,
-            protectionType: protectionType,
+        testimonyLedger.push(TestimonyScroll({
+            regionTag: regionTag,
+            issueType: issueType,
             emotionalAPRTag: emotionalAPRTag,
-            protectionScore: protectionScore,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
