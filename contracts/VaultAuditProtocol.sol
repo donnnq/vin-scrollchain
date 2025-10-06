@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract VaultAuditProtocol {
     address public originator;
 
-    struct ReserveScroll {
+    struct VaultScroll {
         string vaultTag;
-        string currencySignal;
+        string auditSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    ReserveScroll[] public vaultLedger;
+    VaultScroll[] public vaultLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logReserveScroll(
+    function logVaultScroll(
         string memory vaultTag,
-        string memory currencySignal,
+        string memory auditSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        vaultLedger.push(ReserveScroll({
+        vaultLedger.push(VaultScroll({
             vaultTag: vaultTag,
-            currencySignal: currencySignal,
+            auditSignal: auditSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
