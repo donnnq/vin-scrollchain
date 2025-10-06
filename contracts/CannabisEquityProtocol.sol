@@ -4,34 +4,31 @@ pragma solidity ^0.8.19;
 contract CannabisEquityProtocol {
     address public originator;
 
-    struct EquityScroll {
-        string stateTag;
-        string corridorTag;
-        string reformSignal;
+    struct CannabisScroll {
+        string regionTag;
+        string policySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    EquityScroll[] public equityLedger;
+    CannabisScroll[] public cannabisLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logEquityScroll(
-        string memory stateTag,
-        string memory corridorTag,
-        string memory reformSignal,
+    function logCannabisScroll(
+        string memory regionTag,
+        string memory policySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        equityLedger.push(EquityScroll({
-            stateTag: stateTag,
-            corridorTag: corridorTag,
-            reformSignal: reformSignal,
+        cannabisLedger.push(CannabisScroll({
+            regionTag: regionTag,
+            policySignal: policySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
