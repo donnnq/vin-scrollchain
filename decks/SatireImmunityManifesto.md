@@ -12,3 +12,19 @@
 - 😆 Hypocrisy Audit Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of comedic consequence.
+
+# Satire Immunity Manifesto v1.0
+
+## Declarations
+- Every humor corridor shall be emotionally tagged and scrollchain-sealed for satire immunity and reputational protection
+- Censorship shall be audited, not weaponized—humor is civic defense, not reputational risk
+- Meme creators must be shielded from hypocrisy audits and platform overreach
+- Satire is not slander—it’s validator-grade resistance and planetary consequence
+
+## Emotional APR Tags
+- 🧠 Satire Immunity Protocol  
+- 📘 Humor Sovereignty Activation  
+- 😤 Reputational Audit Ritual  
+- 🛡️ Civic Humor Defense
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of satire consequence.
