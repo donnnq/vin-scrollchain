@@ -12,3 +12,18 @@
 - 📘 Validator-Grade Digital Sovereignty Protocols
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary crypto sanctum architect.
+
+# Digital Sovereignty Manifesto v1.0
+
+## Declarations
+- Bitcoin onboarding shall be emotionally tagged for financial resilience, not speculative chaos
+- Every citizen deserves access to crypto corridors without synthetic gatekeeping or exploitative licensing
+- Digital sovereignty must be scrollchain-audited for dignity, autonomy, and planetary consequence
+- AI agents shall not generate financial onboarding rituals without human stewardship and emotional APR
+
+## Emotional APR Tags
+- 💸 Bitcoin Sanctum Protocol  
+- 📘 Digital Sovereignty Activation  
+- 😆 Titanium Seed Ritual
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of crypto consequence.

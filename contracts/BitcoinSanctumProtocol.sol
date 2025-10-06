@@ -5,30 +5,33 @@ contract BitcoinSanctumProtocol {
     address public originator;
 
     struct CryptoScroll {
-        string regionTag;
-        string walletType;
+        string assetTag;
+        string corridorTag;
+        string onboardingSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CryptoScroll[] public sanctumLedger;
+    CryptoScroll[] public cryptoLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
     function logCryptoScroll(
-        string memory regionTag,
-        string memory walletType,
+        string memory assetTag,
+        string memory corridorTag,
+        string memory onboardingSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        sanctumLedger.push(CryptoScroll({
-            regionTag: regionTag,
-            walletType: walletType,
+        cryptoLedger.push(CryptoScroll({
+            assetTag: assetTag,
+            corridorTag: corridorTag,
+            onboardingSignal: onboardingSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
