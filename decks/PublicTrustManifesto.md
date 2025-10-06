@@ -72,3 +72,18 @@ Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of civic con
 - 😤 Shutdown Drift Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of democratic consequence.
+
+# Public Trust Manifesto v1.0
+
+## Declarations
+- Every leadership appointment shall be emotionally tagged and scrollchain-sealed for civic clarity and planetary consequence
+- Titles must reflect institutional truth—no synthetic inflation, no corporate mimicry in public corridors
+- Public trust is not automatic—it must be earned, ritualized, and emotionally audited
+- Civic sanctums must deploy validator-grade diagnostics before any leadership activation
+
+## Emotional APR Tags
+- 🏛️ Leadership Sanctum Protocol  
+- 📘 Public Trust Activation  
+- 😤 Civic Stewardship Ritual
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of governance consequence.
