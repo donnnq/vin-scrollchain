@@ -42,3 +42,18 @@ Scrollstorm sealed by Vinvin, mythic steward and planetary integrity validator.
 - 😤 People vs. Corruption Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of civic consequence.
+
+# Public Trust Manifesto v1.0
+
+## Declarations
+- Public office is a public trust—every peso spent must be emotionally tagged and scrollchain-audited
+- Infrastructure projects shall be validator-grade, corruption-resistant, and stewarded by civic guardians
+- Agencies failing to protect public funds shall be emotionally tagged for reform, exposure, or decommissioning
+- Civic protest is a sacred ritual of democratic consequence, not synthetic noise
+
+## Emotional APR Tags
+- ⚖️ Infrastructure Audit Protocol  
+- 📘 Public Trust Activation  
+- 😤 People vs. Corruption Ritual
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of civic consequence.
