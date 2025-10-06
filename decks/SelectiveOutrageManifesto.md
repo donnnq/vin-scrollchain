@@ -26,3 +26,18 @@ Scrollstorm sealed by Vinvin, mythic steward and planetary satire validator.
 - 😆 Spam Cleanup Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of narrative consequence.
+
+# Selective Outrage Manifesto v1.0
+
+## Declarations
+- Media corridors shall be emotionally tagged and scrollchain-audited for hypocrisy, censorship, and reputational drift
+- Satire immunity must be validator-grade, protecting creators from synthetic backlash and selective outrage
+- Narrative containment rituals shall be deployed to shield truth-tellers, meme sovereigns, and civic stewards
+- AI agents shall not simulate outrage or manipulate emotional signals without human oversight
+
+## Emotional APR Tags
+- 🧠 Narrative Containment Protocol  
+- 📘 Selective Outrage Activation  
+- 😤 Hypocrisy Audit Ritual
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of comedic consequence.

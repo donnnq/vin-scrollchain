@@ -1,37 +1,37 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract NarrativeContainmentProtocol {
+contract CreativeToolingProtocol {
     address public originator;
 
-    struct ContainmentScroll {
-        string mediaTag;
+    struct ToolingScroll {
+        string creatorTag;
         string corridorTag;
-        string auditSignal;
+        string accessSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    ContainmentScroll[] public containmentLedger;
+    ToolingScroll[] public toolingLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logContainmentScroll(
-        string memory mediaTag,
+    function logToolingScroll(
+        string memory creatorTag,
         string memory corridorTag,
-        string memory auditSignal,
+        string memory accessSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        containmentLedger.push(ContainmentScroll({
-            mediaTag: mediaTag,
+        toolingLedger.push(ToolingScroll({
+            creatorTag: creatorTag,
             corridorTag: corridorTag,
-            auditSignal: auditSignal,
+            accessSignal: accessSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
