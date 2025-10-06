@@ -1,37 +1,37 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract CannabisSovereigntyProtocol {
+contract MessengerAuditProtocol {
     address public originator;
 
-    struct HealingScroll {
-        string plantTag;
+    struct MessengerScroll {
+        string messengerTag;
         string corridorTag;
-        string equitySignal;
+        string credibilitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    HealingScroll[] public healingLedger;
+    MessengerScroll[] public messengerLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logHealingScroll(
-        string memory plantTag,
+    function logMessengerScroll(
+        string memory messengerTag,
         string memory corridorTag,
-        string memory equitySignal,
+        string memory credibilitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        healingLedger.push(HealingScroll({
-            plantTag: plantTag,
+        messengerLedger.push(MessengerScroll({
+            messengerTag: messengerTag,
             corridorTag: corridorTag,
-            equitySignal: equitySignal,
+            credibilitySignal: credibilitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
