@@ -4,37 +4,31 @@ pragma solidity ^0.8.19;
 contract YouthTransportProtocol {
     address public originator;
 
-    struct CommuteScroll {
-        string studentTag;
-        string transportType;
-        string accessChannel;
-        uint256 subsidyValue;
+    struct MobilityScroll {
+        string regionTag;
+        string equitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    CommuteScroll[] public commuteLedger;
+    MobilityScroll[] public transportLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logCommuteScroll(
-        string memory studentTag,
-        string memory transportType,
-        string memory accessChannel,
-        uint256 subsidyValue,
+    function logMobilityScroll(
+        string memory regionTag,
+        string memory equitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        commuteLedger.push(CommuteScroll({
-            studentTag: studentTag,
-            transportType: transportType,
-            accessChannel: accessChannel,
-            subsidyValue: subsidyValue,
+        transportLedger.push(MobilityScroll({
+            regionTag: regionTag,
+            equitySignal: equitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
