@@ -6,8 +6,8 @@ contract MemeFlightProtocol {
 
     struct MemeScroll {
         string memeTag;
-        string payloadType;
-        string censorshipSignal;
+        string corridorTag;
+        string immunitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -22,16 +22,16 @@ contract MemeFlightProtocol {
 
     function logMemeScroll(
         string memory memeTag,
-        string memory payloadType,
-        string memory censorshipSignal,
+        string memory corridorTag,
+        string memory immunitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         memeLedger.push(MemeScroll({
             memeTag: memeTag,
-            payloadType: payloadType,
-            censorshipSignal: censorshipSignal,
+            corridorTag: corridorTag,
+            immunitySignal: immunitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
