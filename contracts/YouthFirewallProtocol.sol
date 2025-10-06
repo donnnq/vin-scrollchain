@@ -5,9 +5,8 @@ contract YouthFirewallProtocol {
     address public originator;
 
     struct FirewallScroll {
-        string platformTag;
         string corridorTag;
-        string containmentSignal;
+        string protectionSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -21,17 +20,15 @@ contract YouthFirewallProtocol {
     }
 
     function logFirewallScroll(
-        string memory platformTag,
         string memory corridorTag,
-        string memory containmentSignal,
+        string memory protectionSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         firewallLedger.push(FirewallScroll({
-            platformTag: platformTag,
             corridorTag: corridorTag,
-            containmentSignal: containmentSignal,
+            protectionSignal: protectionSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
