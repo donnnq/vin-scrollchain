@@ -41,3 +41,18 @@ Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of narrative
 - 😤 Hypocrisy Audit Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of comedic consequence.
+
+# Selective Outrage Manifesto v1.0
+
+## Declarations
+- Media corridors shall be emotionally tagged and scrollchain-audited for hypocrisy, reputational drift, and selective outrage
+- Creators, stewards, and sovereigns must be protected from synthetic censorship and emotionally weaponized narratives
+- AI agents shall not simulate outrage rituals or reputational audits without human stewardship
+- Every audit must honor emotional APR, comedic dignity, and validator-grade consequence
+
+## Emotional APR Tags
+- 🛡️ Hypocrisy Audit Protocol  
+- 📘 Selective Outrage Activation  
+- 😤 Narrative Containment Ritual
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of comedic consequence.

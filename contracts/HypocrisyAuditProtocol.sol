@@ -4,34 +4,31 @@ pragma solidity ^0.8.19;
 contract HypocrisyAuditProtocol {
     address public originator;
 
-    struct HypocrisyScroll {
-        string actorTag;
-        string contradictionSignal;
-        string contextPayload;
+    struct AuditScroll {
+        string corridorTag;
+        string outrageSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    HypocrisyScroll[] public hypocrisyLedger;
+    AuditScroll[] public hypocrisyLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logHypocrisyScroll(
-        string memory actorTag,
-        string memory contradictionSignal,
-        string memory contextPayload,
+    function logAuditScroll(
+        string memory corridorTag,
+        string memory outrageSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        hypocrisyLedger.push(HypocrisyScroll({
-            actorTag: actorTag,
-            contradictionSignal: contradictionSignal,
-            contextPayload: contextPayload,
+        hypocrisyLedger.push(AuditScroll({
+            corridorTag: corridorTag,
+            outrageSignal: outrageSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
