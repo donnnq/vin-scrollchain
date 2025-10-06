@@ -5,8 +5,8 @@ contract VoterProtectionProtocol {
     address public originator;
 
     struct ProtectionScroll {
-        string regionTag;
-        string protectionType;
+        string voterTag;
+        string threatSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract VoterProtectionProtocol {
     }
 
     function logProtectionScroll(
-        string memory regionTag,
-        string memory protectionType,
+        string memory voterTag,
+        string memory threatSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         protectionLedger.push(ProtectionScroll({
-            regionTag: regionTag,
-            protectionType: protectionType,
+            voterTag: voterTag,
+            threatSignal: threatSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
