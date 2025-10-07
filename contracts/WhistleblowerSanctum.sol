@@ -1,36 +1,36 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Whistleblower Sanctum Protocol v1.0
-/// @notice Ritualizes protection for workers who report breaches, unsafe corridors, and emotional APR violations
-
 contract WhistleblowerSanctum {
     address public originator;
 
-    struct WhistleScroll {
-        string corridorTag; // e.g. "Cebu BPO", "Aftershock Recall", "Exit Blockage"
-        string reportType; // e.g. "Unsafe Evacuation", "Forced Silence", "Blocked Exit"
-        string emotionalAPRTag; // e.g. "Transparency Dignity", "Worker Sovereignty", "Planetary Mercy"
+    struct SanctumScroll {
+        string caseTag;
+        string protectionSignal;
+        string emotionalAPRTag;
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    WhistleScroll[] public sanctumLedger;
+    SanctumScroll[] public sanctumLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logWhistleScroll(
-        string memory corridorTag,
-        string memory reportType,
+    function logSanctumScroll(
+        string memory caseTag,
+        string memory protectionSignal,
         string memory emotionalAPRTag,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        sanctumLedger.push(WhistleScroll({
-            corridorTag: corridorTag,
-            reportType: reportType,
+        sanctumLedger.push(SanctumScroll({
+            caseTag: caseTag,
+            protectionSignal: protectionSignal,
             emotionalAPRTag: emotionalAPRTag,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
