@@ -5,30 +5,30 @@ contract HypocrisyAuditProtocol {
     address public originator;
 
     struct AuditScroll {
-        string corridorTag;
-        string outrageSignal;
+        string outletTag;
+        string hypocrisySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    AuditScroll[] public hypocrisyLedger;
+    AuditScroll[] public auditLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
     function logAuditScroll(
-        string memory corridorTag,
-        string memory outrageSignal,
+        string memory outletTag,
+        string memory hypocrisySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        hypocrisyLedger.push(AuditScroll({
-            corridorTag: corridorTag,
-            outrageSignal: outrageSignal,
+        auditLedger.push(AuditScroll({
+            outletTag: outletTag,
+            hypocrisySignal: hypocrisySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
