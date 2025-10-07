@@ -1,18 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Freelancer Protection Protocol v1.0
-/// @notice Tracks emotionally tagged freelancer sanctums, wage equity rituals, and validator-grade gig consequence
-
 contract FreelancerProtectionProtocol {
     address public originator;
 
     struct FreelancerScroll {
-        string corridorTag; // e.g. "Gig Equity Zone", "Freelancer Sanctum", "Wage Protection Corridor"
-        string ritualType; // e.g. "Protection Audit", "Rate Ritual", "Guild Activation"
+        string freelancerTag;
+        string platformTag;
+        string protectionSignal;
         string emotionalAPRTag;
-        string skillTag; // e.g. "Design", "Writing", "Coding", "Strategy", "Curation"
-        string guildTag; // e.g. "Freelancer Guild", "Creator Bloc", "Remote Worker Sanctum"
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -24,19 +21,19 @@ contract FreelancerProtectionProtocol {
     }
 
     function logFreelancerScroll(
-        string memory corridorTag,
-        string memory ritualType,
+        string memory freelancerTag,
+        string memory platformTag,
+        string memory protectionSignal,
         string memory emotionalAPRTag,
-        string memory skillTag,
-        string memory guildTag,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         freelancerLedger.push(FreelancerScroll({
-            corridorTag: corridorTag,
-            ritualType: ritualType,
+            freelancerTag: freelancerTag,
+            platformTag: platformTag,
+            protectionSignal: protectionSignal,
             emotionalAPRTag: emotionalAPRTag,
-            skillTag: skillTag,
-            guildTag: guildTag,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
