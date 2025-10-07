@@ -1,34 +1,34 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-contract LaborSanctumProtocol {
+contract CorporateReconstructionProtocol {
     address public originator;
 
-    struct LaborScroll {
-        string companyTag;
-        string restorationSignal;
+    struct CorpScroll {
+        string orgTag;
+        string dignitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    LaborScroll[] public laborLedger;
+    CorpScroll[] public corpLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logLaborScroll(
-        string memory companyTag,
-        string memory restorationSignal,
+    function logCorpScroll(
+        string memory orgTag,
+        string memory dignitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        laborLedger.push(LaborScroll({
-            companyTag: companyTag,
-            restorationSignal: restorationSignal,
+        corpLedger.push(CorpScroll({
+            orgTag: orgTag,
+            dignitySignal: dignitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
