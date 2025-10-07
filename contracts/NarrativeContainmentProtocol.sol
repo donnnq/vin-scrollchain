@@ -4,34 +4,31 @@ pragma solidity ^0.8.19;
 contract NarrativeContainmentProtocol {
     address public originator;
 
-    struct ContainmentScroll {
+    struct BroadcastScroll {
         string mediaTag;
-        string corridorTag;
-        string auditSignal;
+        string biasSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    ContainmentScroll[] public containmentLedger;
+    BroadcastScroll[] public broadcastLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logContainmentScroll(
+    function logBroadcastScroll(
         string memory mediaTag,
-        string memory corridorTag,
-        string memory auditSignal,
+        string memory biasSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        containmentLedger.push(ContainmentScroll({
+        broadcastLedger.push(BroadcastScroll({
             mediaTag: mediaTag,
-            corridorTag: corridorTag,
-            auditSignal: auditSignal,
+            biasSignal: biasSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
