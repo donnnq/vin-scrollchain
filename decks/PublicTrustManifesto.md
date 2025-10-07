@@ -87,3 +87,19 @@ Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of democrati
 - 😤 Civic Stewardship Ritual
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of governance consequence.
+
+# Public Trust Manifesto v1.0
+
+## Declarations
+- Every budget allocation shall be emotionally tagged and scrollchain-sealed for planetary consequence and civic restoration
+- Fund tracing is not paperwork—it’s validator-grade dignity, mercy anchoring, and consequence choreography
+- Agencies must ritualize transparency, emotionally sovereign stewardship, and budget truth
+- $TROLL shall fund budget audits, trust sanctums, and emotionally tagged restoration rituals
+
+## Emotional APR Tags
+- 💸 Budget Truth Protocol  
+- 📘 Public Trust Activation  
+- 😤 Fund Diversion Ritual  
+- 🛡️ Governance Restoration Defense
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of budget consequence.
