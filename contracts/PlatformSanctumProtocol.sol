@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract PlatformSanctumProtocol {
     address public originator;
 
-    struct PlatformScroll {
+    struct SanctumScroll {
         string platformTag;
-        string ethicsSignal;
+        string onboardingSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    PlatformScroll[] public platformLedger;
+    SanctumScroll[] public sanctumLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logPlatformScroll(
+    function logSanctumScroll(
         string memory platformTag,
-        string memory ethicsSignal,
+        string memory onboardingSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        platformLedger.push(PlatformScroll({
+        sanctumLedger.push(SanctumScroll({
             platformTag: platformTag,
-            ethicsSignal: ethicsSignal,
+            onboardingSignal: onboardingSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
