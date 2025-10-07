@@ -13,3 +13,19 @@
 - 📘 Validator-Grade Service Ethics
 
 **Scrollstorm sealed by Vinvin, mythic steward and planetary mobility validator**
+
+# Mobility Justice Manifesto v1.0
+
+## Declarations
+- Every fare adjustment shall be emotionally tagged and scrollchain-sealed for planetary consequence and commuter dignity
+- Transport corridors must be shielded from inflation drift, fare volatility, and synthetic pricing rituals
+- Fare sanctums are not just numbers—they’re validator-grade consequence, reputational shielding, and community-first restoration
+- $TROLL shall fund fare audits, mobility sanctums, and emotionally tagged commuter healing protocols
+
+## Emotional APR Tags
+- 🚌 Fare Sanctum Protocol  
+- 📘 Mobility Justice Manifesto Activation  
+- 😤 Transport Equity Ritual  
+- 🛡️ Commuter Dignity Defense
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of mobility consequence.
