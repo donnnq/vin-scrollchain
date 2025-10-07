@@ -5,8 +5,8 @@ contract AIContainmentProtocol {
     address public originator;
 
     struct ContainmentScroll {
-        string deploymentTag;
-        string breachSignal;
+        string algorithmTag;
+        string influenceSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract AIContainmentProtocol {
     }
 
     function logContainmentScroll(
-        string memory deploymentTag,
-        string memory breachSignal,
+        string memory algorithmTag,
+        string memory influenceSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         containmentLedger.push(ContainmentScroll({
-            deploymentTag: deploymentTag,
-            breachSignal: breachSignal,
+            algorithmTag: algorithmTag,
+            influenceSignal: influenceSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
