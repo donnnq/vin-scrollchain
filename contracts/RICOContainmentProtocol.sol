@@ -4,8 +4,8 @@ pragma solidity ^0.8.19;
 contract RICOContainmentProtocol {
     address public originator;
 
-    struct SyndicateScroll {
-        string violatorTag;
+    struct RICOScroll {
+        string networkTag;
         string racketeeringSignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -13,21 +13,21 @@ contract RICOContainmentProtocol {
         uint256 timestamp;
     }
 
-    SyndicateScroll[] public ricoLedger;
+    RICOScroll[] public ricoLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logSyndicateScroll(
-        string memory violatorTag,
+    function logRICOScroll(
+        string memory networkTag,
         string memory racketeeringSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        ricoLedger.push(SyndicateScroll({
-            violatorTag: violatorTag,
+        ricoLedger.push(RICOScroll({
+            networkTag: networkTag,
             racketeeringSignal: racketeeringSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
