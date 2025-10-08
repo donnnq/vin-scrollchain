@@ -5,8 +5,7 @@ contract InflationContainmentProtocol {
     address public originator;
 
     struct InflationScroll {
-        string regionTag;
-        uint256 inflationRate;
+        string sectorTag;
         string containmentSignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -21,16 +20,14 @@ contract InflationContainmentProtocol {
     }
 
     function logInflationScroll(
-        string memory regionTag,
-        uint256 inflationRate,
+        string memory sectorTag,
         string memory containmentSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         inflationLedger.push(InflationScroll({
-            regionTag: regionTag,
-            inflationRate: inflationRate,
+            sectorTag: sectorTag,
             containmentSignal: containmentSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
