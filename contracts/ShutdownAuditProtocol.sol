@@ -6,7 +6,7 @@ contract ShutdownAuditProtocol {
 
     struct ShutdownScroll {
         string agencyTag;
-        string paralysisSignal;
+        string auditSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -21,14 +21,14 @@ contract ShutdownAuditProtocol {
 
     function logShutdownScroll(
         string memory agencyTag,
-        string memory paralysisSignal,
+        string memory auditSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         shutdownLedger.push(ShutdownScroll({
             agencyTag: agencyTag,
-            paralysisSignal: paralysisSignal,
+            auditSignal: auditSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
