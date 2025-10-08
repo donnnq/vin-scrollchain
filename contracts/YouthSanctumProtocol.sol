@@ -5,8 +5,8 @@ contract YouthSanctumProtocol {
     address public originator;
 
     struct YouthScroll {
-        string childTag;
-        string ritualType;
+        string athleteTag;
+        string sanctumSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract YouthSanctumProtocol {
     }
 
     function logYouthScroll(
-        string memory childTag,
-        string memory ritualType,
+        string memory athleteTag,
+        string memory sanctumSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         youthLedger.push(YouthScroll({
-            childTag: childTag,
-            ritualType: ritualType,
+            athleteTag: athleteTag,
+            sanctumSignal: sanctumSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
