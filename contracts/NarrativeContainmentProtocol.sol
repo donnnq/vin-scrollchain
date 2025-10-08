@@ -6,7 +6,7 @@ contract NarrativeContainmentProtocol {
 
     struct BroadcastScroll {
         string mediaTag;
-        string biasSignal;
+        string containmentSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -21,14 +21,14 @@ contract NarrativeContainmentProtocol {
 
     function logBroadcastScroll(
         string memory mediaTag,
-        string memory biasSignal,
+        string memory containmentSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         broadcastLedger.push(BroadcastScroll({
             mediaTag: mediaTag,
-            biasSignal: biasSignal,
+            containmentSignal: containmentSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
