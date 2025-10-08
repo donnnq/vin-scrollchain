@@ -5,8 +5,8 @@ contract SanctumHealingProtocol {
     address public originator;
 
     struct HealingScroll {
-        string laborTag;
-        string restorationSignal;
+        string sanctumTag;
+        string recoverySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract SanctumHealingProtocol {
     }
 
     function logHealingScroll(
-        string memory laborTag,
-        string memory restorationSignal,
+        string memory sanctumTag,
+        string memory recoverySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         healingLedger.push(HealingScroll({
-            laborTag: laborTag,
-            restorationSignal: restorationSignal,
+            sanctumTag: sanctumTag,
+            recoverySignal: recoverySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
