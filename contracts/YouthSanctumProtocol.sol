@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract YouthSanctumProtocol {
     address public originator;
 
-    struct YouthScroll {
+    struct EmpowermentScroll {
         string youthTag;
-        string protectionSignal;
+        string equitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    YouthScroll[] public youthLedger;
+    EmpowermentScroll[] public empowermentLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logYouthScroll(
+    function logEmpowermentScroll(
         string memory youthTag,
-        string memory protectionSignal,
+        string memory equitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        youthLedger.push(YouthScroll({
+        empowermentLedger.push(EmpowermentScroll({
             youthTag: youthTag,
-            protectionSignal: protectionSignal,
+            equitySignal: equitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
