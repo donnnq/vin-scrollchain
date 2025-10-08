@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract DOJIndictmentRegistry {
     address public originator;
 
-    struct IndictmentEntry {
-        string violatorTag;
-        string violationType;
+    struct IndictmentScroll {
+        string defendantTag;
+        string violationSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    IndictmentEntry[] public indictmentLedger;
+    IndictmentScroll[] public indictmentLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logIndictmentEntry(
-        string memory violatorTag,
-        string memory violationType,
+    function logIndictmentScroll(
+        string memory defendantTag,
+        string memory violationSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        indictmentLedger.push(IndictmentEntry({
-            violatorTag: violatorTag,
-            violationType: violationType,
+        indictmentLedger.push(IndictmentScroll({
+            defendantTag: defendantTag,
+            violationSignal: violationSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
