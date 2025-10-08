@@ -5,30 +5,30 @@ contract NarrativeContainmentProtocol {
     address public originator;
 
     struct ContainmentScroll {
-        string propagandaTag;
-        string containmentSignal;
+        string memeTag;
+        string satireSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    ContainmentScroll[] public narrativeLedger;
+    ContainmentScroll[] public containmentLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
     function logContainmentScroll(
-        string memory propagandaTag,
-        string memory containmentSignal,
+        string memory memeTag,
+        string memory satireSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        narrativeLedger.push(ContainmentScroll({
-            propagandaTag: propagandaTag,
-            containmentSignal: containmentSignal,
+        containmentLedger.push(ContainmentScroll({
+            memeTag: memeTag,
+            satireSignal: satireSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
