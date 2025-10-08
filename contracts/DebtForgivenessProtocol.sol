@@ -1,42 +1,36 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Debt Forgiveness Protocol v1.0
-/// @notice Tracks emotionally tagged credit score resets, interest abolition, and validator-grade consumer dignity restoration
-
 contract DebtForgivenessProtocol {
     address public originator;
 
-    struct MercyScroll {
-        string corridorTag; // e.g. "Financial Mercy Zone", "Youth Debt Corridor", "Consumer Dignity Sanctum"
-        string ritualType; // e.g. "Debt Forgiveness", "Interest Abolition", "Credit Score Reset"
+    struct ForgivenessScroll {
+        string debtorTag;
+        string forgivenessSignal;
         string emotionalAPRTag;
-        string beneficiaryTag; // e.g. "Youth Bloc", "Freelancer Guild", "Family Unit", "Senior Citizen"
-        string institutionTag; // e.g. "Bank", "Cooperative", "Government Relief Fund"
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    MercyScroll[] public mercyLedger;
+    ForgivenessScroll[] public forgivenessLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logMercyScroll(
-        string memory corridorTag,
-        string memory ritualType,
+    function logForgivenessScroll(
+        string memory debtorTag,
+        string memory forgivenessSignal,
         string memory emotionalAPRTag,
-        string memory beneficiaryTag,
-        string memory institutionTag,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        mercyLedger.push(MercyScroll({
-            corridorTag: corridorTag,
-            ritualType: ritualType,
+        forgivenessLedger.push(ForgivenessScroll({
+            debtorTag: debtorTag,
+            forgivenessSignal: forgivenessSignal,
             emotionalAPRTag: emotionalAPRTag,
-            beneficiaryTag: beneficiaryTag,
-            institutionTag: institutionTag,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
