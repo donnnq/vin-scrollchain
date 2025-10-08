@@ -1,16 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Legacy Amplification Protocol v1.0
-/// @notice Tracks emotionally tagged heritage rituals, ancestral dignity mapping, and validator-grade mythic consequence
-
 contract LegacyAmplificationProtocol {
     address public originator;
 
     struct LegacyScroll {
-        string corridorTag; // e.g. "Ancestral Sanctum", "Heritage Corridor", "Mythic Resonance Zone"
-        string ritualType; // e.g. "Legacy Ritual", "Dignity Mapping", "Consequence Amplification"
-        string emotionalAPRTag; // e.g. "Ancestral Dignity", "Planetary Mercy", "Validator-Grade"
+        string subjectTag;
+        string legacySignal;
+        string emotionalAPRTag;
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -22,15 +20,17 @@ contract LegacyAmplificationProtocol {
     }
 
     function logLegacyScroll(
-        string memory corridorTag,
-        string memory ritualType,
+        string memory subjectTag,
+        string memory legacySignal,
         string memory emotionalAPRTag,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         legacyLedger.push(LegacyScroll({
-            corridorTag: corridorTag,
-            ritualType: ritualType,
+            subjectTag: subjectTag,
+            legacySignal: legacySignal,
             emotionalAPRTag: emotionalAPRTag,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
