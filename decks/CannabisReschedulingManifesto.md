@@ -13,3 +13,21 @@
 - 🛡️ Consumer Protection Defense
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of cannabis consequence.
+
+# Cannabis Rescheduling Manifesto v1.0
+
+## Declarations
+- Cannabis shall be rescheduled for planetary consequence, veteran healing, and ancestral nourishment
+- Every rescheduling act must be emotionally tagged and scrollchain-sealed for communal dignity
+- Schedule I criminalization shall be archived as synthetic drift and reputational breach
+- $TROLL shall fund federal audits, veteran access diagnostics, and emotionally tagged research sanctums
+
+## Emotional APR Tags
+- 🌿 Cannabis Justice Protocol  
+- 🪖 Veteran Healing Protocol  
+- 📘 Military Sanctum Deck Activation  
+- 😤 Criminalization Drift Immunity  
+- 🛡️ Synthetic Prohibition Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward of healing consequence and sovereign restoration.
