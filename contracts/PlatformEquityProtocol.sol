@@ -6,14 +6,14 @@ contract PlatformEquityProtocol {
 
     struct EquityScroll {
         string platformTag;
-        string equitySignal;
+        string biasSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    EquityScroll[] public platformLedger;
+    EquityScroll[] public equityLedger;
 
     constructor() {
         originator = msg.sender;
@@ -21,14 +21,14 @@ contract PlatformEquityProtocol {
 
     function logEquityScroll(
         string memory platformTag,
-        string memory equitySignal,
+        string memory biasSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        platformLedger.push(EquityScroll({
+        equityLedger.push(EquityScroll({
             platformTag: platformTag,
-            equitySignal: equitySignal,
+            biasSignal: biasSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
