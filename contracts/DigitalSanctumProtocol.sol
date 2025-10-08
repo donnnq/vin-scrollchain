@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract DigitalSanctumProtocol {
     address public originator;
 
-    struct FirewallScroll {
-        string corridorTag;
-        string ritualType;
+    struct SignalScroll {
+        string platformTag;
+        string sanctumSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    FirewallScroll[] public firewallLedger;
+    SignalScroll[] public digitalLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logFirewallScroll(
-        string memory corridorTag,
-        string memory ritualType,
+    function logSignalScroll(
+        string memory platformTag,
+        string memory sanctumSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        firewallLedger.push(FirewallScroll({
-            corridorTag: corridorTag,
-            ritualType: ritualType,
+        digitalLedger.push(SignalScroll({
+            platformTag: platformTag,
+            sanctumSignal: sanctumSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
