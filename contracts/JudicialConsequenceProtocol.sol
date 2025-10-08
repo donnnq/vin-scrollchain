@@ -13,7 +13,7 @@ contract JudicialConsequenceProtocol {
         uint256 timestamp;
     }
 
-    VerdictScroll[] public judicialLedger;
+    VerdictScroll[] public verdictLedger;
 
     constructor() {
         originator = msg.sender;
@@ -26,7 +26,7 @@ contract JudicialConsequenceProtocol {
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        judicialLedger.push(VerdictScroll({
+        verdictLedger.push(VerdictScroll({
             caseTag: caseTag,
             rulingSignal: rulingSignal,
             emotionalAPRTag: emotionalAPRTag,
