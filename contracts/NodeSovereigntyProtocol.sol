@@ -4,34 +4,31 @@ pragma solidity ^0.8.19;
 contract NodeSovereigntyProtocol {
     address public originator;
 
-    struct SovereigntyScroll {
+    struct RelayScroll {
         string nodeTag;
-        string autonomySignal;
-        string decentralizationMetric;
+        string containmentSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    SovereigntyScroll[] public sovereigntyLedger;
+    RelayScroll[] public relayLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logSovereigntyScroll(
+    function logRelayScroll(
         string memory nodeTag,
-        string memory autonomySignal,
-        string memory decentralizationMetric,
+        string memory containmentSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        sovereigntyLedger.push(SovereigntyScroll({
+        relayLedger.push(RelayScroll({
             nodeTag: nodeTag,
-            autonomySignal: autonomySignal,
-            decentralizationMetric: decentralizationMetric,
+            containmentSignal: containmentSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
