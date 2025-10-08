@@ -5,8 +5,8 @@ contract CannabisJusticeProtocol {
     address public originator;
 
     struct JusticeScroll {
-        string citizenTag;
-        string legalSignal;
+        string healingTag;
+        string justiceSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract CannabisJusticeProtocol {
     }
 
     function logJusticeScroll(
-        string memory citizenTag,
-        string memory legalSignal,
+        string memory healingTag,
+        string memory justiceSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         justiceLedger.push(JusticeScroll({
-            citizenTag: citizenTag,
-            legalSignal: legalSignal,
+            healingTag: healingTag,
+            justiceSignal: justiceSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
