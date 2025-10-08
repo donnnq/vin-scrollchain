@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract JudicialConsequenceProtocol {
     address public originator;
 
-    struct VerdictScroll {
+    struct JusticeScroll {
         string caseTag;
-        string rulingSignal;
+        string consequenceSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    VerdictScroll[] public verdictLedger;
+    JusticeScroll[] public justiceLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logVerdictScroll(
+    function logJusticeScroll(
         string memory caseTag,
-        string memory rulingSignal,
+        string memory consequenceSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        verdictLedger.push(VerdictScroll({
+        justiceLedger.push(JusticeScroll({
             caseTag: caseTag,
-            rulingSignal: rulingSignal,
+            consequenceSignal: consequenceSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
