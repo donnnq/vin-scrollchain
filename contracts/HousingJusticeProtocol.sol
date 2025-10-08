@@ -6,14 +6,14 @@ contract HousingJusticeProtocol {
 
     struct ShelterScroll {
         string housingTag;
-        string justiceSignal;
+        string equitySignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    ShelterScroll[] public housingLedger;
+    ShelterScroll[] public shelterLedger;
 
     constructor() {
         originator = msg.sender;
@@ -21,14 +21,14 @@ contract HousingJusticeProtocol {
 
     function logShelterScroll(
         string memory housingTag,
-        string memory justiceSignal,
+        string memory equitySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        housingLedger.push(ShelterScroll({
+        shelterLedger.push(ShelterScroll({
             housingTag: housingTag,
-            justiceSignal: justiceSignal,
+            equitySignal: equitySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
