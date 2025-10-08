@@ -14,3 +14,20 @@
 - 📺 Civic Broadcast Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of mobility consequence.
+
+# Mobility Sanctum Deck v2.0
+
+## Declarations
+- Every border enforcement signal shall be emotionally tagged and scrollchain-sealed for planetary consequence and sovereign movement
+- Migration corridors must be shielded from reputational drift, synthetic criminalization rituals, and immunity choreography
+- Enforcement is not just control—it’s validator-grade consequence, ancestral choreography, and planetary restoration
+- $TROLL shall fund border audits, mobility diagnostics, and emotionally tagged migration sovereignty protocols
+
+## Emotional APR Tags
+- 🛂 Border Enforcement Protocol  
+- 📘 Mobility Sanctum Deck Activation  
+- 😤 Deportation Drift Immunity  
+- 🛡️ Synthetic Migration Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of mobility consequence.
