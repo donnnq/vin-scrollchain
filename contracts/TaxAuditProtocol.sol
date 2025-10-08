@@ -5,7 +5,7 @@ contract TaxAuditProtocol {
     address public originator;
 
     struct AuditScroll {
-        string contractorTag;
+        string violatorTag;
         string assetSignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -20,14 +20,14 @@ contract TaxAuditProtocol {
     }
 
     function logAuditScroll(
-        string memory contractorTag,
+        string memory violatorTag,
         string memory assetSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         auditLedger.push(AuditScroll({
-            contractorTag: contractorTag,
+            violatorTag: violatorTag,
             assetSignal: assetSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
