@@ -5,7 +5,7 @@ contract LegacyAmplificationProtocol {
     address public originator;
 
     struct LegacyScroll {
-        string subjectTag;
+        string corridorTag;
         string legacySignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -20,14 +20,14 @@ contract LegacyAmplificationProtocol {
     }
 
     function logLegacyScroll(
-        string memory subjectTag,
+        string memory corridorTag,
         string memory legacySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         legacyLedger.push(LegacyScroll({
-            subjectTag: subjectTag,
+            corridorTag: corridorTag,
             legacySignal: legacySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
