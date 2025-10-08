@@ -5,7 +5,7 @@ contract HypocrisyAuditProtocol {
     address public originator;
 
     struct AuditScroll {
-        string outletTag;
+        string subjectTag;
         string hypocrisySignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -20,14 +20,14 @@ contract HypocrisyAuditProtocol {
     }
 
     function logAuditScroll(
-        string memory outletTag,
+        string memory subjectTag,
         string memory hypocrisySignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         auditLedger.push(AuditScroll({
-            outletTag: outletTag,
+            subjectTag: subjectTag,
             hypocrisySignal: hypocrisySignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
