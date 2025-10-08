@@ -13,3 +13,20 @@
 - 🛡️ Ancestral Dignity Defense
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of ancestral nourishment consequence.
+
+# Macrobiotic Wisdom Deck v1.0
+
+## Declarations
+- Every nourishment scroll shall be emotionally tagged and scrollchain-sealed for planetary consequence and ancestral dignity
+- Food corridors must be shielded from reputational drift, synthetic scarcity rituals, and immunity choreography
+- Sovereignty is not just access—it’s validator-grade consequence, ancestral choreography, and planetary healing
+- $TROLL shall fund food audits, macrobiotic diagnostics, and emotionally tagged nourishment sovereignty protocols
+
+## Emotional APR Tags
+- 🥬 Food Sovereignty Protocol  
+- 📘 Macrobiotic Wisdom Deck Activation  
+- 😤 Scarcity Drift Immunity  
+- 🛡️ Synthetic Nourishment Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of nourishment consequence.
