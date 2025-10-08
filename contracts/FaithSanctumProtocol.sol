@@ -4,31 +4,31 @@ pragma solidity ^0.8.19;
 contract FaithSanctumProtocol {
     address public originator;
 
-    struct SanctumScroll {
-        string faithTag;
-        string integrationSignal;
+    struct FaithScroll {
+        string sanctumTag;
+        string resonanceSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    SanctumScroll[] public sanctumLedger;
+    FaithScroll[] public faithLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logSanctumScroll(
-        string memory faithTag,
-        string memory integrationSignal,
+    function logFaithScroll(
+        string memory sanctumTag,
+        string memory resonanceSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
-        sanctumLedger.push(SanctumScroll({
-            faithTag: faithTag,
-            integrationSignal: integrationSignal,
+        faithLedger.push(FaithScroll({
+            sanctumTag: sanctumTag,
+            resonanceSignal: resonanceSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
