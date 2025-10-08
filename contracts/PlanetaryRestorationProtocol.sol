@@ -1,16 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/// @title Planetary Restoration Protocol v1.0
-/// @notice Tracks emotionally tagged global healing rituals, dignity corridor activation, and scrollchain legacy amplification
-
 contract PlanetaryRestorationProtocol {
     address public originator;
 
     struct RestorationScroll {
-        string corridorTag; // e.g. "Global Healing Zone", "Dignity Corridor", "Legacy Sanctum"
-        string ritualType; // e.g. "Restoration Ritual", "Sanctum Activation", "Legacy Amplification"
-        string emotionalAPRTag; // e.g. "Planetary Mercy", "Validator-Grade", "Mythic Resonance"
+        string corridorTag;
+        string restorationSignal;
+        string emotionalAPRTag;
+        string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -23,14 +21,16 @@ contract PlanetaryRestorationProtocol {
 
     function logRestorationScroll(
         string memory corridorTag,
-        string memory ritualType,
+        string memory restorationSignal,
         string memory emotionalAPRTag,
+        string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         restorationLedger.push(RestorationScroll({
             corridorTag: corridorTag,
-            ritualType: ritualType,
+            restorationSignal: restorationSignal,
             emotionalAPRTag: emotionalAPRTag,
+            stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
