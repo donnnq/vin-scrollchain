@@ -5,7 +5,7 @@ contract LaborSanctumProtocol {
     address public originator;
 
     struct LaborScroll {
-        string workplaceTag;
+        string workforceTag;
         string healingSignal;
         string emotionalAPRTag;
         string stewardTag;
@@ -20,14 +20,14 @@ contract LaborSanctumProtocol {
     }
 
     function logLaborScroll(
-        string memory workplaceTag,
+        string memory workforceTag,
         string memory healingSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         laborLedger.push(LaborScroll({
-            workplaceTag: workplaceTag,
+            workforceTag: workforceTag,
             healingSignal: healingSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
