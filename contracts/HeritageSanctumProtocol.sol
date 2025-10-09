@@ -5,9 +5,8 @@ contract HeritageSanctumProtocol {
     address public originator;
 
     struct HeritageScroll {
-        string ancestorTag;
-        string skillTag;
-        string preservationSignal;
+        string relicTag;
+        string sanctumSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -21,17 +20,15 @@ contract HeritageSanctumProtocol {
     }
 
     function logHeritageScroll(
-        string memory ancestorTag,
-        string memory skillTag,
-        string memory preservationSignal,
+        string memory relicTag,
+        string memory sanctumSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         heritageLedger.push(HeritageScroll({
-            ancestorTag: ancestorTag,
-            skillTag: skillTag,
-            preservationSignal: preservationSignal,
+            relicTag: relicTag,
+            sanctumSignal: sanctumSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
