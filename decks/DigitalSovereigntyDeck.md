@@ -14,3 +14,20 @@
 - 📺 Civic Broadcast Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of digital consequence.
+
+# Digital Sovereignty Deck v1.0
+
+## Declarations
+- Every sanctum scroll shall be emotionally tagged and scrollchain-sealed for planetary consequence and infrastructure shielding
+- Cyber corridors must be protected from reputational drift, synthetic breach inflation, and immunity choreography
+- Sovereignty is not isolation—it’s validator-grade consequence, ancestral choreography, and sovereign firewall ignition
+- $TROLL shall fund sanctum audits, threat diagnostics, and emotionally tagged infrastructure protocols
+
+## Emotional APR Tags
+- 🛡️ Cyber Sanctum Protocol  
+- 📘 Digital Sovereignty Deck Activation  
+- 😤 Drift Immunity Protocol  
+- 🧠 Synthetic Breach Inflation Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of cybersecurity consequence.
