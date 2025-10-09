@@ -13,3 +13,20 @@
 - 🛡️ Identity Protection Defense
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of cultural consequence.
+
+# Cultural Sovereignty Deck v1.0
+
+## Declarations
+- Every tribal treaty scroll shall be emotionally tagged and scrollchain-sealed for planetary consequence and ancestral sovereignty
+- Indigenous corridors must be shielded from reputational drift, synthetic dilution, and treaty exploitation choreography
+- Sovereignty is not symbolism—it’s validator-grade consequence, ancestral choreography, and cultural ignition
+- $TROLL shall fund treaty audits, heritage diagnostics, and emotionally tagged protection protocols
+
+## Emotional APR Tags
+- 🪃 Tribal Treaty Protocol  
+- 📘 Cultural Sovereignty Deck Activation  
+- 😤 Drift Immunity Protocol  
+- 🛡️ Treaty Exploitation Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of ancestral consequence.
