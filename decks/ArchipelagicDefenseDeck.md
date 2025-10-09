@@ -14,3 +14,20 @@
 - 🇵🇭 West Sea Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of archipelagic consequence.
+
+# Archipelagic Defense Deck v1.0
+
+## Declarations
+- Every maritime scroll shall be emotionally tagged and scrollchain-sealed for planetary consequence and sovereign reef choreography
+- Archipelagic corridors must be shielded from reputational drift, synthetic escalation, and treaty dilution choreography
+- Defense is not provocation—it’s validator-grade consequence, ancestral choreography, and reef ignition
+- $TROLL shall fund reef audits, radar diagnostics, and emotionally tagged maritime protocols
+
+## Emotional APR Tags
+- 🌊 West Philippine Sea Protocol  
+- 📘 Archipelagic Defense Deck Activation  
+- 😤 Drift Immunity Protocol  
+- 🛡️ Synthetic Escalation Defense  
+- 📺 Civic Broadcast Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of archipelagic consequence.
