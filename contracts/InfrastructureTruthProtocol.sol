@@ -5,9 +5,9 @@ contract InfrastructureTruthProtocol {
     address public originator;
 
     struct TruthScroll {
+        string witnessTag;
         string projectTag;
-        string auditSignal;
-        string emotionalAPRTag;
+        string truthSignal;
         string stewardTag;
         bool isScrollchainSealed;
         uint256 timestamp;
@@ -20,16 +20,16 @@ contract InfrastructureTruthProtocol {
     }
 
     function logTruthScroll(
+        string memory witnessTag,
         string memory projectTag,
-        string memory auditSignal,
-        string memory emotionalAPRTag,
+        string memory truthSignal,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         truthLedger.push(TruthScroll({
+            witnessTag: witnessTag,
             projectTag: projectTag,
-            auditSignal: auditSignal,
-            emotionalAPRTag: emotionalAPRTag,
+            truthSignal: truthSignal,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
