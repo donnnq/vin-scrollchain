@@ -5,8 +5,8 @@ contract DigitalSovereigntyProtocol {
     address public originator;
 
     struct SovereigntyScroll {
-        string creatorTag;
-        string accessSignal;
+        string appTag;
+        string firewallSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -20,15 +20,15 @@ contract DigitalSovereigntyProtocol {
     }
 
     function logSovereigntyScroll(
-        string memory creatorTag,
-        string memory accessSignal,
+        string memory appTag,
+        string memory firewallSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         sovereigntyLedger.push(SovereigntyScroll({
-            creatorTag: creatorTag,
-            accessSignal: accessSignal,
+            appTag: appTag,
+            firewallSignal: firewallSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
