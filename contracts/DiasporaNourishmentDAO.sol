@@ -4,33 +4,30 @@ pragma solidity ^0.8.19;
 contract DiasporaNourishmentDAO {
     address public originator;
 
-    struct NourishmentScroll {
-        string recipeTag;
-        string exportSignal;
-        string nourishmentAction;
-        string stewardTag;
+    struct NourishmentSignal {
+        string snack;
+        string region;
+        string culturalSignificance;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    NourishmentScroll[] public nourishmentLedger;
+    NourishmentSignal[] public nourishmentLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logNourishmentScroll(
-        string memory recipeTag,
-        string memory exportSignal,
-        string memory nourishmentAction,
-        string memory stewardTag,
+    function logNourishmentSignal(
+        string memory snack,
+        string memory region,
+        string memory culturalSignificance,
         bool isScrollchainSealed
     ) external {
-        nourishmentLedger.push(NourishmentScroll({
-            recipeTag: recipeTag,
-            exportSignal: exportSignal,
-            nourishmentAction: nourishmentAction,
-            stewardTag: stewardTag,
+        nourishmentLedger.push(NourishmentSignal({
+            snack: snack,
+            region: region,
+            culturalSignificance: culturalSignificance,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
