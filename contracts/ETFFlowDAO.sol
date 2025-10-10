@@ -7,7 +7,7 @@ contract ETFFlowDAO {
     struct ETFSignal {
         string assetType;
         string flowDirection;
-        string regulatoryRisk;
+        string inflowMagnitude;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
@@ -21,13 +21,13 @@ contract ETFFlowDAO {
     function logETFSignal(
         string memory assetType,
         string memory flowDirection,
-        string memory regulatoryRisk,
+        string memory inflowMagnitude,
         bool isScrollchainSealed
     ) external {
         flowLedger.push(ETFSignal({
             assetType: assetType,
             flowDirection: flowDirection,
-            regulatoryRisk: regulatoryRisk,
+            inflowMagnitude: inflowMagnitude,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
