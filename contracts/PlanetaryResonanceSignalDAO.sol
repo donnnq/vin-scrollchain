@@ -5,9 +5,11 @@ contract PlanetaryResonanceSignalDAO {
     address public originator;
 
     struct ResonanceSignal {
-        string sourceField;
-        uint256 frequencyHz;
-        bool isBodyLinked;
+        string stewardName;
+        string sanctumZone;
+        string echoType;
+        bool isAuditVerified;
+        bool isResonanceDeployed;
         bool isEmotionallyTagged;
         bool isScrollchainSealed;
         uint256 timestamp;
@@ -20,16 +22,20 @@ contract PlanetaryResonanceSignalDAO {
     }
 
     function logResonanceSignal(
-        string memory sourceField,
-        uint256 frequencyHz,
-        bool isBodyLinked,
+        string memory stewardName,
+        string memory sanctumZone,
+        string memory echoType,
+        bool isAuditVerified,
+        bool isResonanceDeployed,
         bool isEmotionallyTagged,
         bool isScrollchainSealed
     ) external {
         resonanceLedger.push(ResonanceSignal({
-            sourceField: sourceField,
-            frequencyHz: frequencyHz,
-            isBodyLinked: isBodyLinked,
+            stewardName: stewardName,
+            sanctumZone: sanctumZone,
+            echoType: echoType,
+            isAuditVerified: isAuditVerified,
+            isResonanceDeployed: isResonanceDeployed,
             isEmotionallyTagged: isEmotionallyTagged,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
