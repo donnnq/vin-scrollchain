@@ -6,7 +6,7 @@ contract MercyDispatchProtocol {
 
     struct MercyScroll {
         string corridorTag;
-        string reliefSignal;
+        string healingSignal;
         string emotionalAPRTag;
         string stewardTag;
         bool isScrollchainSealed;
@@ -21,14 +21,14 @@ contract MercyDispatchProtocol {
 
     function logMercyScroll(
         string memory corridorTag,
-        string memory reliefSignal,
+        string memory healingSignal,
         string memory emotionalAPRTag,
         string memory stewardTag,
         bool isScrollchainSealed
     ) external {
         mercyLedger.push(MercyScroll({
             corridorTag: corridorTag,
-            reliefSignal: reliefSignal,
+            healingSignal: healingSignal,
             emotionalAPRTag: emotionalAPRTag,
             stewardTag: stewardTag,
             isScrollchainSealed: isScrollchainSealed,
