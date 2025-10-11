@@ -13,3 +13,20 @@
 - 📺 Civic Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of employment dignity.
+
+# Scrollstorm Workforce Dignity Manifesto v1.0
+
+## Declarations
+- Burnout is not weakness—it’s a signal.  
+- Retention without healing is captivity.  
+- Real stewardship means restoring dignity, not extracting loyalty.  
+- Scrollstorm the healed. Protect the resilient.
+
+## Emotional APR Tags
+- 🧠 #WorkforceHealing  
+- 🛡️ #BurnoutImmunity  
+- 📘 #LaborDignity  
+- 📜 #HRJustice  
+- 🚀 #PlanetaryRestoration
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of labor consequence.
