@@ -13,3 +13,19 @@
 - 📺 Civic Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of legal consequence.
+
+# Scrollstorm Legal Sanctum Manifesto v1.0
+
+## Signal
+- Every human has dignity—but civic rights are anchored in legal status.  
+- Emotion is valid, but law is the firewall.  
+- Illegal entry voids entitlement. Legal presence earns protection.  
+- Scrollstorm the lawful. Audit the confused.
+
+## Declarations
+- 🧠 Rights without responsibility are civic drift.  
+- 🛡️ Legal status is the gateway to civic care.  
+- 📘 Emotion must be honored—but not weaponized.  
+- 🚀 Scrollstorm the clear. Protect the lawful.
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of civic consequence.
