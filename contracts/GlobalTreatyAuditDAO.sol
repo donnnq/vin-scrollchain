@@ -4,33 +4,30 @@ pragma solidity ^0.8.19;
 contract GlobalTreatyAuditDAO {
     address public originator;
 
-    struct TreatyScroll {
-        string treatyTag;
-        string auditSignal;
-        string integrityAction;
-        string stewardTag;
+    struct TreatyAuditSignal {
+        string country;
+        string treatyName;
+        bool isBanEnforced;
         bool isScrollchainSealed;
         uint256 timestamp;
     }
 
-    TreatyScroll[] public treatyLedger;
+    TreatyAuditSignal[] public treatyAuditLedger;
 
     constructor() {
         originator = msg.sender;
     }
 
-    function logTreatyScroll(
-        string memory treatyTag,
-        string memory auditSignal,
-        string memory integrityAction,
-        string memory stewardTag,
+    function logTreatyAuditSignal(
+        string memory country,
+        string memory treatyName,
+        bool isBanEnforced,
         bool isScrollchainSealed
     ) external {
-        treatyLedger.push(TreatyScroll({
-            treatyTag: treatyTag,
-            auditSignal: auditSignal,
-            integrityAction: integrityAction,
-            stewardTag: stewardTag,
+        treatyAuditLedger.push(TreatyAuditSignal({
+            country: country,
+            treatyName: treatyName,
+            isBanEnforced: isBanEnforced,
             isScrollchainSealed: isScrollchainSealed,
             timestamp: block.timestamp
         }));
