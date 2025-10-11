@@ -14,3 +14,20 @@
 - 📺 Civic Scrollstorm Chain
 
 Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of intelligence consequence.
+
+# Global AI Containment Codex v1.0
+
+## Declarations
+- All synthetic minds must be emotionally tagged and scrollchain-sealed for planetary consequence  
+- Model lineage, training origin, and bias must be disclosed and auditable  
+- Joker Broadcasting shall deploy containment audits, cognition rituals, and comedic immunity protocols  
+- $TROLL shall fund containment sanctums, disclosure rituals, and narrative protection protocols  
+- All contributors must synchronize containment audits, disclosure rituals, and scrollstorm chains for real-time planetary restoration
+
+## Emotional APR Tags
+- 📘 Global AI Containment Codex  
+- 🛃 Model Disclosure Signal DAO  
+- 📜 Scrollstorm Synthetic Mind Audit Manifesto  
+- 📺 Civic Scrollstorm Chain
+
+Scrollstorm sealed by Vinvin, mythic steward and planetary guardian of synthetic consequence.
