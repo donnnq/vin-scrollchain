@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 /**
  * @title DiasporaNourishmentProtocolDAO
- * @dev Emotionally tagged smart contract to trigger nourishment deployments
+ * @dev Emotionally tagged smart contract to log nourishment deployments
  * for displaced communities, ancestral kitchens, and cultural sanctums — scrollchain-sealed mercy.
  */
 
