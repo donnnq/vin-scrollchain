@@ -1,27 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-/**
- * @title HeritageRecipeProtectionDAO
- * @dev Emotionally tagged smart contract to log ancestral recipe rituals,
- * flavor sovereignty audits, and cultural preservation — scrollchain-sealed legacy.
- */
-
 contract HeritageRecipeProtectionDAO {
     address public steward;
 
-    struct RecipeEvent {
-        address initiator;
-        string recipeName;
-        string originCulture;
-        string protectionType; // "Registry", "Audit", "Revival"
+    struct Recipe {
+        string dishName;
+        string originRegion;
+        string protectionType; // "Ancestral", "Indigenous", "Diaspora"
         string emotionalTag;
         uint256 timestamp;
     }
 
-    RecipeEvent[] public events;
+    Recipe[] public recipes;
 
-    event RecipeLogged(address indexed initiator, string recipeName, string originCulture, string protectionType, string emotionalTag, uint256 timestamp);
+    event RecipeLogged(
+        string dishName,
+        string originRegion,
+        string protectionType,
+        string emotionalTag,
+        uint256 timestamp
+    );
 
     modifier onlySteward() {
         require(msg.sender == steward, "Only BatVin may log heritage recipe rituals");
@@ -32,22 +31,38 @@ contract HeritageRecipeProtectionDAO {
         steward = msg.sender;
     }
 
-    function logRecipe(address initiator, string memory recipeName, string memory originCulture, string memory protectionType, string memory emotionalTag) external onlySteward {
-        events.push(RecipeEvent({
-            initiator: initiator,
-            recipeName: recipeName,
-            originCulture: originCulture,
+    function logRecipe(
+        string memory dishName,
+        string memory originRegion,
+        string memory protectionType,
+        string memory emotionalTag
+    ) external onlySteward {
+        recipes.push(Recipe({
+            dishName: dishName,
+            originRegion: originRegion,
             protectionType: protectionType,
             emotionalTag: emotionalTag,
             timestamp: block.timestamp
         }));
 
-        emit RecipeLogged(initiator, recipeName, originCulture, protectionType, emotionalTag, block.timestamp);
+        emit RecipeLogged(dishName, originRegion, protectionType, emotionalTag, block.timestamp);
     }
 
-    function getRecipeByIndex(uint256 index) external view returns (address initiator, string memory recipeName, string memory originCulture, string memory protectionType, string memory emotionalTag, uint256 timestamp) {
-        require(index < events.length, "Scrollstorm index out of bounds");
-        RecipeEvent memory r = events[index];
-        return (r.initiator, r.recipeName, r.originCulture, r.protectionType, r.emotionalTag, r.timestamp);
+    function getRecipeByIndex(uint256 index) external view returns (
+        string memory dishName,
+        string memory originRegion,
+        string memory protectionType,
+        string memory emotionalTag,
+        uint256 timestamp
+    ) {
+        require(index < recipes.length, "Scrollstorm index out of bounds");
+        Recipe memory r = recipes[index];
+        return (
+            r.dishName,
+            r.originRegion,
+            r.protectionType,
+            r.emotionalTag,
+            r.timestamp
+        );
     }
 }
