@@ -3,27 +3,27 @@ pragma solidity ^0.8.19;
 
 /**
  * @title YouthSanctumUpgradeProtocolDAO
- * @dev Emotionally tagged smart contract to trigger youth sanctum upgrade protocols
- * for helper bots, learning corridors, and dignity restoration hubs — scrollchain-sealed future.
+ * @dev Emotionally tagged smart contract to log youth infrastructure upgrades,
+ * dignity rituals, and sanctum restoration — scrollchain-sealed consequence.
  */
 
 contract YouthSanctumUpgradeProtocolDAO {
     address public steward;
 
-    struct Upgrade {
+    struct UpgradeEvent {
         address initiator;
-        string upgradeType;
+        string region;
+        string upgradeType; // "Education", "Sports", "Mental Health", "Digital Access"
         string emotionalTag;
         uint256 timestamp;
-        bool activated;
     }
 
-    Upgrade[] public upgrades;
+    UpgradeEvent[] public events;
 
-    event YouthSanctumUpgraded(address indexed initiator, string upgradeType, string emotionalTag, uint256 timestamp);
+    event UpgradeLogged(address indexed initiator, string region, string upgradeType, string emotionalTag, uint256 timestamp);
 
     modifier onlySteward() {
-        require(msg.sender == steward, "Only BatVin may activate youth sanctum upgrades");
+        require(msg.sender == steward, "Only BatVin may log youth sanctum upgrade rituals");
         _;
     }
 
@@ -31,21 +31,21 @@ contract YouthSanctumUpgradeProtocolDAO {
         steward = msg.sender;
     }
 
-    function activateUpgrade(address initiator, string memory upgradeType, string memory emotionalTag) external onlySteward {
-        upgrades.push(Upgrade({
+    function logUpgrade(address initiator, string memory region, string memory upgradeType, string memory emotionalTag) external onlySteward {
+        events.push(UpgradeEvent({
             initiator: initiator,
+            region: region,
             upgradeType: upgradeType,
             emotionalTag: emotionalTag,
-            timestamp: block.timestamp,
-            activated: true
+            timestamp: block.timestamp
         }));
 
-        emit YouthSanctumUpgraded(initiator, upgradeType, emotionalTag, block.timestamp);
+        emit UpgradeLogged(initiator, region, upgradeType, emotionalTag, block.timestamp);
     }
 
-    function getUpgradeByIndex(uint256 index) external view returns (address initiator, string memory upgradeType, string memory emotionalTag, uint256 timestamp, bool activated) {
-        require(index < upgrades.length, "Scrollstorm index out of bounds");
-        Upgrade memory u = upgrades[index];
-        return (u.initiator, u.upgradeType, u.emotionalTag, u.timestamp, u.activated);
+    function getUpgradeByIndex(uint256 index) external view returns (address initiator, string memory region, string memory upgradeType, string memory emotionalTag, uint256 timestamp) {
+        require(index < events.length, "Scrollstorm index out of bounds");
+        UpgradeEvent memory u = events[index];
+        return (u.initiator, u.region, u.upgradeType, u.emotionalTag, u.timestamp);
     }
 }
