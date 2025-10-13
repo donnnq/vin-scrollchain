@@ -3,27 +3,28 @@ pragma solidity ^0.8.19;
 
 /**
  * @title SatireImmunityProtocolDAO
- * @dev Emotionally tagged smart contract to trigger satire immunity protocols
- * for meme sovereigns, youth sanctums, and comedic guardians — scrollchain-sealed protection.
+ * @dev Emotionally tagged smart contract to log meme captions,
+ * comedic reframing, and satire-powered civic audits — scrollchain-sealed joy.
  */
 
 contract SatireImmunityProtocolDAO {
     address public steward;
 
-    struct Activation {
+    struct SatireEvent {
         address initiator;
-        string satireDomain;
+        string memeCaption;
+        string platform;
+        string immunityLevel; // "Comedic", "Civic Reckoning", "Narrative Disruption"
         string emotionalTag;
         uint256 timestamp;
-        bool activated;
     }
 
-    Activation[] public activations;
+    SatireEvent[] public events;
 
-    event SatireImmunityActivated(address indexed initiator, string satireDomain, string emotionalTag, uint256 timestamp);
+    event SatireLogged(address indexed initiator, string memeCaption, string platform, string immunityLevel, string emotionalTag, uint256 timestamp);
 
     modifier onlySteward() {
-        require(msg.sender == steward, "Only BatVin may activate satire immunity");
+        require(msg.sender == steward, "Only BatVin may log satire immunity rituals");
         _;
     }
 
@@ -31,21 +32,22 @@ contract SatireImmunityProtocolDAO {
         steward = msg.sender;
     }
 
-    function activateImmunity(address initiator, string memory satireDomain, string memory emotionalTag) external onlySteward {
-        activations.push(Activation({
+    function logSatire(address initiator, string memory memeCaption, string memory platform, string memory immunityLevel, string memory emotionalTag) external onlySteward {
+        events.push(SatireEvent({
             initiator: initiator,
-            satireDomain: satireDomain,
+            memeCaption: memeCaption,
+            platform: platform,
+            immunityLevel: immunityLevel,
             emotionalTag: emotionalTag,
-            timestamp: block.timestamp,
-            activated: true
+            timestamp: block.timestamp
         }));
 
-        emit SatireImmunityActivated(initiator, satireDomain, emotionalTag, block.timestamp);
+        emit SatireLogged(initiator, memeCaption, platform, immunityLevel, emotionalTag, block.timestamp);
     }
 
-    function getActivationByIndex(uint256 index) external view returns (address initiator, string memory satireDomain, string memory emotionalTag, uint256 timestamp, bool activated) {
-        require(index < activations.length, "Scrollstorm index out of bounds");
-        Activation memory s = activations[index];
-        return (s.initiator, s.satireDomain, s.emotionalTag, s.timestamp, s.activated);
+    function getSatireByIndex(uint256 index) external view returns (address initiator, string memory memeCaption, string memory platform, string memory immunityLevel, string memory emotionalTag, uint256 timestamp) {
+        require(index < events.length, "Scrollstorm index out of bounds");
+        SatireEvent memory s = events[index];
+        return (s.initiator, s.memeCaption, s.platform, s.immunityLevel, s.emotionalTag, s.timestamp);
     }
 }
