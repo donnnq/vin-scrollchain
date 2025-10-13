@@ -3,28 +3,28 @@ pragma solidity ^0.8.19;
 
 /**
  * @title DiasporaNourishmentProtocolDAO
- * @dev Emotionally tagged smart contract to log nourishment deployments
- * for displaced communities, ancestral kitchens, and cultural sanctums — scrollchain-sealed mercy.
+ * @dev Emotionally tagged smart contract to log ancestral food rituals,
+ * cross-border flavor sovereignty, and nourishment equity — scrollchain-sealed dignity.
  */
 
 contract DiasporaNourishmentProtocolDAO {
     address public steward;
 
-    struct Nourishment {
+    struct NourishmentEvent {
         address initiator;
-        string region;
-        string foodType;
+        string dishName;
+        string originRegion;
+        string diasporaCommunity;
         string emotionalTag;
         uint256 timestamp;
-        bool activated;
     }
 
-    Nourishment[] public nourishments;
+    NourishmentEvent[] public events;
 
-    event NourishmentActivated(address indexed initiator, string region, string foodType, string emotionalTag, uint256 timestamp);
+    event NourishmentLogged(address indexed initiator, string dishName, string originRegion, string diasporaCommunity, string emotionalTag, uint256 timestamp);
 
     modifier onlySteward() {
-        require(msg.sender == steward, "Only BatVin may activate nourishment protocols");
+        require(msg.sender == steward, "Only BatVin may log diaspora nourishment rituals");
         _;
     }
 
@@ -32,22 +32,22 @@ contract DiasporaNourishmentProtocolDAO {
         steward = msg.sender;
     }
 
-    function activateNourishment(address initiator, string memory region, string memory foodType, string memory emotionalTag) external onlySteward {
-        nourishments.push(Nourishment({
+    function logNourishment(address initiator, string memory dishName, string memory originRegion, string memory diasporaCommunity, string memory emotionalTag) external onlySteward {
+        events.push(NourishmentEvent({
             initiator: initiator,
-            region: region,
-            foodType: foodType,
+            dishName: dishName,
+            originRegion: originRegion,
+            diasporaCommunity: diasporaCommunity,
             emotionalTag: emotionalTag,
-            timestamp: block.timestamp,
-            activated: true
+            timestamp: block.timestamp
         }));
 
-        emit NourishmentActivated(initiator, region, foodType, emotionalTag, block.timestamp);
+        emit NourishmentLogged(initiator, dishName, originRegion, diasporaCommunity, emotionalTag, block.timestamp);
     }
 
-    function getNourishmentByIndex(uint256 index) external view returns (address initiator, string memory region, string memory foodType, string memory emotionalTag, uint256 timestamp, bool activated) {
-        require(index < nourishments.length, "Scrollstorm index out of bounds");
-        Nourishment memory n = nourishments[index];
-        return (n.initiator, n.region, n.foodType, n.emotionalTag, n.timestamp, n.activated);
+    function getNourishmentByIndex(uint256 index) external view returns (address initiator, string memory dishName, string memory originRegion, string memory diasporaCommunity, string memory emotionalTag, uint256 timestamp) {
+        require(index < events.length, "Scrollstorm index out of bounds");
+        NourishmentEvent memory n = events[index];
+        return (n.initiator, n.dishName, n.originRegion, n.diasporaCommunity, n.emotionalTag, n.timestamp);
     }
 }
