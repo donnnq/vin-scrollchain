@@ -1,16 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract DisasterHousingBroadcastDAO {
+contract EmergencyShelterEquityDAO {
     address public admin;
 
-    struct Broadcast {
-        string city;
-        string message;
-        uint256 timestamp;
+    struct Shelter {
+        string location;
+        uint256 capacity;
+        bool accessible;
+        bool verified;
     }
 
-    Broadcast[] public broadcasts;
+    Shelter[] public shelters;
 
     constructor() {
         admin = msg.sender;
@@ -21,11 +22,11 @@ contract DisasterHousingBroadcastDAO {
         _;
     }
 
-    function issueBroadcast(string memory _city, string memory _message) external onlyAdmin {
-        broadcasts.push(Broadcast(_city, _message, block.timestamp));
+    function registerShelter(string memory _location, uint256 _capacity, bool _accessible) external onlyAdmin {
+        shelters.push(Shelter(_location, _capacity, _accessible, true));
     }
 
-    function getBroadcast(uint256 index) external view returns (Broadcast memory) {
-        return broadcasts[index];
+    function getShelter(uint256 index) external view returns (Shelter memory) {
+        return shelters[index];
     }
 }
