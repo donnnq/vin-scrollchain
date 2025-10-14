@@ -5,10 +5,11 @@ contract HousingJusticeTribunalDAO {
     address public admin;
 
     struct Case {
-        string city;
-        string issue;
-        address petitioner;
-        bool resolved;
+        string projectName;
+        string accusedEntity;
+        string violationType;
+        string emotionalTag;
+        bool referredToCourt;
     }
 
     Case[] public cases;
@@ -22,12 +23,12 @@ contract HousingJusticeTribunalDAO {
         _;
     }
 
-    function submitCase(string memory _city, string memory _issue, address _petitioner) external {
-        cases.push(Case(_city, _issue, _petitioner, false));
+    function fileCase(string memory _projectName, string memory _accusedEntity, string memory _violationType, string memory _emotionalTag) external onlyAdmin {
+        cases.push(Case(_projectName, _accusedEntity, _violationType, _emotionalTag, false));
     }
 
-    function resolveCase(uint256 index) external onlyAdmin {
-        cases[index].resolved = true;
+    function referToCourt(uint256 index) external onlyAdmin {
+        cases[index].referredToCourt = true;
     }
 
     function getCase(uint256 index) external view returns (Case memory) {
