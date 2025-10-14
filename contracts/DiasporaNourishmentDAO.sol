@@ -1,35 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract DiasporaNourishmentDAO {
-    address public originator;
+    address public admin;
 
-    struct NourishmentSignal {
-        string snack;
+    struct NourishmentGrant {
+        string community;
         string region;
-        string culturalSignificance;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+        string foodTradition;
+        uint256 grantAmount;
+        bool disbursed;
     }
 
-    NourishmentSignal[] public nourishmentLedger;
+    NourishmentGrant[] public grants;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logNourishmentSignal(
-        string memory snack,
-        string memory region,
-        string memory culturalSignificance,
-        bool isScrollchainSealed
-    ) external {
-        nourishmentLedger.push(NourishmentSignal({
-            snack: snack,
-            region: region,
-            culturalSignificance: culturalSignificance,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function proposeGrant(string memory _community, string memory _region, string memory _foodTradition, uint256 _amount) external onlyAdmin {
+        grants.push(NourishmentGrant(_community, _region, _foodTradition, _amount, false));
+    }
+
+    function disburseGrant(uint256 index) external onlyAdmin {
+        grants[index].disbursed = true;
+    }
+
+    function getGrant(uint256 index) external view returns (NourishmentGrant memory) {
+        return grants[index];
     }
 }
