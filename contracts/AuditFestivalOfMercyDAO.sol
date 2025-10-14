@@ -4,13 +4,15 @@ pragma solidity ^0.8.0;
 contract AuditFestivalOfMercyDAO {
     address public admin;
 
-    struct Audit {
+    struct Festival {
         string corridor;
-        string ritual;
-        bool completed;
+        string auditTheme;
+        string mercyProtocol;
+        uint256 date;
+        bool celebrated;
     }
 
-    Audit[] public audits;
+    Festival[] public festivals;
 
     constructor() {
         admin = msg.sender;
@@ -21,15 +23,15 @@ contract AuditFestivalOfMercyDAO {
         _;
     }
 
-    function submitAudit(string memory _corridor, string memory _ritual) external onlyAdmin {
-        audits.push(Audit(_corridor, _ritual, false));
+    function scheduleFestival(string memory _corridor, string memory _auditTheme, string memory _mercyProtocol, uint256 _date) external onlyAdmin {
+        festivals.push(Festival(_corridor, _auditTheme, _mercyProtocol, _date, false));
     }
 
-    function markCompleted(uint256 index) external onlyAdmin {
-        audits[index].completed = true;
+    function markCelebrated(uint256 index) external onlyAdmin {
+        festivals[index].celebrated = true;
     }
 
-    function getAudit(uint256 index) external view returns (Audit memory) {
-        return audits[index];
+    function getFestival(uint256 index) external view returns (Festival memory) {
+        return festivals[index];
     }
 }
