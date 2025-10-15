@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract FarmgatePriceKarmaLedgerDAO {
+    address public admin;
+
+    struct LedgerEntry {
+        string region;
+        uint256 farmgatePrice;
+        string karmaClause;
+        string emotionalTag;
+        bool logged;
+    }
+
+    LedgerEntry[] public ledger;
+
+    constructor() {
+        admin = msg.sender;
+    }
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function submitEntry(string memory _region, uint256 _farmgatePrice, string memory _karmaClause, string memory _emotionalTag) external onlyAdmin {
+        ledger.push(LedgerEntry(_region, _farmgatePrice, _karmaClause, _emotionalTag, false));
+    }
+
+    function markLogged(uint256 index) external onlyAdmin {
+        ledger[index].logged = true;
+    }
+
+    function getEntry(uint256 index) external view returns (LedgerEntry memory) {
+        return ledger[index];
+    }
+}
