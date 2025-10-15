@@ -1,38 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract SALNTransparencyDAO {
-    address public originator;
+    address public admin;
 
-    struct DisclosureSignal {
+    struct SALNEntry {
         string officialName;
-        string role;
-        string accessLevel;
-        bool isUnderInvestigation;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+        string accessClause;
+        string emotionalTag;
+        bool published;
     }
 
-    DisclosureSignal[] public salnLedger;
+    SALNEntry[] public registry;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logDisclosureSignal(
-        string memory officialName,
-        string memory role,
-        string memory accessLevel,
-        bool isUnderInvestigation,
-        bool isScrollchainSealed
-    ) external {
-        salnLedger.push(DisclosureSignal({
-            officialName: officialName,
-            role: role,
-            accessLevel: accessLevel,
-            isUnderInvestigation: isUnderInvestigation,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function submitSALN(string memory _officialName, string memory _accessClause, string memory _emotionalTag) external onlyAdmin {
+        registry.push(SALNEntry(_officialName, _accessClause, _emotionalTag, false));
+    }
+
+    function publishSALN(uint256 index) external onlyAdmin {
+        registry[index].published = true;
+    }
+
+    function getSALN(uint256 index) external view returns (SALNEntry memory) {
+        return registry[index];
     }
 }
