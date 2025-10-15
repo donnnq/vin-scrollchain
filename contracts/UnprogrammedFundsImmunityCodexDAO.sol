@@ -7,7 +7,6 @@ contract UnprogrammedFundsImmunityCodexDAO {
     struct CodexEntry {
         string fundLabel;
         string immunityClause;
-        string constitutionalConcern;
         string emotionalTag;
         bool enforced;
     }
@@ -23,8 +22,8 @@ contract UnprogrammedFundsImmunityCodexDAO {
         _;
     }
 
-    function submitEntry(string memory _fundLabel, string memory _immunityClause, string memory _constitutionalConcern, string memory _emotionalTag) external onlyAdmin {
-        codex.push(CodexEntry(_fundLabel, _immunityClause, _constitutionalConcern, _emotionalTag, false));
+    function submitEntry(string memory _fundLabel, string memory _immunityClause, string memory _emotionalTag) external onlyAdmin {
+        codex.push(CodexEntry(_fundLabel, _immunityClause, _emotionalTag, false));
     }
 
     function enforceEntry(uint256 index) external onlyAdmin {
