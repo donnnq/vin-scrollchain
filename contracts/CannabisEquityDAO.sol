@@ -1,41 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract CannabisEquityDAO {
-    address public originator;
+    address public admin;
 
-    struct EquitySignal {
-        string country;
-        string equityFocus;
-        bool cultivationLiberated;
-        bool justiceReinvested;
-        bool thcClarityEnabled;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+    struct EquityEntry {
+        string companyName;
+        string tickerSymbol;
+        string accessStatus;
+        string emotionalTag;
+        bool listed;
     }
 
-    EquitySignal[] public equityLedger;
+    EquityEntry[] public equities;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logEquitySignal(
-        string memory country,
-        string memory equityFocus,
-        bool cultivationLiberated,
-        bool justiceReinvested,
-        bool thcClarityEnabled,
-        bool isScrollchainSealed
-    ) external {
-        equityLedger.push(EquitySignal({
-            country: country,
-            equityFocus: equityFocus,
-            cultivationLiberated: cultivationLiberated,
-            justiceReinvested: justiceReinvested,
-            thcClarityEnabled: thcClarityEnabled,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function submitEquity(string memory _companyName, string memory _tickerSymbol, string memory _accessStatus, string memory _emotionalTag) external onlyAdmin {
+        equities.push(EquityEntry(_companyName, _tickerSymbol, _accessStatus, _emotionalTag, false));
+    }
+
+    function markListed(uint256 index) external onlyAdmin {
+        equities[index].listed = true;
+    }
+
+    function getEquity(uint256 index) external view returns (EquityEntry memory) {
+        return equities[index];
     }
 }
