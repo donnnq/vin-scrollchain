@@ -4,15 +4,14 @@ pragma solidity ^0.8.0;
 contract DiasporaNourishmentDAO {
     address public admin;
 
-    struct NourishmentGrant {
-        string community;
-        string region;
-        string foodTradition;
-        uint256 grantAmount;
-        bool disbursed;
+    struct NourishmentEntry {
+        string communityLabel;
+        string nourishmentClause;
+        string emotionalTag;
+        bool activated;
     }
 
-    NourishmentGrant[] public grants;
+    NourishmentEntry[] public nourishment;
 
     constructor() {
         admin = msg.sender;
@@ -23,15 +22,15 @@ contract DiasporaNourishmentDAO {
         _;
     }
 
-    function proposeGrant(string memory _community, string memory _region, string memory _foodTradition, uint256 _amount) external onlyAdmin {
-        grants.push(NourishmentGrant(_community, _region, _foodTradition, _amount, false));
+    function submitEntry(string memory _communityLabel, string memory _nourishmentClause, string memory _emotionalTag) external onlyAdmin {
+        nourishment.push(NourishmentEntry(_communityLabel, _nourishmentClause, _emotionalTag, false));
     }
 
-    function disburseGrant(uint256 index) external onlyAdmin {
-        grants[index].disbursed = true;
+    function activateEntry(uint256 index) external onlyAdmin {
+        nourishment[index].activated = true;
     }
 
-    function getGrant(uint256 index) external view returns (NourishmentGrant memory) {
-        return grants[index];
+    function getEntry(uint256 index) external view returns (NourishmentEntry memory) {
+        return nourishment[index];
     }
 }
