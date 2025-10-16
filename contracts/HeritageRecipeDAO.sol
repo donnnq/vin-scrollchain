@@ -1,38 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract HeritageRecipeDAO {
-    address public originator;
+    address public admin;
 
-    struct RecipeScroll {
-        string recipeTag;
-        string originRegion;
-        string proposalSignal;
-        string stewardTag;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+    struct RecipeEntry {
+        string recipeLabel;
+        string protectionClause;
+        string emotionalTag;
+        bool preserved;
     }
 
-    RecipeScroll[] public recipeLedger;
+    RecipeEntry[] public recipes;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logRecipeScroll(
-        string memory recipeTag,
-        string memory originRegion,
-        string memory proposalSignal,
-        string memory stewardTag,
-        bool isScrollchainSealed
-    ) external {
-        recipeLedger.push(RecipeScroll({
-            recipeTag: recipeTag,
-            originRegion: originRegion,
-            proposalSignal: proposalSignal,
-            stewardTag: stewardTag,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function submitEntry(string memory _recipeLabel, string memory _protectionClause, string memory _emotionalTag) external onlyAdmin {
+        recipes.push(RecipeEntry(_recipeLabel, _protectionClause, _emotionalTag, false));
+    }
+
+    function preserveEntry(uint256 index) external onlyAdmin {
+        recipes[index].preserved = true;
+    }
+
+    function getEntry(uint256 index) external view returns (RecipeEntry memory) {
+        return recipes[index];
     }
 }
