@@ -5,11 +5,11 @@ contract BudgetInsertionAuditDAO {
     address public admin;
 
     struct InsertionEntry {
-        string sourceLabel;
-        string fundPurpose;
+        string agencyLabel;
+        string insertionDetail;
         string emotionalTag;
         bool flagged;
-        bool returned;
+        bool reversed;
     }
 
     InsertionEntry[] public entries;
@@ -23,19 +23,19 @@ contract BudgetInsertionAuditDAO {
         _;
     }
 
-    function submitInsertion(string memory sourceLabel, string memory fundPurpose, string memory emotionalTag) external onlyAdmin {
-        entries.push(InsertionEntry(sourceLabel, fundPurpose, emotionalTag, false, false));
+    function submitInsertion(string memory agencyLabel, string memory insertionDetail, string memory emotionalTag) external onlyAdmin {
+        entries.push(InsertionEntry(agencyLabel, insertionDetail, emotionalTag, false, false));
     }
 
     function flagInsertion(uint256 index) external onlyAdmin {
         entries[index].flagged = true;
     }
 
-    function markReturned(uint256 index) external onlyAdmin {
-        entries[index].returned = true;
+    function reverseInsertion(uint256 index) external onlyAdmin {
+        entries[index].reversed = true;
     }
 
-    function getEntry(uint256 index) external view returns (InsertionEntry memory) {
+    function getInsertion(uint256 index) external view returns (InsertionEntry memory) {
         return entries[index];
     }
 }
