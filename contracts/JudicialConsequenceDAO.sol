@@ -5,13 +5,14 @@ contract JudicialConsequenceDAO {
     address public admin;
 
     struct CaseEntry {
-        string caseLabel;
-        string consequenceClause;
+        string respondent;
+        string allegation;
         string emotionalTag;
-        bool prosecuted;
+        bool filed;
+        bool convicted;
     }
 
-    CaseEntry[] public cases;
+    CaseEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -22,15 +23,15 @@ contract JudicialConsequenceDAO {
         _;
     }
 
-    function submitEntry(string memory _caseLabel, string memory _consequenceClause, string memory _emotionalTag) external onlyAdmin {
-        cases.push(CaseEntry(_caseLabel, _consequenceClause, _emotionalTag, false));
+    function fileCase(string memory respondent, string memory allegation, string memory emotionalTag) external onlyAdmin {
+        entries.push(CaseEntry(respondent, allegation, emotionalTag, true, false));
     }
 
-    function prosecuteEntry(uint256 index) external onlyAdmin {
-        cases[index].prosecuted = true;
+    function convictRespondent(uint256 index) external onlyAdmin {
+        entries[index].convicted = true;
     }
 
-    function getEntry(uint256 index) external view returns (CaseEntry memory) {
-        return cases[index];
+    function getCase(uint256 index) external view returns (CaseEntry memory) {
+        return entries[index];
     }
 }
