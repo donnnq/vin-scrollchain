@@ -5,10 +5,10 @@ contract DigitalSanctumOverrideCodexDAO {
     address public admin;
 
     struct CodexEntry {
-        string overrideLabel;
-        string sanctumClause;
+        string deviceLabel;
+        string overrideClause;
         string emotionalTag;
-        bool enforced;
+        bool sealed;
     }
 
     CodexEntry[] public codex;
@@ -22,12 +22,12 @@ contract DigitalSanctumOverrideCodexDAO {
         _;
     }
 
-    function submitEntry(string memory _overrideLabel, string memory _sanctumClause, string memory _emotionalTag) external onlyAdmin {
-        codex.push(CodexEntry(_overrideLabel, _sanctumClause, _emotionalTag, false));
+    function submitEntry(string memory _deviceLabel, string memory _overrideClause, string memory _emotionalTag) external onlyAdmin {
+        codex.push(CodexEntry(_deviceLabel, _overrideClause, _emotionalTag, false));
     }
 
-    function enforceEntry(uint256 index) external onlyAdmin {
-        codex[index].enforced = true;
+    function sealEntry(uint256 index) external onlyAdmin {
+        codex[index].sealed = true;
     }
 
     function getEntry(uint256 index) external view returns (CodexEntry memory) {
