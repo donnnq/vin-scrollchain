@@ -7,7 +7,7 @@ contract DiasporaRescueFellowship {
     struct RescueEntry {
         string workerName;
         string nationality;
-        string rescueMethod; // e.g., "legal aid", "embassy extraction"
+        string rescueMethod;
         string emotionalTag;
         bool rescued;
         bool supported;
