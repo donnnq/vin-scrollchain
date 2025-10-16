@@ -8,7 +8,7 @@ contract JudicialConsequenceDAO {
         string caseLabel;
         string consequenceClause;
         string emotionalTag;
-        bool enforced;
+        bool prosecuted;
     }
 
     CaseEntry[] public cases;
@@ -26,8 +26,8 @@ contract JudicialConsequenceDAO {
         cases.push(CaseEntry(_caseLabel, _consequenceClause, _emotionalTag, false));
     }
 
-    function enforceEntry(uint256 index) external onlyAdmin {
-        cases[index].enforced = true;
+    function prosecuteEntry(uint256 index) external onlyAdmin {
+        cases[index].prosecuted = true;
     }
 
     function getEntry(uint256 index) external view returns (CaseEntry memory) {
