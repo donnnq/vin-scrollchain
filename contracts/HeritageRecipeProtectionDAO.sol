@@ -1,68 +1,38 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract HeritageRecipeProtectionDAO {
-    address public steward;
+    address public admin;
 
-    struct Recipe {
-        string dishName;
-        string originRegion;
-        string protectionType; // "Ancestral", "Indigenous", "Diaspora"
+    struct RecipeEntry {
+        string recipeName;
+        string ancestralOrigin;
+        string preservationMethod;
         string emotionalTag;
-        uint256 timestamp;
+        bool protected;
+        bool archived;
     }
 
-    Recipe[] public recipes;
+    RecipeEntry[] public entries;
 
-    event RecipeLogged(
-        string dishName,
-        string originRegion,
-        string protectionType,
-        string emotionalTag,
-        uint256 timestamp
-    );
+    constructor() {
+        admin = msg.sender;
+    }
 
-    modifier onlySteward() {
-        require(msg.sender == steward, "Only BatVin may log heritage recipe rituals");
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
         _;
     }
 
-    constructor() {
-        steward = msg.sender;
+    function protectRecipe(string memory recipeName, string memory ancestralOrigin, string memory preservationMethod, string memory emotionalTag) external onlyAdmin {
+        entries.push(RecipeEntry(recipeName, ancestralOrigin, preservationMethod, emotionalTag, true, false));
     }
 
-    function logRecipe(
-        string memory dishName,
-        string memory originRegion,
-        string memory protectionType,
-        string memory emotionalTag
-    ) external onlySteward {
-        recipes.push(Recipe({
-            dishName: dishName,
-            originRegion: originRegion,
-            protectionType: protectionType,
-            emotionalTag: emotionalTag,
-            timestamp: block.timestamp
-        }));
-
-        emit RecipeLogged(dishName, originRegion, protectionType, emotionalTag, block.timestamp);
+    function archiveRecipe(uint256 index) external onlyAdmin {
+        entries[index].archived = true;
     }
 
-    function getRecipeByIndex(uint256 index) external view returns (
-        string memory dishName,
-        string memory originRegion,
-        string memory protectionType,
-        string memory emotionalTag,
-        uint256 timestamp
-    ) {
-        require(index < recipes.length, "Scrollstorm index out of bounds");
-        Recipe memory r = recipes[index];
-        return (
-            r.dishName,
-            r.originRegion,
-            r.protectionType,
-            r.emotionalTag,
-            r.timestamp
-        );
+    function getRecipe(uint256 index) external view returns (RecipeEntry memory) {
+        return entries[index];
     }
 }
