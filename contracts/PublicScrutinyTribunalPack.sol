@@ -6,7 +6,7 @@ contract PublicScrutinyTribunalPack {
 
     struct ScrutinyNote {
         string submittedBy;
-        string investigationLabel;
+        string issueLabel;
         string comment;
         string emotionalTag;
         bool acknowledged;
@@ -23,8 +23,8 @@ contract PublicScrutinyTribunalPack {
         _;
     }
 
-    function submitNote(string memory submittedBy, string memory investigationLabel, string memory comment, string memory emotionalTag) external onlyAdmin {
-        notes.push(ScrutinyNote(submittedBy, investigationLabel, comment, emotionalTag, false));
+    function submitNote(string memory submittedBy, string memory issueLabel, string memory comment, string memory emotionalTag) external onlyAdmin {
+        notes.push(ScrutinyNote(submittedBy, issueLabel, comment, emotionalTag, false));
     }
 
     function acknowledgeNote(uint256 index) external onlyAdmin {
