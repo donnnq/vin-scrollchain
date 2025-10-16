@@ -5,13 +5,14 @@ contract OrbitalEthicsDAO {
     address public admin;
 
     struct EthicsEntry {
-        string operatorLabel;
-        string ethicsClause;
+        string satelliteLabel;
+        string breachConcern;
         string emotionalTag;
-        bool ratified;
+        bool flagged;
+        bool resolved;
     }
 
-    EthicsEntry[] public ethics;
+    EthicsEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -22,15 +23,19 @@ contract OrbitalEthicsDAO {
         _;
     }
 
-    function submitEntry(string memory _operatorLabel, string memory _ethicsClause, string memory _emotionalTag) external onlyAdmin {
-        ethics.push(EthicsEntry(_operatorLabel, _ethicsClause, _emotionalTag, false));
+    function submitConcern(string memory satelliteLabel, string memory breachConcern, string memory emotionalTag) external onlyAdmin {
+        entries.push(EthicsEntry(satelliteLabel, breachConcern, emotionalTag, false, false));
     }
 
-    function ratifyEntry(uint256 index) external onlyAdmin {
-        ethics[index].ratified = true;
+    function flagConcern(uint256 index) external onlyAdmin {
+        entries[index].flagged = true;
     }
 
-    function getEntry(uint256 index) external view returns (EthicsEntry memory) {
-        return ethics[index];
+    function resolveConcern(uint256 index) external onlyAdmin {
+        entries[index].resolved = true;
+    }
+
+    function getConcern(uint256 index) external view returns (EthicsEntry memory) {
+        return entries[index];
     }
 }
