@@ -5,11 +5,11 @@ contract FoodSovereigntyDAO {
     address public admin;
 
     struct SovereigntyEntry {
-        string purokName;
-        string foodProgram;
+        string cropOrDish;
+        string region;
         string emotionalTag;
-        bool deployed;
-        bool sovereign;
+        bool summoned;
+        bool protected;
     }
 
     SovereigntyEntry[] public entries;
@@ -23,15 +23,15 @@ contract FoodSovereigntyDAO {
         _;
     }
 
-    function deployProgram(string memory purokName, string memory foodProgram, string memory emotionalTag) external onlyAdmin {
-        entries.push(SovereigntyEntry(purokName, foodProgram, emotionalTag, true, false));
+    function summonSovereignty(string memory cropOrDish, string memory region, string memory emotionalTag) external onlyAdmin {
+        entries.push(SovereigntyEntry(cropOrDish, region, emotionalTag, true, false));
     }
 
-    function markSovereign(uint256 index) external onlyAdmin {
-        entries[index].sovereign = true;
+    function protectSovereignty(uint256 index) external onlyAdmin {
+        entries[index].protected = true;
     }
 
-    function getProgram(uint256 index) external view returns (SovereigntyEntry memory) {
+    function getSovereignty(uint256 index) external view returns (SovereigntyEntry memory) {
         return entries[index];
     }
 }
