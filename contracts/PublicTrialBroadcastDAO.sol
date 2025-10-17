@@ -4,14 +4,15 @@ pragma solidity ^0.8.0;
 contract PublicTrialBroadcastDAO {
     address public admin;
 
-    struct TrialEntry {
-        string trialLabel;
-        string broadcastClause;
+    struct BroadcastEntry {
+        string caseTitle;
+        string trialMoment;
         string emotionalTag;
         bool aired;
+        bool archived;
     }
 
-    TrialEntry[] public trials;
+    BroadcastEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -22,15 +23,19 @@ contract PublicTrialBroadcastDAO {
         _;
     }
 
-    function submitEntry(string memory _trialLabel, string memory _broadcastClause, string memory _emotionalTag) external onlyAdmin {
-        trials.push(TrialEntry(_trialLabel, _broadcastClause, _emotionalTag, false));
+    function submitBroadcast(string memory caseTitle, string memory trialMoment, string memory emotionalTag) external onlyAdmin {
+        entries.push(BroadcastEntry(caseTitle, trialMoment, emotionalTag, false, false));
     }
 
-    function airEntry(uint256 index) external onlyAdmin {
-        trials[index].aired = true;
+    function airBroadcast(uint256 index) external onlyAdmin {
+        entries[index].aired = true;
     }
 
-    function getEntry(uint256 index) external view returns (TrialEntry memory) {
-        return trials[index];
+    function archiveBroadcast(uint256 index) external onlyAdmin {
+        entries[index].archived = true;
+    }
+
+    function getBroadcastEntry(uint256 index) external view returns (BroadcastEntry memory) {
+        return entries[index];
     }
 }
