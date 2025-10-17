@@ -4,15 +4,15 @@ pragma solidity ^0.8.0;
 contract JudicialConsequenceDAO {
     address public admin;
 
-    struct CaseEntry {
-        string respondent;
-        string allegation;
+    struct ConsequenceEntry {
+        string actorName;
+        string infraction;
         string emotionalTag;
-        bool filed;
-        bool convicted;
+        bool summoned;
+        bool resolved;
     }
 
-    CaseEntry[] public entries;
+    ConsequenceEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -23,15 +23,15 @@ contract JudicialConsequenceDAO {
         _;
     }
 
-    function fileCase(string memory respondent, string memory allegation, string memory emotionalTag) external onlyAdmin {
-        entries.push(CaseEntry(respondent, allegation, emotionalTag, true, false));
+    function summonConsequence(string memory actorName, string memory infraction, string memory emotionalTag) external onlyAdmin {
+        entries.push(ConsequenceEntry(actorName, infraction, emotionalTag, true, false));
     }
 
-    function convictRespondent(uint256 index) external onlyAdmin {
-        entries[index].convicted = true;
+    function resolveConsequence(uint256 index) external onlyAdmin {
+        entries[index].resolved = true;
     }
 
-    function getCase(uint256 index) external view returns (CaseEntry memory) {
+    function getConsequence(uint256 index) external view returns (ConsequenceEntry memory) {
         return entries[index];
     }
 }
