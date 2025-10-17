@@ -8,7 +8,7 @@ contract AidBrandingImmunityCodex {
         string aidType;
         string department;
         string emotionalTag;
-        bool egoFree;
+        bool logoOnly;
         bool enforced;
     }
 
@@ -27,7 +27,7 @@ contract AidBrandingImmunityCodex {
         entries.push(BrandingEntry(aidType, department, emotionalTag, true, false));
     }
 
-    function enforceEgoFree(uint256 index) external onlyAdmin {
+    function enforceLogoOnly(uint256 index) external onlyAdmin {
         entries[index].enforced = true;
     }
 
