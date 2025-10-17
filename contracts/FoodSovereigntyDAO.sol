@@ -1,35 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract FoodSovereigntyDAO {
-    address public originator;
+    address public admin;
 
-    struct NourishmentSignal {
-        string locationTag;
-        string farmerGroup;
-        string protocolType;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+    struct SovereigntyEntry {
+        string purokName;
+        string foodProgram;
+        string emotionalTag;
+        bool deployed;
+        bool sovereign;
     }
 
-    NourishmentSignal[] public nourishmentLedger;
+    SovereigntyEntry[] public entries;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logNourishmentSignal(
-        string memory locationTag,
-        string memory farmerGroup,
-        string memory protocolType,
-        bool isScrollchainSealed
-    ) external {
-        nourishmentLedger.push(NourishmentSignal({
-            locationTag: locationTag,
-            farmerGroup: farmerGroup,
-            protocolType: protocolType,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function deployProgram(string memory purokName, string memory foodProgram, string memory emotionalTag) external onlyAdmin {
+        entries.push(SovereigntyEntry(purokName, foodProgram, emotionalTag, true, false));
+    }
+
+    function markSovereign(uint256 index) external onlyAdmin {
+        entries[index].sovereign = true;
+    }
+
+    function getProgram(uint256 index) external view returns (SovereigntyEntry memory) {
+        return entries[index];
     }
 }
