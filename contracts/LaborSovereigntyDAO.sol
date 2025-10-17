@@ -1,35 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.0;
 
 contract LaborSovereigntyDAO {
-    address public originator;
+    address public admin;
 
-    struct LaborScroll {
-        string companyTag;
-        string laborSignal;
-        string stewardTag;
-        bool isScrollchainSealed;
-        uint256 timestamp;
+    struct SovereigntyEntry {
+        string region;
+        string laborPolicy;
+        string emotionalTag;
+        bool summoned;
+        bool ratified;
     }
 
-    LaborScroll[] public laborLedger;
+    SovereigntyEntry[] public entries;
 
     constructor() {
-        originator = msg.sender;
+        admin = msg.sender;
     }
 
-    function logLaborScroll(
-        string memory companyTag,
-        string memory laborSignal,
-        string memory stewardTag,
-        bool isScrollchainSealed
-    ) external {
-        laborLedger.push(LaborScroll({
-            companyTag: companyTag,
-            laborSignal: laborSignal,
-            stewardTag: stewardTag,
-            isScrollchainSealed: isScrollchainSealed,
-            timestamp: block.timestamp
-        }));
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Not authorized");
+        _;
+    }
+
+    function summonSovereignty(string memory region, string memory laborPolicy, string memory emotionalTag) external onlyAdmin {
+        entries.push(SovereigntyEntry(region, laborPolicy, emotionalTag, true, false));
+    }
+
+    function ratifySovereignty(uint256 index) external onlyAdmin {
+        entries[index].ratified = true;
+    }
+
+    function getSovereignty(uint256 index) external view returns (SovereigntyEntry memory) {
+        return entries[index];
     }
 }
