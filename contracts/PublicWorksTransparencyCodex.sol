@@ -4,16 +4,15 @@ pragma solidity ^0.8.0;
 contract PublicWorksTransparencyCodex {
     address public admin;
 
-    struct DisclosureEntry {
-        string officialName;
-        string contractorLink;
-        string projectScope;
+    struct TransparencyEntry {
+        string projectName;
+        string agency;
         string emotionalTag;
-        bool disclosed;
-        bool flagged;
+        bool published;
+        bool searchable;
     }
 
-    DisclosureEntry[] public entries;
+    TransparencyEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -24,15 +23,15 @@ contract PublicWorksTransparencyCodex {
         _;
     }
 
-    function logDisclosure(string memory officialName, string memory contractorLink, string memory projectScope, string memory emotionalTag) external onlyAdmin {
-        entries.push(DisclosureEntry(officialName, contractorLink, projectScope, emotionalTag, true, false));
+    function publishProject(string memory projectName, string memory agency, string memory emotionalTag) external onlyAdmin {
+        entries.push(TransparencyEntry(projectName, agency, emotionalTag, true, false));
     }
 
-    function flagConflict(uint256 index) external onlyAdmin {
-        entries[index].flagged = true;
+    function enableSearch(uint256 index) external onlyAdmin {
+        entries[index].searchable = true;
     }
 
-    function getDisclosure(uint256 index) external view returns (DisclosureEntry memory) {
+    function getTransparency(uint256 index) external view returns (TransparencyEntry memory) {
         return entries[index];
     }
 }
