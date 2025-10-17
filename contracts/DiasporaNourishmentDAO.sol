@@ -5,13 +5,14 @@ contract DiasporaNourishmentDAO {
     address public admin;
 
     struct NourishmentEntry {
-        string communityLabel;
-        string nourishmentClause;
+        string communityName;
+        string nourishmentTheme;
         string emotionalTag;
-        bool activated;
+        bool summoned;
+        bool distributed;
     }
 
-    NourishmentEntry[] public nourishment;
+    NourishmentEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -22,15 +23,15 @@ contract DiasporaNourishmentDAO {
         _;
     }
 
-    function submitEntry(string memory _communityLabel, string memory _nourishmentClause, string memory _emotionalTag) external onlyAdmin {
-        nourishment.push(NourishmentEntry(_communityLabel, _nourishmentClause, _emotionalTag, false));
+    function summonNourishment(string memory communityName, string memory nourishmentTheme, string memory emotionalTag) external onlyAdmin {
+        entries.push(NourishmentEntry(communityName, nourishmentTheme, emotionalTag, true, false));
     }
 
-    function activateEntry(uint256 index) external onlyAdmin {
-        nourishment[index].activated = true;
+    function distributeNourishment(uint256 index) external onlyAdmin {
+        entries[index].distributed = true;
     }
 
-    function getEntry(uint256 index) external view returns (NourishmentEntry memory) {
-        return nourishment[index];
+    function getNourishment(uint256 index) external view returns (NourishmentEntry memory) {
+        return entries[index];
     }
 }
