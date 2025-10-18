@@ -7,10 +7,11 @@ contract DiasporaNourishmentDAO {
     struct NourishmentEntry {
         string dishName;
         string originRegion;
+        string diasporaCommunity;
         string emotionalTag;
         bool summoned;
-        bool flagged;
-        bool revived;
+        bool archived;
+        bool exported;
     }
 
     NourishmentEntry[] public entries;
@@ -24,17 +25,16 @@ contract DiasporaNourishmentDAO {
         _;
     }
 
-    function summonDish(string memory dishName, string memory originRegion, string memory emotionalTag) external onlyAdmin {
-        entries.push(NourishmentEntry(dishName, originRegion, emotionalTag, true, false, false));
+    function summonDish(string memory dishName, string memory originRegion, string memory diasporaCommunity, string memory emotionalTag) external onlyAdmin {
+        entries.push(NourishmentEntry(dishName, originRegion, diasporaCommunity, emotionalTag, true, false, false));
     }
 
-    function flagForRevival(uint256 index) external onlyAdmin {
-        entries[index].flagged = true;
+    function archiveDish(uint256 index) external onlyAdmin {
+        entries[index].archived = true;
     }
 
-    function reviveDish(uint256 index) external onlyAdmin {
-        require(entries[index].flagged, "Must be flagged first");
-        entries[index].revived = true;
+    function exportDish(uint256 index) external onlyAdmin {
+        entries[index].exported = true;
     }
 
     function getNourishmentEntry(uint256 index) external view returns (NourishmentEntry memory) {

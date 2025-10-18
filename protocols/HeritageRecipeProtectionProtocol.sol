@@ -6,11 +6,12 @@ contract HeritageRecipeProtectionProtocol {
 
     struct RecipeEntry {
         string recipeName;
-        string culturalOrigin;
+        string ancestralOrigin;
+        string steward;
         string emotionalTag;
         bool summoned;
-        bool verified;
         bool protected;
+        bool sealed;
     }
 
     RecipeEntry[] public entries;
@@ -24,17 +25,17 @@ contract HeritageRecipeProtectionProtocol {
         _;
     }
 
-    function summonRecipe(string memory recipeName, string memory culturalOrigin, string memory emotionalTag) external onlyAdmin {
-        entries.push(RecipeEntry(recipeName, culturalOrigin, emotionalTag, true, false, false));
-    }
-
-    function verifyRecipe(uint256 index) external onlyAdmin {
-        entries[index].verified = true;
+    function summonRecipe(string memory recipeName, string memory ancestralOrigin, string memory steward, string memory emotionalTag) external onlyAdmin {
+        entries.push(RecipeEntry(recipeName, ancestralOrigin, steward, emotionalTag, true, false, false));
     }
 
     function protectRecipe(uint256 index) external onlyAdmin {
-        require(entries[index].verified, "Must be verified first");
         entries[index].protected = true;
+    }
+
+    function sealRecipe(uint256 index) external onlyAdmin {
+        require(entries[index].protected, "Must be protected first");
+        entries[index].sealed = true;
     }
 
     function getRecipeEntry(uint256 index) external view returns (RecipeEntry memory) {
