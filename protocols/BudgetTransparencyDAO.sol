@@ -5,9 +5,9 @@ contract BudgetTransparencyDAO {
     address public admin;
 
     struct BudgetEntry {
-        string departmentName;
-        uint256 proposedAmount;
-        string fiscalYear;
+        string countryName;
+        string department;
+        uint256 allocatedAmount;
         string emotionalTag;
         bool summoned;
         bool published;
@@ -25,8 +25,8 @@ contract BudgetTransparencyDAO {
         _;
     }
 
-    function summonBudgetDisclosure(string memory departmentName, uint256 proposedAmount, string memory fiscalYear, string memory emotionalTag) external onlyAdmin {
-        entries.push(BudgetEntry(departmentName, proposedAmount, fiscalYear, emotionalTag, true, false, false));
+    function summonBudget(string memory countryName, string memory department, uint256 allocatedAmount, string memory emotionalTag) external onlyAdmin {
+        entries.push(BudgetEntry(countryName, department, allocatedAmount, emotionalTag, true, false, false));
     }
 
     function confirmPublication(uint256 index) external onlyAdmin {
