@@ -4,16 +4,17 @@ pragma solidity ^0.8.0;
 contract PublicAccountabilityCodex {
     address public admin;
 
-    struct StatementEntry {
-        string official;
-        string topic;
+    struct AccountabilityEntry {
+        string institutionName;
+        string grievanceType;
+        string resolutionPath;
         string emotionalTag;
         bool summoned;
-        bool verified;
+        bool resolved;
         bool sealed;
     }
 
-    StatementEntry[] public entries;
+    AccountabilityEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -24,20 +25,20 @@ contract PublicAccountabilityCodex {
         _;
     }
 
-    function summonStatement(string memory official, string memory topic, string memory emotionalTag) external onlyAdmin {
-        entries.push(StatementEntry(official, topic, emotionalTag, true, false, false));
+    function summonAccountability(string memory institutionName, string memory grievanceType, string memory resolutionPath, string memory emotionalTag) external onlyAdmin {
+        entries.push(AccountabilityEntry(institutionName, grievanceType, resolutionPath, emotionalTag, true, false, false));
     }
 
-    function verifyStatement(uint256 index) external onlyAdmin {
-        entries[index].verified = true;
+    function confirmResolution(uint256 index) external onlyAdmin {
+        entries[index].resolved = true;
     }
 
-    function sealStatement(uint256 index) external onlyAdmin {
-        require(entries[index].verified, "Must be verified first");
+    function sealAccountabilityEntry(uint256 index) external onlyAdmin {
+        require(entries[index].resolved, "Must be resolved first");
         entries[index].sealed = true;
     }
 
-    function getStatementEntry(uint256 index) external view returns (StatementEntry memory) {
+    function getAccountabilityEntry(uint256 index) external view returns (AccountabilityEntry memory) {
         return entries[index];
     }
 }
