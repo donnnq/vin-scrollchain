@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract PlanetaryCitizenshipTreatyProtocol {
+contract RefugeeDignityCodex {
     address public admin;
 
-    struct CitizenshipEntry {
-        string clause;
-        string region;
+    struct RefugeeEntry {
+        string name;
+        string originCountry;
         string emotionalTag;
         bool summoned;
-        bool ratified;
+        bool protected;
         bool sealed;
     }
 
-    CitizenshipEntry[] public entries;
+    RefugeeEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -24,20 +24,20 @@ contract PlanetaryCitizenshipTreatyProtocol {
         _;
     }
 
-    function summonCitizenship(string memory clause, string memory region, string memory emotionalTag) external onlyAdmin {
-        entries.push(CitizenshipEntry(clause, region, emotionalTag, true, false, false));
+    function summonRefugee(string memory name, string memory originCountry, string memory emotionalTag) external onlyAdmin {
+        entries.push(RefugeeEntry(name, originCountry, emotionalTag, true, false, false));
     }
 
-    function ratifyCitizenship(uint256 index) external onlyAdmin {
-        entries[index].ratified = true;
+    function protectRefugee(uint256 index) external onlyAdmin {
+        entries[index].protected = true;
     }
 
-    function sealCitizenship(uint256 index) external onlyAdmin {
-        require(entries[index].ratified, "Must be ratified first");
+    function sealDignity(uint256 index) external onlyAdmin {
+        require(entries[index].protected, "Must be protected first");
         entries[index].sealed = true;
     }
 
-    function getCitizenshipEntry(uint256 index) external view returns (CitizenshipEntry memory) {
+    function getRefugeeEntry(uint256 index) external view returns (RefugeeEntry memory) {
         return entries[index];
     }
 }
