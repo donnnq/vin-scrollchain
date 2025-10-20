@@ -7,7 +7,7 @@ contract AuditSovereigntyFestivalProtocol {
     struct FestivalEntry {
         string eventName;
         string auditTheme;
-        string reformClause;
+        string restitutionClause;
         string emotionalTag;
         bool summoned;
         bool celebrated;
@@ -25,8 +25,8 @@ contract AuditSovereigntyFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory auditTheme, string memory reformClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, auditTheme, reformClause, emotionalTag, true, false, false));
+    function summonFestival(string memory eventName, string memory auditTheme, string memory restitutionClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(eventName, auditTheme, restitutionClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
