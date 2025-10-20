@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract LandSovereigntyCodex {
+contract FremontFactoryDAO {
     address public admin;
 
-    struct LandEntry {
-        string region;
-        string accessType;
-        string housingClause;
+    struct FactoryEntry {
+        string facilityName;
+        string productionType;
+        string automationLevel;
         string emotionalTag;
         bool summoned;
-        bool audited;
+        bool verified;
         bool sealed;
     }
 
-    LandEntry[] public entries;
+    FactoryEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -25,20 +25,20 @@ contract LandSovereigntyCodex {
         _;
     }
 
-    function summonLandAudit(string memory region, string memory accessType, string memory housingClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(LandEntry(region, accessType, housingClause, emotionalTag, true, false, false));
+    function summonFactory(string memory facilityName, string memory productionType, string memory automationLevel, string memory emotionalTag) external onlyAdmin {
+        entries.push(FactoryEntry(facilityName, productionType, automationLevel, emotionalTag, true, false, false));
     }
 
-    function confirmAudit(uint256 index) external onlyAdmin {
-        entries[index].audited = true;
+    function confirmVerification(uint256 index) external onlyAdmin {
+        entries[index].verified = true;
     }
 
-    function sealLandEntry(uint256 index) external onlyAdmin {
-        require(entries[index].audited, "Must be audited first");
+    function sealFactoryEntry(uint256 index) external onlyAdmin {
+        require(entries[index].verified, "Must be verified first");
         entries[index].sealed = true;
     }
 
-    function getLandEntry(uint256 index) external view returns (LandEntry memory) {
+    function getFactoryEntry(uint256 index) external view returns (FactoryEntry memory) {
         return entries[index];
     }
 }

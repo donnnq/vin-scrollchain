@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract HousingJusticeFestivalProtocol {
+contract LandSovereigntyCodex {
     address public admin;
 
-    struct FestivalEntry {
-        string eventName;
-        string justiceTheme;
-        string landClause;
+    struct LandEntry {
+        string region;
+        string accessType;
+        string housingClause;
         string emotionalTag;
         bool summoned;
-        bool celebrated;
+        bool audited;
         bool sealed;
     }
 
-    FestivalEntry[] public entries;
+    LandEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -25,20 +25,20 @@ contract HousingJusticeFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory justiceTheme, string memory landClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, justiceTheme, landClause, emotionalTag, true, false, false));
+    function summonLandAudit(string memory region, string memory accessType, string memory housingClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(LandEntry(region, accessType, housingClause, emotionalTag, true, false, false));
     }
 
-    function confirmCelebration(uint256 index) external onlyAdmin {
-        entries[index].celebrated = true;
+    function confirmAudit(uint256 index) external onlyAdmin {
+        entries[index].audited = true;
     }
 
-    function sealFestivalEntry(uint256 index) external onlyAdmin {
-        require(entries[index].celebrated, "Must be celebrated first");
+    function sealLandEntry(uint256 index) external onlyAdmin {
+        require(entries[index].audited, "Must be audited first");
         entries[index].sealed = true;
     }
 
-    function getFestivalEntry(uint256 index) external view returns (FestivalEntry memory) {
+    function getLandEntry(uint256 index) external view returns (LandEntry memory) {
         return entries[index];
     }
 }
