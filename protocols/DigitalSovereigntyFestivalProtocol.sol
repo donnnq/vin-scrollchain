@@ -6,8 +6,8 @@ contract DigitalSovereigntyFestivalProtocol {
 
     struct FestivalEntry {
         string eventName;
-        string platformFocus;
         string sovereigntyTheme;
+        string privacyClause;
         string emotionalTag;
         bool summoned;
         bool celebrated;
@@ -25,8 +25,8 @@ contract DigitalSovereigntyFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory platformFocus, string memory sovereigntyTheme, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, platformFocus, sovereigntyTheme, emotionalTag, true, false, false));
+    function summonFestival(string memory eventName, string memory sovereigntyTheme, string memory privacyClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(eventName, sovereigntyTheme, privacyClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
