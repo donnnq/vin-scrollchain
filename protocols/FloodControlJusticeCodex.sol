@@ -1,20 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract InfrastructureReckoningFestivalProtocol {
+contract FloodControlJusticeCodex {
     address public admin;
 
-    struct FestivalEntry {
-        string eventName;
-        string reckoningTheme;
+    struct JusticeEntry {
+        string projectName;
+        string barangayZone;
         string auditClause;
         string emotionalTag;
         bool summoned;
-        bool celebrated;
+        bool audited;
         bool sealed;
     }
 
-    FestivalEntry[] public entries;
+    JusticeEntry[] public entries;
 
     constructor() {
         admin = msg.sender;
@@ -25,20 +25,20 @@ contract InfrastructureReckoningFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory reckoningTheme, string memory auditClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, reckoningTheme, auditClause, emotionalTag, true, false, false));
+    function summonJusticeAudit(string memory projectName, string memory barangayZone, string memory auditClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(JusticeEntry(projectName, barangayZone, auditClause, emotionalTag, true, false, false));
     }
 
-    function confirmCelebration(uint256 index) external onlyAdmin {
-        entries[index].celebrated = true;
+    function confirmAudit(uint256 index) external onlyAdmin {
+        entries[index].audited = true;
     }
 
-    function sealFestivalEntry(uint256 index) external onlyAdmin {
-        require(entries[index].celebrated, "Must be celebrated first");
+    function sealJusticeEntry(uint256 index) external onlyAdmin {
+        require(entries[index].audited, "Must be audited first");
         entries[index].sealed = true;
     }
 
-    function getFestivalEntry(uint256 index) external view returns (FestivalEntry memory) {
+    function getJusticeEntry(uint256 index) external view returns (JusticeEntry memory) {
         return entries[index];
     }
 }
