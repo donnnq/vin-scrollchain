@@ -6,11 +6,11 @@ contract PublicWorksTransparencyCodex {
 
     struct TransparencyEntry {
         string projectName;
-        string oversightClause;
-        string reformMilestone;
+        string agency;
+        string auditClause;
         string emotionalTag;
         bool summoned;
-        bool audited;
+        bool published;
         bool sealed;
     }
 
@@ -25,16 +25,16 @@ contract PublicWorksTransparencyCodex {
         _;
     }
 
-    function summonTransparency(string memory projectName, string memory oversightClause, string memory reformMilestone, string memory emotionalTag) external onlyAdmin {
-        entries.push(TransparencyEntry(projectName, oversightClause, reformMilestone, emotionalTag, true, false, false));
+    function summonTransparency(string memory projectName, string memory agency, string memory auditClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(TransparencyEntry(projectName, agency, auditClause, emotionalTag, true, false, false));
     }
 
-    function confirmAudit(uint256 index) external onlyAdmin {
-        entries[index].audited = true;
+    function confirmPublication(uint256 index) external onlyAdmin {
+        entries[index].published = true;
     }
 
     function sealTransparencyEntry(uint256 index) external onlyAdmin {
-        require(entries[index].audited, "Must be audited first");
+        require(entries[index].published, "Must be published first");
         entries[index].sealed = true;
     }
 
