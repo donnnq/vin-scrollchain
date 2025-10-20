@@ -7,7 +7,7 @@ contract InfrastructureJusticeFestivalProtocol {
     struct FestivalEntry {
         string eventName;
         string justiceTheme;
-        string auditClause;
+        string prosecutionClause;
         string emotionalTag;
         bool summoned;
         bool celebrated;
@@ -25,8 +25,8 @@ contract InfrastructureJusticeFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory justiceTheme, string memory auditClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, justiceTheme, auditClause, emotionalTag, true, false, false));
+    function summonFestival(string memory eventName, string memory justiceTheme, string memory prosecutionClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(eventName, justiceTheme, prosecutionClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
