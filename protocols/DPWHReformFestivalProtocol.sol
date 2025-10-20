@@ -7,7 +7,7 @@ contract DPWHReformFestivalProtocol {
     struct FestivalEntry {
         string eventName;
         string reformTheme;
-        string integrityClause;
+        string equityClause;
         string emotionalTag;
         bool summoned;
         bool celebrated;
@@ -25,8 +25,8 @@ contract DPWHReformFestivalProtocol {
         _;
     }
 
-    function summonFestival(string memory eventName, string memory reformTheme, string memory integrityClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(eventName, reformTheme, integrityClause, emotionalTag, true, false, false));
+    function summonFestival(string memory eventName, string memory reformTheme, string memory equityClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(eventName, reformTheme, equityClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
