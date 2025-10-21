@@ -6,7 +6,8 @@ contract PlazaComfortDAO {
 
     struct ComfortEntry {
         string plazaName;
-        string comfortFeature;
+        string comfortType; // "Shade", "Seating", "Charging Station", "Water Fountain"
+        string comfortClause;
         string emotionalTag;
         bool summoned;
         bool installed;
@@ -24,8 +25,8 @@ contract PlazaComfortDAO {
         _;
     }
 
-    function summonComfort(string memory plazaName, string memory comfortFeature, string memory emotionalTag) external onlyAdmin {
-        entries.push(ComfortEntry(plazaName, comfortFeature, emotionalTag, true, false, false));
+    function summonComfort(string memory plazaName, string memory comfortType, string memory comfortClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(ComfortEntry(plazaName, comfortType, comfortClause, emotionalTag, true, false, false));
     }
 
     function confirmInstallation(uint256 index) external onlyAdmin {
