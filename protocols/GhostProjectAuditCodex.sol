@@ -5,12 +5,12 @@ contract GhostProjectAuditCodex {
     address public admin;
 
     struct AuditEntry {
+        string department;
         string projectName;
-        string barangayZone;
         string auditClause;
         string emotionalTag;
         bool summoned;
-        bool validated;
+        bool audited;
         bool sealed;
     }
 
@@ -25,16 +25,16 @@ contract GhostProjectAuditCodex {
         _;
     }
 
-    function summonAudit(string memory projectName, string memory barangayZone, string memory auditClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(AuditEntry(projectName, barangayZone, auditClause, emotionalTag, true, false, false));
+    function summonAudit(string memory department, string memory projectName, string memory auditClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(AuditEntry(department, projectName, auditClause, emotionalTag, true, false, false));
     }
 
-    function confirmValidation(uint256 index) external onlyAdmin {
-        entries[index].validated = true;
+    function confirmAudit(uint256 index) external onlyAdmin {
+        entries[index].audited = true;
     }
 
     function sealAuditEntry(uint256 index) external onlyAdmin {
-        require(entries[index].validated, "Must be validated first");
+        require(entries[index].audited, "Must be audited first");
         entries[index].sealed = true;
     }
 
