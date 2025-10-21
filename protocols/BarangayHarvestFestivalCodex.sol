@@ -5,9 +5,9 @@ contract BarangayHarvestFestivalCodex {
     address public admin;
 
     struct FestivalEntry {
-        string barangayName;
-        string festivalName;
-        string activityType;
+        string barangay;
+        string ritualType; // "Egg Parade", "Tilapia Cook-off", "Compost Ceremony", "Youth Farmer Awards"
+        string codexClause;
         string emotionalTag;
         bool summoned;
         bool celebrated;
@@ -25,8 +25,8 @@ contract BarangayHarvestFestivalCodex {
         _;
     }
 
-    function summonFestival(string memory barangayName, string memory festivalName, string memory activityType, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(barangayName, festivalName, activityType, emotionalTag, true, false, false));
+    function summonFestival(string memory barangay, string memory ritualType, string memory codexClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(barangay, ritualType, codexClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
