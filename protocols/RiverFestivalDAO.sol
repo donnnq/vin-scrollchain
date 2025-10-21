@@ -5,7 +5,7 @@ contract RiverFestivalDAO {
     address public admin;
 
     struct FestivalEntry {
-        string segmentName;
+        string dockName;
         string festivalName;
         string celebrationClause;
         string emotionalTag;
@@ -25,8 +25,8 @@ contract RiverFestivalDAO {
         _;
     }
 
-    function summonFestival(string memory segmentName, string memory festivalName, string memory celebrationClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(FestivalEntry(segmentName, festivalName, celebrationClause, emotionalTag, true, false, false));
+    function summonFestival(string memory dockName, string memory festivalName, string memory celebrationClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(FestivalEntry(dockName, festivalName, celebrationClause, emotionalTag, true, false, false));
     }
 
     function confirmCelebration(uint256 index) external onlyAdmin {
