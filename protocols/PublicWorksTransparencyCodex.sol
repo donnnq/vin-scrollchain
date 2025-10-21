@@ -7,7 +7,7 @@ contract PublicWorksTransparencyCodex {
     struct TransparencyEntry {
         string projectName;
         string agency;
-        string auditClause;
+        string transparencyClause;
         string emotionalTag;
         bool summoned;
         bool published;
@@ -25,8 +25,8 @@ contract PublicWorksTransparencyCodex {
         _;
     }
 
-    function summonTransparency(string memory projectName, string memory agency, string memory auditClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(TransparencyEntry(projectName, agency, auditClause, emotionalTag, true, false, false));
+    function summonTransparency(string memory projectName, string memory agency, string memory transparencyClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(TransparencyEntry(projectName, agency, transparencyClause, emotionalTag, true, false, false));
     }
 
     function confirmPublication(uint256 index) external onlyAdmin {

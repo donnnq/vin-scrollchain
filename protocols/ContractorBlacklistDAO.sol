@@ -6,11 +6,11 @@ contract ContractorBlacklistDAO {
 
     struct BlacklistEntry {
         string contractorName;
-        string projectZone;
-        string violationClause;
+        string violationType;
+        string blacklistClause;
         string emotionalTag;
         bool summoned;
-        bool blacklisted;
+        bool verified;
         bool sealed;
     }
 
@@ -25,16 +25,16 @@ contract ContractorBlacklistDAO {
         _;
     }
 
-    function summonBlacklist(string memory contractorName, string memory projectZone, string memory violationClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(BlacklistEntry(contractorName, projectZone, violationClause, emotionalTag, true, false, false));
+    function summonBlacklist(string memory contractorName, string memory violationType, string memory blacklistClause, string memory emotionalTag) external onlyAdmin {
+        entries.push(BlacklistEntry(contractorName, violationType, blacklistClause, emotionalTag, true, false, false));
     }
 
-    function confirmBlacklist(uint256 index) external onlyAdmin {
-        entries[index].blacklisted = true;
+    function confirmVerification(uint256 index) external onlyAdmin {
+        entries[index].verified = true;
     }
 
     function sealBlacklistEntry(uint256 index) external onlyAdmin {
-        require(entries[index].blacklisted, "Must be blacklisted first");
+        require(entries[index].verified, "Must be verified first");
         entries[index].sealed = true;
     }
 
