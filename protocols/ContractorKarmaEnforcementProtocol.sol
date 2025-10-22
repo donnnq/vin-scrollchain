@@ -5,9 +5,8 @@ contract ContractorKarmaEnforcementProtocol {
     address public admin;
 
     struct EnforcementEntry {
-        string contractorName; // "XYZ Builders Inc."
-        string anomalyType; // "Overpricing", "Ghost project", "Delayed implementation"
-        string karmaSignal; // "Blacklist", "Asset freeze", "Public exposure"
+        string contractorName; // "CLTG Builders", "Alfredo Builders & Supply"
+        string karmaSignal; // "Overpriced contract", "Conflict of interest", "Political proximity"
         string emotionalTag;
         bool enforced;
         bool sealed;
@@ -24,8 +23,8 @@ contract ContractorKarmaEnforcementProtocol {
         _;
     }
 
-    function enforceKarma(string memory contractorName, string memory anomalyType, string memory karmaSignal, string memory emotionalTag) external onlyAdmin {
-        entries.push(EnforcementEntry(contractorName, anomalyType, karmaSignal, emotionalTag, true, false));
+    function enforceKarma(string memory contractorName, string memory karmaSignal, string memory emotionalTag) external onlyAdmin {
+        entries.push(EnforcementEntry(contractorName, karmaSignal, emotionalTag, true, false));
     }
 
     function sealEnforcementEntry(uint256 index) external onlyAdmin {
