@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract ShutdownWorkerReliefGrid {
+contract DOJConflictImmunityProtocol {
     address public steward;
 
-    struct ReliefEntry {
-        string agencyName;
-        uint256 unpaidWorkers;
-        uint256 emergencyFundAllocated;
+    struct ConflictEntry {
+        string officialName;
+        string priorAffiliation; // "Trump legal team", "Political donor", etc.
+        string currentRole;
         string emotionalTag;
-        bool deployed;
+        bool flagged;
         bool sealed;
     }
 
-    ReliefEntry[] public entries;
+    ConflictEntry[] public entries;
 
     constructor() {
         steward = msg.sender;
@@ -24,16 +24,16 @@ contract ShutdownWorkerReliefGrid {
         _;
     }
 
-    function deployRelief(string memory agencyName, uint256 unpaidWorkers, uint256 emergencyFundAllocated, string memory emotionalTag) external onlySteward {
-        entries.push(ReliefEntry(agencyName, unpaidWorkers, emergencyFundAllocated, emotionalTag, true, false));
+    function flagConflict(string memory officialName, string memory priorAffiliation, string memory currentRole, string memory emotionalTag) external onlySteward {
+        entries.push(ConflictEntry(officialName, priorAffiliation, currentRole, emotionalTag, true, false));
     }
 
-    function sealReliefEntry(uint256 index) external onlySteward {
-        require(entries[index].deployed, "Must be deployed first");
+    function sealConflictEntry(uint256 index) external onlySteward {
+        require(entries[index].flagged, "Must be flagged first");
         entries[index].sealed = true;
     }
 
-    function getReliefEntry(uint256 index) external view returns (ReliefEntry memory) {
+    function getConflictEntry(uint256 index) external view returns (ConflictEntry memory) {
         return entries[index];
     }
 }
