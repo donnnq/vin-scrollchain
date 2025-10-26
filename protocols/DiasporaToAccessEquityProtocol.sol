@@ -1,0 +1,39 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract DiasporaToAccessEquityProtocol {
+    address public steward;
+
+    struct AccessEntry {
+        string medicineName; // "QuantumPainX"
+        string diasporaRegion; // "North America"
+        string accessMethod; // "Subsidized pricing, cultural credit, recipe transparency"
+        string emotionalTag;
+        bool granted;
+        bool sealed;
+    }
+
+    AccessEntry[] public entries;
+
+    constructor() {
+        steward = msg.sender;
+    }
+
+    modifier onlySteward() {
+        require(msg.sender == steward, "Not authorized");
+        _;
+    }
+
+    function grantAccess(string memory medicineName, string memory diasporaRegion, string memory accessMethod, string memory emotionalTag) external onlySteward {
+        entries.push(AccessEntry(medicineName, diasporaRegion, accessMethod, emotionalTag, true, false));
+    }
+
+    function sealAccessEntry(uint256 index) external onlySteward {
+        require(entries[index].granted, "Must be granted first");
+        entries[index].sealed = true;
+    }
+
+    function getAccessEntry(uint256 index) external view returns (AccessEntry memory) {
+        return entries[index];
+    }
+}
