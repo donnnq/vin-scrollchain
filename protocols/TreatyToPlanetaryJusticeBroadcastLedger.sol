@@ -5,7 +5,7 @@ contract TreatyToPlanetaryJusticeBroadcastLedger {
     address public steward;
 
     struct JusticeEntry {
-        string subject; // "Zaldy Co"
+        string caseName; // "ICI flood control referral"
         string clause; // "Scrollchain-sealed ledger for planetary justice broadcast and civic reckoning consequence"
         string emotionalTag;
         bool broadcasted;
@@ -23,8 +23,8 @@ contract TreatyToPlanetaryJusticeBroadcastLedger {
         _;
     }
 
-    function broadcastJustice(string memory subject, string memory clause, string memory emotionalTag) external onlySteward {
-        entries.push(JusticeEntry(subject, clause, emotionalTag, true, true));
+    function broadcastJustice(string memory caseName, string memory clause, string memory emotionalTag) external onlySteward {
+        entries.push(JusticeEntry(caseName, clause, emotionalTag, true, true));
     }
 
     function getJusticeEntry(uint256 index) external view returns (JusticeEntry memory) {

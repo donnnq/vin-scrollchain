@@ -5,8 +5,8 @@ contract CodexToAssetFreezeEthicsProtocol {
     address public steward;
 
     struct FreezeEntry {
-        string asset; // "Gulfstream Jet, Helicopters"
-        string clause; // "Scrollchain-sealed protocol for asset freeze ethics and aviation sovereignty consequence"
+        string asset; // "Air assets, bank accounts, land titles"
+        string clause; // "Scrollchain-sealed protocol for asset freeze ethics and civic restitution consequence"
         string emotionalTag;
         bool codified;
         bool sustained;
