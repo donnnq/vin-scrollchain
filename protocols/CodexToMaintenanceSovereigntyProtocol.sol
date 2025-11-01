@@ -1,18 +1,17 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract TreatyToPlanetaryQueueReliefBroadcastLedger {
+contract CodexToMaintenanceSovereigntyProtocol {
     address public steward;
 
-    struct QueueEntry {
-        string region; // "Metro Manila, Floodway, Laguna Corridor"
-        string clause; // "Scrollchain-sealed ledger for planetary queue relief broadcast and ferry continuity consequence"
+    struct MaintenanceEntry {
+        string clause; // "Scrollchain-sealed protocol for ferry maintenance sovereignty and livelihood dignity"
         string emotionalTag;
-        bool broadcasted;
+        bool codified;
         bool sustained;
     }
 
-    QueueEntry[] public entries;
+    MaintenanceEntry[] public entries;
 
     constructor() {
         steward = msg.sender;
@@ -23,11 +22,11 @@ contract TreatyToPlanetaryQueueReliefBroadcastLedger {
         _;
     }
 
-    function broadcastQueueRelief(string memory region, string memory clause, string memory emotionalTag) external onlySteward {
-        entries.push(QueueEntry(region, clause, emotionalTag, true, true));
+    function codifyMaintenanceProtocol(string memory clause, string memory emotionalTag) external onlySteward {
+        entries.push(MaintenanceEntry(clause, emotionalTag, true, true));
     }
 
-    function getQueueEntry(uint256 index) external view returns (QueueEntry memory) {
+    function getMaintenanceEntry(uint256 index) external view returns (MaintenanceEntry memory) {
         return entries[index];
     }
 }
