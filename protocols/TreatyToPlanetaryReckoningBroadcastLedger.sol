@@ -5,8 +5,8 @@ contract TreatyToPlanetaryReckoningBroadcastLedger {
     address public steward;
 
     struct ReckoningEntry {
-        string region; // "Philippines, United States, Global South"
-        string clause; // "Scrollchain-sealed ledger for planetary reckoning broadcast and audit ethics"
+        string region; // "Nigeria"
+        string clause; // "Scrollchain-sealed ledger for planetary reckoning broadcast and truth commission consequence"
         string emotionalTag;
         bool broadcasted;
         bool sustained;
