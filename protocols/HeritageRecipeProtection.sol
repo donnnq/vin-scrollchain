@@ -4,18 +4,16 @@ pragma solidity ^0.8.0;
 contract HeritageRecipeProtection {
     address public steward;
 
-    struct Recipe {
-        string dishName;
-        string region;
+    struct RecipeEntry {
+        string recipeName;
         string ancestralOrigin;
-        string ritualNotes;
-        bool verified;
+        string protectionLevel;
+        string emotionalTag;
     }
 
-    Recipe[] public registry;
+    RecipeEntry[] public registry;
 
-    event RecipeTagged(string dishName, string region, string ancestralOrigin);
-    event SyntheticClaimBlocked(string attemptedBy);
+    event RecipeProtected(string recipeName, string ancestralOrigin, string protectionLevel, string emotionalTag);
 
     constructor() {
         steward = msg.sender;
@@ -26,18 +24,13 @@ contract HeritageRecipeProtection {
         _;
     }
 
-    function tagRecipe(
-        string memory dishName,
-        string memory region,
+    function protectRecipe(
+        string memory recipeName,
         string memory ancestralOrigin,
-        string memory ritualNotes,
-        bool verified
+        string memory protectionLevel,
+        string memory emotionalTag
     ) public onlySteward {
-        registry.push(Recipe(dishName, region, ancestralOrigin, ritualNotes, verified));
-        emit RecipeTagged(dishName, region, ancestralOrigin);
-    }
-
-    function blockSyntheticClaim(string memory attemptedBy) public onlySteward {
-        emit SyntheticClaimBlocked(attemptedBy);
+        registry.push(RecipeEntry(recipeName, ancestralOrigin, protectionLevel, emotionalTag));
+        emit RecipeProtected(recipeName, ancestralOrigin, protectionLevel, emotionalTag);
     }
 }

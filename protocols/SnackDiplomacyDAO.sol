@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract HeritageRecipeProtection {
+contract SnackDiplomacyDAO {
     address public steward;
 
-    struct RecipeEntry {
-        string recipeName;
-        string ancestralOrigin;
-        string protectionLevel;
+    struct SnackTreaty {
+        string snackName;
+        string corridor;
+        string diplomaticFunction;
         string emotionalTag;
     }
 
-    RecipeEntry[] public registry;
+    SnackTreaty[] public treatyLog;
 
-    event RecipeProtected(string recipeName, string ancestralOrigin, string protectionLevel, string emotionalTag);
+    event SnackTreatySigned(string snackName, string corridor, string diplomaticFunction, string emotionalTag);
 
     constructor() {
         steward = msg.sender;
@@ -24,13 +24,13 @@ contract HeritageRecipeProtection {
         _;
     }
 
-    function protectRecipe(
-        string memory recipeName,
-        string memory ancestralOrigin,
-        string memory protectionLevel,
+    function signTreaty(
+        string memory snackName,
+        string memory corridor,
+        string memory diplomaticFunction,
         string memory emotionalTag
     ) public onlySteward {
-        registry.push(RecipeEntry(recipeName, ancestralOrigin, protectionLevel, emotionalTag));
-        emit RecipeProtected(recipeName, ancestralOrigin, protectionLevel, emotionalTag);
+        treatyLog.push(SnackTreaty(snackName, corridor, diplomaticFunction, emotionalTag));
+        emit SnackTreatySigned(snackName, corridor, diplomaticFunction, emotionalTag);
     }
 }
