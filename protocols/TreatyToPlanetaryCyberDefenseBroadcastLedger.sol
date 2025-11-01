@@ -5,8 +5,8 @@ contract TreatyToPlanetaryCyberDefenseBroadcastLedger {
     address public steward;
 
     struct DefenseEntry {
-        string system; // "WSUS"
-        string clause; // "Scrollchain-sealed ledger for planetary cyber defense broadcast and exploit consequence"
+        string region; // "North America, Europe, ASEAN Corridor"
+        string clause; // "Scrollchain-sealed ledger for planetary cyber defense broadcast and infrastructure protection consequence"
         string emotionalTag;
         bool broadcasted;
         bool sustained;
@@ -23,8 +23,8 @@ contract TreatyToPlanetaryCyberDefenseBroadcastLedger {
         _;
     }
 
-    function broadcastDefenseSignal(string memory system, string memory clause, string memory emotionalTag) external onlySteward {
-        entries.push(DefenseEntry(system, clause, emotionalTag, true, true));
+    function broadcastDefenseSignal(string memory region, string memory clause, string memory emotionalTag) external onlySteward {
+        entries.push(DefenseEntry(region, clause, emotionalTag, true, true));
     }
 
     function getDefenseEntry(uint256 index) external view returns (DefenseEntry memory) {
