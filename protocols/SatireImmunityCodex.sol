@@ -2,43 +2,35 @@
 pragma solidity ^0.8.0;
 
 contract SatireImmunityCodex {
-    address public admin;
+    address public steward;
 
-    struct SatireEntry {
-        string creatorName;
-        string satireType;
-        string immunityClause;
+    struct SatireClause {
+        string satireID;
+        string corridor;
+        string immunityLevel;
         string emotionalTag;
-        bool summoned;
-        bool protected;
-        bool sealed;
     }
 
-    SatireEntry[] public entries;
+    SatireClause[] public codex;
+
+    event SatireProtected(string satireID, string corridor, string immunityLevel, string emotionalTag);
 
     constructor() {
-        admin = msg.sender;
+        steward = msg.sender;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlySteward() {
+        require(msg.sender == steward, "Unauthorized: Not the steward");
         _;
     }
 
-    function summonSatire(string memory creatorName, string memory satireType, string memory immunityClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(SatireEntry(creatorName, satireType, immunityClause, emotionalTag, true, false, false));
-    }
-
-    function confirmProtection(uint256 index) external onlyAdmin {
-        entries[index].protected = true;
-    }
-
-    function sealSatireEntry(uint256 index) external onlyAdmin {
-        require(entries[index].protected, "Must be protected first");
-        entries[index].sealed = true;
-    }
-
-    function getSatireEntry(uint256 index) external view returns (SatireEntry memory) {
-        return entries[index];
+    function protectSatire(
+        string memory satireID,
+        string memory corridor,
+        string memory immunityLevel,
+        string memory emotionalTag
+    ) public onlySteward {
+        codex.push(SatireClause(satireID, corridor, immunityLevel, emotionalTag));
+        emit SatireProtected(satireID, corridor, immunityLevel, emotionalTag);
     }
 }
