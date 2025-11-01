@@ -5,8 +5,8 @@ contract TreatyToPlanetarySoftwareSovereigntyBroadcastLedger {
     address public steward;
 
     struct SovereigntyEntry {
-        string vendor; // "Microsoft"
-        string clause; // "Scrollchain-sealed ledger for planetary software sovereignty broadcast and patch ethics"
+        string vendor; // "Google, Microsoft, Brave Software"
+        string clause; // "Scrollchain-sealed ledger for planetary software sovereignty broadcast and crash recovery consequence"
         string emotionalTag;
         bool broadcasted;
         bool sustained;
@@ -23,7 +23,7 @@ contract TreatyToPlanetarySoftwareSovereigntyBroadcastLedger {
         _;
     }
 
-    function broadcastSoftwareSovereignty(string memory vendor, string memory clause, string memory emotionalTag) external onlySteward {
+    function broadcastSovereigntySignal(string memory vendor, string memory clause, string memory emotionalTag) external onlySteward {
         entries.push(SovereigntyEntry(vendor, clause, emotionalTag, true, true));
     }
 
