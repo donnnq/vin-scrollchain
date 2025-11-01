@@ -2,43 +2,40 @@
 pragma solidity ^0.8.0;
 
 contract HousingEquityDAO {
-    address public admin;
+    address public steward;
 
-    struct EquityEntry {
-        string programName;
-        string regionZone;
-        string equityClause;
-        string emotionalTag;
-        bool summoned;
-        bool allocated;
-        bool sealed;
+    struct HousingEntry {
+        string purok;
+        string residentName;
+        string housingType;
+        bool dignityCertified;
     }
 
-    EquityEntry[] public entries;
+    HousingEntry[] public registry;
+
+    event HousingTagged(string purok, string residentName, string housingType);
+    event EvictionKarmaTriggered(string purok, string reason);
 
     constructor() {
-        admin = msg.sender;
+        steward = msg.sender;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlySteward() {
+        require(msg.sender == steward, "Unauthorized: Not the steward");
         _;
     }
 
-    function summonAllocation(string memory programName, string memory regionZone, string memory equityClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(EquityEntry(programName, regionZone, equityClause, emotionalTag, true, false, false));
+    function tagHousing(
+        string memory purok,
+        string memory residentName,
+        string memory housingType,
+        bool dignityCertified
+    ) public onlySteward {
+        registry.push(HousingEntry(purok, residentName, housingType, dignityCertified));
+        emit HousingTagged(purok, residentName, housingType);
     }
 
-    function confirmAllocation(uint256 index) external onlyAdmin {
-        entries[index].allocated = true;
-    }
-
-    function sealEquityEntry(uint256 index) external onlyAdmin {
-        require(entries[index].allocated, "Must be allocated first");
-        entries[index].sealed = true;
-    }
-
-    function getEquityEntry(uint256 index) external view returns (EquityEntry memory) {
-        return entries[index];
+    function triggerEvictionKarma(string memory purok, string memory reason) public onlySteward {
+        emit EvictionKarmaTriggered(purok, reason);
     }
 }
