@@ -2,43 +2,35 @@
 pragma solidity ^0.8.0;
 
 contract DroneEthicsDAO {
-    address public admin;
+    address public steward;
 
     struct EthicsEntry {
-        string droneType;
-        string deploymentZone;
-        string ethicsClause;
+        string droneModel;
+        string ethicalRisk;
+        string mitigationProtocol;
         string emotionalTag;
-        bool summoned;
-        bool reviewed;
-        bool sealed;
     }
 
-    EthicsEntry[] public entries;
+    EthicsEntry[] public registry;
+
+    event DroneEthicsTagged(string droneModel, string ethicalRisk, string mitigationProtocol, string emotionalTag);
 
     constructor() {
-        admin = msg.sender;
+        steward = msg.sender;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlySteward() {
+        require(msg.sender == steward, "Unauthorized");
         _;
     }
 
-    function summonEthics(string memory droneType, string memory deploymentZone, string memory ethicsClause, string memory emotionalTag) external onlyAdmin {
-        entries.push(EthicsEntry(droneType, deploymentZone, ethicsClause, emotionalTag, true, false, false));
-    }
-
-    function confirmReview(uint256 index) external onlyAdmin {
-        entries[index].reviewed = true;
-    }
-
-    function sealEthicsEntry(uint256 index) external onlyAdmin {
-        require(entries[index].reviewed, "Must be reviewed first");
-        entries[index].sealed = true;
-    }
-
-    function getEthicsEntry(uint256 index) external view returns (EthicsEntry memory) {
-        return entries[index];
+    function tagEthics(
+        string memory droneModel,
+        string memory ethicalRisk,
+        string memory mitigationProtocol,
+        string memory emotionalTag
+    ) public onlySteward {
+        registry.push(EthicsEntry(droneModel, ethicalRisk, mitigationProtocol, emotionalTag));
+        emit DroneEthicsTagged(droneModel, ethicalRisk, mitigationProtocol, emotionalTag);
     }
 }
