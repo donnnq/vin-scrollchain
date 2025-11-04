@@ -2,43 +2,35 @@
 pragma solidity ^0.8.0;
 
 contract NarrativeContainmentCodex {
-    address public admin;
+    address public steward;
 
     struct ContainmentEntry {
-        string outletName;
-        string narrativeTitle;
-        string missingContext;
+        string narrativeReference;
+        string containmentSignal;
+        string codexMechanism;
         string emotionalTag;
-        bool summoned;
-        bool contained;
-        bool sealed;
     }
 
-    ContainmentEntry[] public entries;
+    ContainmentEntry[] public codex;
+
+    event NarrativeContained(string narrativeReference, string containmentSignal, string codexMechanism, string emotionalTag);
 
     constructor() {
-        admin = msg.sender;
+        steward = msg.sender;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlySteward() {
+        require(msg.sender == steward, "Unauthorized");
         _;
     }
 
-    function summonContainment(string memory outletName, string memory narrativeTitle, string memory missingContext, string memory emotionalTag) external onlyAdmin {
-        entries.push(ContainmentEntry(outletName, narrativeTitle, missingContext, emotionalTag, true, false, false));
-    }
-
-    function confirmContainment(uint256 index) external onlyAdmin {
-        entries[index].contained = true;
-    }
-
-    function sealContainmentEntry(uint256 index) external onlyAdmin {
-        require(entries[index].contained, "Must be contained first");
-        entries[index].sealed = true;
-    }
-
-    function getContainmentEntry(uint256 index) external view returns (ContainmentEntry memory) {
-        return entries[index];
+    function containNarrative(
+        string memory narrativeReference,
+        string memory containmentSignal,
+        string memory codexMechanism,
+        string memory emotionalTag
+    ) public onlySteward {
+        codex.push(ContainmentEntry(narrativeReference, containmentSignal, codexMechanism, emotionalTag));
+        emit NarrativeContained(narrativeReference, containmentSignal, codexMechanism, emotionalTag);
     }
 }
