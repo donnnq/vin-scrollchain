@@ -2,43 +2,35 @@
 pragma solidity ^0.8.0;
 
 contract CivicLiteracyDAO {
-    address public admin;
+    address public steward;
 
-    struct LiteracyEntry {
-        string region;
-        string curriculumTheme;
-        string deliveryMethod;
+    struct LearningGrant {
+        string community;
+        string learningFocus;
+        string fundingMechanism;
         string emotionalTag;
-        bool summoned;
-        bool deployed;
-        bool sealed;
     }
 
-    LiteracyEntry[] public entries;
+    LearningGrant[] public registry;
+
+    event CivicLiteracyFunded(string community, string learningFocus, string fundingMechanism, string emotionalTag);
 
     constructor() {
-        admin = msg.sender;
+        steward = msg.sender;
     }
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlySteward() {
+        require(msg.sender == steward, "Unauthorized");
         _;
     }
 
-    function summonLiteracy(string memory region, string memory curriculumTheme, string memory deliveryMethod, string memory emotionalTag) external onlyAdmin {
-        entries.push(LiteracyEntry(region, curriculumTheme, deliveryMethod, emotionalTag, true, false, false));
-    }
-
-    function confirmDeployment(uint256 index) external onlyAdmin {
-        entries[index].deployed = true;
-    }
-
-    function sealLiteracyEntry(uint256 index) external onlyAdmin {
-        require(entries[index].deployed, "Must be deployed first");
-        entries[index].sealed = true;
-    }
-
-    function getLiteracyEntry(uint256 index) external view returns (LiteracyEntry memory) {
-        return entries[index];
+    function fundLiteracy(
+        string memory community,
+        string memory learningFocus,
+        string memory fundingMechanism,
+        string memory emotionalTag
+    ) public onlySteward {
+        registry.push(LearningGrant(community, learningFocus, fundingMechanism, emotionalTag));
+        emit CivicLiteracyFunded(community, learningFocus, fundingMechanism, emotionalTag);
     }
 }
