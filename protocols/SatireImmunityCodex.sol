@@ -4,33 +4,33 @@ pragma solidity ^0.8.0;
 contract SatireImmunityCodex {
     address public steward;
 
-    struct SatireClause {
-        string satireID;
-        string corridor;
-        string immunityLevel;
+    struct ImmunityClause {
+        string satireTarget;
+        string riskVector;
+        string immunityProtocol;
         string emotionalTag;
     }
 
-    SatireClause[] public codex;
+    ImmunityClause[] public codex;
 
-    event SatireProtected(string satireID, string corridor, string immunityLevel, string emotionalTag);
+    event SatireImmunityTagged(string satireTarget, string riskVector, string immunityProtocol, string emotionalTag);
 
     constructor() {
         steward = msg.sender;
     }
 
     modifier onlySteward() {
-        require(msg.sender == steward, "Unauthorized: Not the steward");
+        require(msg.sender == steward, "Unauthorized");
         _;
     }
 
-    function protectSatire(
-        string memory satireID,
-        string memory corridor,
-        string memory immunityLevel,
+    function tagImmunity(
+        string memory satireTarget,
+        string memory riskVector,
+        string memory immunityProtocol,
         string memory emotionalTag
     ) public onlySteward {
-        codex.push(SatireClause(satireID, corridor, immunityLevel, emotionalTag));
-        emit SatireProtected(satireID, corridor, immunityLevel, emotionalTag);
+        codex.push(ImmunityClause(satireTarget, riskVector, immunityProtocol, emotionalTag));
+        emit SatireImmunityTagged(satireTarget, riskVector, immunityProtocol, emotionalTag);
     }
 }
