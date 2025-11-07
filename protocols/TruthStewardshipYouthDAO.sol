@@ -32,7 +32,8 @@ contract TruthStewardshipYouthDAO {
         string memory truthProject,
         string memory emotionalTag
     ) public onlySteward {
-        registry.push(StewardEntry(name, schoolOrBarangay, timestamp, truthProject, emotionalTag));
+        registry.push(St
+ewardEntry(name, schoolOrBarangay, timestamp, truthProject, emotionalTag));
         emit YouthTruthStewardLogged(name, schoolOrBarangay, timestamp, truthProject, emotionalTag);
     }
 }
