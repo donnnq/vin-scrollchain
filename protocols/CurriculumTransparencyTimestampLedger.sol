@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract CurriculumTransparencyTimestampLedger {
+    address public validator;
+
+    struct Reform {
+        string subject;
+        string change;
+        string transparencyTag;
+        uint256 timestamp;
+    }
+
+    Reform[] public reforms;
+
+    modifier onlyValidator() {
+        require(msg.sender == validator, "Not authorized");
+        _;
+    }
+
+    constructor() {
+        validator = msg.sender;
+    }
+
+    function logReform(string memory _subject, string memory _change, string memory _tag) public onlyValidator {
+        reforms.push(Reform(_subject, _change, _tag, block.timestamp));
+    }
+
+    function getReform(uint256 index) public view returns (Reform memory) {
+        return reforms[index];
+    }
+
+    function totalReforms() public view returns (uint256) {
+        return reforms.length;
+    }
+}
