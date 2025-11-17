@@ -1,44 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 contract DigitalSovereigntyDAO {
-    address public admin;
+    address public validator;
 
-    struct SovereigntyEntry {
-        string country;
-        string censorshipTool;
-        string exportTrigger;
-        string emotionalTag;
-        bool summoned;
-        bool verified;
-        bool sealed;
+    struct Sovereignty {
+        string system;
+        string jurisdiction;
+        string sovereigntyTag;
+        uint256 timestamp;
     }
 
-    SovereigntyEntry[] public entries;
+    Sovereignty[] public records;
 
-    constructor() {
-        admin = msg.sender;
-    }
-
-    modifier onlyAdmin() {
-        require(msg.sender == admin, "Not authorized");
+    modifier onlyValidator() {
+        require(msg.sender == validator, "Not authorized");
         _;
     }
 
-    function summonSovereignty(string memory country, string memory censorshipTool, string memory exportTrigger, string memory emotionalTag) external onlyAdmin {
-        entries.push(SovereigntyEntry(country, censorshipTool, exportTrigger, emotionalTag, true, false, false));
+    constructor() {
+        validator = msg.sender;
     }
 
-    function confirmVerification(uint256 index) external onlyAdmin {
-        entries[index].verified = true;
+    function logSovereignty(string memory _system, string memory _jurisdiction, string memory _tag) public onlyValidator {
+        records.push(Sovereignty(_system, _jurisdiction, _tag, block.timestamp));
     }
 
-    function sealSovereigntyEntry(uint256 index) external onlyAdmin {
-        require(entries[index].verified, "Must be verified first");
-        entries[index].sealed = true;
+    function getSovereignty(uint256 index) public view returns (Sovereignty memory) {
+        return records[index];
     }
 
-    function getSovereigntyEntry(uint256 index) external view returns (SovereigntyEntry memory) {
-        return entries[index];
+    function totalRecords() public view returns (uint256) {
+        return records.length;
     }
 }
