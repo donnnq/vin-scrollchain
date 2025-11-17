@@ -1,36 +1,36 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 contract ConsumerProtectionDAO {
-    address public steward;
+    address public validator;
 
-    struct ProtectionEntry {
-        string watchdogName;
-        string protectionAction;
-        string cartelSignal;
-        string emotionalTag;
+    struct Case {
+        string product;
+        string violation;
+        string penalty;
+        uint256 timestamp;
     }
 
-    ProtectionEntry[] public registry;
+    Case[] public cases;
 
-    event ConsumerProtectionTagged(string watchdogName, string protectionAction, string cartelSignal, string emotionalTag);
-
-    constructor() {
-        steward = msg.sender;
-    }
-
-    modifier onlySteward() {
-        require(msg.sender == steward, "Unauthorized");
+    modifier onlyValidator() {
+        require(msg.sender == validator, "Not authorized");
         _;
     }
 
-    function tagProtection(
-        string memory watchdogName,
-        string memory protectionAction,
-        string memory cartelSignal,
-        string memory emotionalTag
-    ) public onlySteward {
-        registry.push(ProtectionEntry(watchdogName, protectionAction, cartelSignal, emotionalTag));
-        emit ConsumerProtectionTagged(watchdogName, protectionAction, cartelSignal, emotionalTag);
+    constructor() {
+        validator = msg.sender;
+    }
+
+    function logCase(string memory _product, string memory _violation, string memory _penalty) public onlyValidator {
+        cases.push(Case(_product, _violation, _penalty, block.timestamp));
+    }
+
+    function getCase(uint256 index) public view returns (Case memory) {
+        return cases[index];
+    }
+
+    function totalCases() public view returns (uint256) {
+        return cases.length;
     }
 }
