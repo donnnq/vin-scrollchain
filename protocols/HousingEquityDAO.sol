@@ -1,41 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 contract HousingEquityDAO {
-    address public steward;
+    address public validator;
 
-    struct HousingEntry {
-        string purok;
-        string residentName;
-        string housingType;
-        bool dignityCertified;
+    struct Allocation {
+        string beneficiary;
+        string shelterType;
+        uint256 units;
+        string dignityTag;
+        uint256 timestamp;
     }
 
-    HousingEntry[] public registry;
+    Allocation[] public allocations;
 
-    event HousingTagged(string purok, string residentName, string housingType);
-    event EvictionKarmaTriggered(string purok, string reason);
-
-    constructor() {
-        steward = msg.sender;
-    }
-
-    modifier onlySteward() {
-        require(msg.sender == steward, "Unauthorized: Not the steward");
+    modifier onlyValidator() {
+        require(msg.sender == validator, "Not authorized");
         _;
     }
 
-    function tagHousing(
-        string memory purok,
-        string memory residentName,
-        string memory housingType,
-        bool dignityCertified
-    ) public onlySteward {
-        registry.push(HousingEntry(purok, residentName, housingType, dignityCertified));
-        emit HousingTagged(purok, residentName, housingType);
+    constructor() {
+        validator = msg.sender;
     }
 
-    function triggerEvictionKarma(string memory purok, string memory reason) public onlySteward {
-        emit EvictionKarmaTriggered(purok, reason);
+    function logAllocation(string memory _beneficiary, string memory _shelterType, uint256 _units, string memory _tag) public onlyValidator {
+        allocations.push(Allocation(_beneficiary, _shelterType, _units, _tag, block.timestamp));
+    }
+
+    function getAllocation(uint256 index) public view returns (Allocation memory) {
+        return allocations[index];
+    }
+
+    function totalAllocations() public view returns (uint256) {
+        return allocations.length;
     }
 }
