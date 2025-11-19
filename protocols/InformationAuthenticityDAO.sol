@@ -4,15 +4,14 @@ pragma solidity ^0.8.19;
 contract InformationAuthenticityDAO {
     address public validator;
 
-    struct Record {
+    struct InfoLog {
         string source;
         string claim;
-        bool verified;
         string authenticityTag;
         uint256 timestamp;
     }
 
-    Record[] public records;
+    InfoLog[] public logs;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -23,15 +22,15 @@ contract InformationAuthenticityDAO {
         validator = msg.sender;
     }
 
-    function logRecord(string memory _source, string memory _claim, bool _verified, string memory _tag) public onlyValidator {
-        records.push(Record(_source, _claim, _verified, _tag, block.timestamp));
+    function logInfo(string memory _source, string memory _claim, string memory _tag) public onlyValidator {
+        logs.push(InfoLog(_source, _claim, _tag, block.timestamp));
     }
 
-    function getRecord(uint256 index) public view returns (Record memory) {
-        return records[index];
+    function getInfo(uint256 index) public view returns (InfoLog memory) {
+        return logs[index];
     }
 
-    function totalRecords() public view returns (uint256) {
-        return records.length;
+    function totalLogs() public view returns (uint256) {
+        return logs.length;
     }
 }

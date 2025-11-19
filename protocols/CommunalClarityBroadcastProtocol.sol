@@ -4,15 +4,14 @@ pragma solidity ^0.8.19;
 contract CommunalClarityBroadcastProtocol {
     address public validator;
 
-    struct Broadcast {
-        string aiModel;
-        string query;
-        string clarityTag;
+    struct Initiative {
+        string reform;
+        string impact;
         string resonance;
         uint256 timestamp;
     }
 
-    Broadcast[] public broadcasts;
+    Initiative[] public broadcasts;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -23,11 +22,11 @@ contract CommunalClarityBroadcastProtocol {
         validator = msg.sender;
     }
 
-    function broadcastClarity(string memory _model, string memory _query, string memory _tag, string memory _resonance) public onlyValidator {
-        broadcasts.push(Broadcast(_model, _query, _tag, _resonance, block.timestamp));
+    function broadcastInitiative(string memory _reform, string memory _impact, string memory _resonance) public onlyValidator {
+        broadcasts.push(Initiative(_reform, _impact, _resonance, block.timestamp));
     }
 
-    function getBroadcast(uint256 index) public view returns (Broadcast memory) {
+    function getInitiative(uint256 index) public view returns (Initiative memory) {
         return broadcasts[index];
     }
 
