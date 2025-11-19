@@ -11,7 +11,7 @@ contract CommunalSustainabilityBroadcastProtocol {
         uint256 timestamp;
     }
 
-    Initiative[] public initiatives;
+    Initiative[] public broadcasts;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -23,14 +23,14 @@ contract CommunalSustainabilityBroadcastProtocol {
     }
 
     function broadcastInitiative(string memory _reform, string memory _impact, string memory _resonance) public onlyValidator {
-        initiatives.push(Initiative(_reform, _impact, _resonance, block.timestamp));
+        broadcasts.push(Initiative(_reform, _impact, _resonance, block.timestamp));
     }
 
     function getInitiative(uint256 index) public view returns (Initiative memory) {
-        return initiatives[index];
+        return broadcasts[index];
     }
 
-    function totalInitiatives() public view returns (uint256) {
-        return initiatives.length;
+    function totalBroadcasts() public view returns (uint256) {
+        return broadcasts.length;
     }
 }

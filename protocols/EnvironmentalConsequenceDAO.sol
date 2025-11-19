@@ -4,14 +4,15 @@ pragma solidity ^0.8.19;
 contract EnvironmentalConsequenceDAO {
     address public validator;
 
-    struct Violation {
-        string project;
-        string offense;
-        string penalty;
+    struct Consequence {
+        string location;
+        string action;
+        string species;
+        string consequenceTag;
         uint256 timestamp;
     }
 
-    Violation[] public violations;
+    Consequence[] public logs;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -22,15 +23,15 @@ contract EnvironmentalConsequenceDAO {
         validator = msg.sender;
     }
 
-    function logViolation(string memory _project, string memory _offense, string memory _penalty) public onlyValidator {
-        violations.push(Violation(_project, _offense, _penalty, block.timestamp));
+    function logConsequence(string memory _location, string memory _action, string memory _species, string memory _tag) public onlyValidator {
+        logs.push(Consequence(_location, _action, _species, _tag, block.timestamp));
     }
 
-    function getViolation(uint256 index) public view returns (Violation memory) {
-        return violations[index];
+    function getConsequence(uint256 index) public view returns (Consequence memory) {
+        return logs[index];
     }
 
-    function totalViolations() public view returns (uint256) {
-        return violations.length;
+    function totalLogs() public view returns (uint256) {
+        return logs.length;
     }
 }

@@ -5,9 +5,10 @@ contract EcologicalImpactTimestampLedger {
     address public validator;
 
     struct Impact {
-        string activity;
-        string effect;
-        string consequenceTag;
+        string location;
+        string species;
+        string impactType;
+        string impactTag;
         uint256 timestamp;
     }
 
@@ -22,8 +23,8 @@ contract EcologicalImpactTimestampLedger {
         validator = msg.sender;
     }
 
-    function logImpact(string memory _activity, string memory _effect, string memory _tag) public onlyValidator {
-        impacts.push(Impact(_activity, _effect, _tag, block.timestamp));
+    function logImpact(string memory _location, string memory _species, string memory _type, string memory _tag) public onlyValidator {
+        impacts.push(Impact(_location, _species, _type, _tag, block.timestamp));
     }
 
     function getImpact(uint256 index) public view returns (Impact memory) {
