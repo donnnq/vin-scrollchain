@@ -4,15 +4,14 @@ pragma solidity ^0.8.19;
 contract CyberDefenseDAO {
     address public validator;
 
-    struct Incident {
-        string actor;
-        string method;
+    struct DefenseLog {
         string system;
+        string action;
         string defenseTag;
         uint256 timestamp;
     }
 
-    Incident[] public incidents;
+    DefenseLog[] public logs;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -23,15 +22,15 @@ contract CyberDefenseDAO {
         validator = msg.sender;
     }
 
-    function logIncident(string memory _actor, string memory _method, string memory _system, string memory _tag) public onlyValidator {
-        incidents.push(Incident(_actor, _method, _system, _tag, block.timestamp));
+    function logDefense(string memory _system, string memory _action, string memory _tag) public onlyValidator {
+        logs.push(DefenseLog(_system, _action, _tag, block.timestamp));
     }
 
-    function getIncident(uint256 index) public view returns (Incident memory) {
-        return incidents[index];
+    function getDefense(uint256 index) public view returns (DefenseLog memory) {
+        return logs[index];
     }
 
-    function totalIncidents() public view returns (uint256) {
-        return incidents.length;
+    function totalLogs() public view returns (uint256) {
+        return logs.length;
     }
 }
