@@ -4,14 +4,13 @@ pragma solidity ^0.8.19;
 contract CommunalAccountabilityBroadcastProtocol {
     address public validator;
 
-    struct Initiative {
-        string reform;
-        string impact;
+    struct Broadcast {
+        string message;
         string resonance;
         uint256 timestamp;
     }
 
-    Initiative[] public broadcasts;
+    Broadcast[] public broadcasts;
 
     modifier onlyValidator() {
         require(msg.sender == validator, "Not authorized");
@@ -22,11 +21,11 @@ contract CommunalAccountabilityBroadcastProtocol {
         validator = msg.sender;
     }
 
-    function broadcastInitiative(string memory _reform, string memory _impact, string memory _resonance) public onlyValidator {
-        broadcasts.push(Initiative(_reform, _impact, _resonance, block.timestamp));
+    function broadcastMessage(string memory _message, string memory _resonance) public onlyValidator {
+        broadcasts.push(Broadcast(_message, _resonance, block.timestamp));
     }
 
-    function getInitiative(uint256 index) public view returns (Initiative memory) {
+    function getBroadcast(uint256 index) public view returns (Broadcast memory) {
         return broadcasts[index];
     }
 
