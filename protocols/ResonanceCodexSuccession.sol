@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-contract ResonanceCodexHealthcare {
-    string public batchID = "1321.9.146";
+contract ResonanceCodexSuccession {
+    string public batchID = "Succession-001";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme; // migration, sovereignty, liquidity, consequence
-        string narrative;
+        string theme;       // humor, metaphor, rhetoric
+        string narrative;   // how it reshapes sovereignty, liquidity, consequence
         uint256 timestamp;
     }
 
