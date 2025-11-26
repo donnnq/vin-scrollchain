@@ -2,22 +2,22 @@
 pragma solidity ^0.8.30;
 
 contract TreatyToCrisisBroadcastLedger {
-    string public batchID = "1321.9.135";
+    string public batchID = "1321.9.141";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CrisisEvent {
-        string alliance;
-        string trigger; // currency shock, default, freeze
-        uint256 impact;
+        string institution;
+        string trigger; // bank run, shock, freeze
+        uint256 severity;
         uint256 timestamp;
         bool broadcasted;
     }
 
     CrisisEvent[] public events;
 
-    event CrisisBroadcast(string alliance, string trigger, uint256 impact);
+    event CrisisBroadcast(string institution, string trigger, uint256 severity);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -28,13 +28,13 @@ contract TreatyToCrisisBroadcastLedger {
         admin = msg.sender;
     }
 
-    function broadcastCrisis(string memory alliance, string memory trigger, uint256 impact) public onlyAdmin {
-        events.push(CrisisEvent(alliance, trigger, impact, block.timestamp, true));
-        emit CrisisBroadcast(alliance, trigger, impact);
+    function broadcastCrisis(string memory institution, string memory trigger, uint256 severity) public onlyAdmin {
+        events.push(CrisisEvent(institution, trigger, severity, block.timestamp, true));
+        emit CrisisBroadcast(institution, trigger, severity);
     }
 
-    function getCrisis(uint256 index) public view returns (string memory alliance, string memory trigger, uint256 impact, uint256 timestamp, bool broadcasted) {
+    function getCrisis(uint256 index) public view returns (string memory institution, string memory trigger, uint256 severity, uint256 timestamp, bool broadcasted) {
         CrisisEvent memory e = events[index];
-        return (e.alliance, e.trigger, e.impact, e.timestamp, e.broadcasted);
+        return (e.institution, e.trigger, e.severity, e.timestamp, e.broadcasted);
     }
 }
