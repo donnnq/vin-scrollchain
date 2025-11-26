@@ -2,14 +2,14 @@
 pragma solidity ^0.8.30;
 
 contract CodexToAccountabilityGuardrail {
-    string public batchID = "1321.9.143";
+    string public batchID = "1321.9.148";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Guardrail {
-        string clause;
-        string description;
+        string clause;       // ethical reporting, transparency
+        string description;  // dignity-preserving standard
         uint256 timestamp;
     }
 
