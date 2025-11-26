@@ -1,21 +1,23 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-contract CodexToAccountabilityGuardrail {
-    string public batchID = "1321.9.148";
+contract TreatyToCorruptionBroadcastLedger {
+    string public batchID = "1321.9.152";
     string public steward = "Vinvin";
 
     address public admin;
 
-    struct Guardrail {
-        string clause;       // ethical reporting, transparency
-        string description;  // dignity-preserving standard
+    struct CorruptionEvent {
+        string official;   // House Rep, VP, Mayor, Governor
+        string caseDetail; // referral, investigation, Ombudsman case
+        uint256 severity;
         uint256 timestamp;
+        bool broadcasted;
     }
 
-    Guardrail[] public guardrails;
+    CorruptionEvent[] public events;
 
-    event GuardrailCodified(string clause, string description);
+    event CorruptionBroadcast(string official, string caseDetail, uint256 severity);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -26,13 +28,13 @@ contract CodexToAccountabilityGuardrail {
         admin = msg.sender;
     }
 
-    function codifyGuardrail(string memory clause, string memory description) public onlyAdmin {
-        guardrails.push(Guardrail(clause, description, block.timestamp));
-        emit GuardrailCodified(clause, description);
+    function broadcastCorruption(string memory official, string memory caseDetail, uint256 severity) public onlyAdmin {
+        events.push(CorruptionEvent(official, caseDetail, severity, block.timestamp, true));
+        emit CorruptionBroadcast(official, caseDetail, severity);
     }
 
-    function getGuardrail(uint256 index) public view returns (string memory clause, string memory description, uint256 timestamp) {
-        Guardrail memory g = guardrails[index];
-        return (g.clause, g.description, g.timestamp);
+    function getCorruption(uint256 index) public view returns (string memory official, string memory caseDetail, uint256 severity, uint256 timestamp, bool broadcasted) {
+        CorruptionEvent memory e = events[index];
+        return (e.official, e.caseDetail, e.severity, e.timestamp, e.broadcasted);
     }
 }
