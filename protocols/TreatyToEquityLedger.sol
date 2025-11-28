@@ -2,20 +2,20 @@
 pragma solidity ^0.8.30;
 
 contract TreatyToEquityLedger {
-    string public batchID = "1321.9.163";
+    string public batchID = "1321.9.166";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct EquityAction {
-        string measure;     // subsidy, incentive, PPP
-        string target;      // agency, operator
+        string reform;     // resource allocation, scholarship, training
+        string target;     // school, teacher, student
         uint256 timestamp;
     }
 
     EquityAction[] public actions;
 
-    event EquityLogged(string measure, string target);
+    event EquityLogged(string reform, string target);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -26,13 +26,13 @@ contract TreatyToEquityLedger {
         admin = msg.sender;
     }
 
-    function logEquity(string memory measure, string memory target) public onlyAdmin {
-        actions.push(EquityAction(measure, target, block.timestamp));
-        emit EquityLogged(measure, target);
+    function logEquity(string memory reform, string memory target) public onlyAdmin {
+        actions.push(EquityAction(reform, target, block.timestamp));
+        emit EquityLogged(reform, target);
     }
 
-    function getEquity(uint256 index) public view returns (string memory measure, string memory target, uint256 timestamp) {
+    function getEquity(uint256 index) public view returns (string memory reform, string memory target, uint256 timestamp) {
         EquityAction memory e = actions[index];
-        return (e.measure, e.target, e.timestamp);
+        return (e.reform, e.target, e.timestamp);
     }
 }
