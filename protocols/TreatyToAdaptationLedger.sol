@@ -2,20 +2,20 @@
 pragma solidity ^0.8.30;
 
 contract TreatyToAdaptationLedger {
-    string public batchID = "1321.9.168";
+    string public batchID = "1321.9.178";
     string public steward = "Vinvin";
 
     address public admin;
 
-    struct AdaptationAction {
-        string project;     // seawall, cooling center, drainage upgrade
-        string location;
+    struct Adaptation {
+        string sector;      // energy, transport, digital
+        string measure;     // new policy, upgraded infra, resilience training
         uint256 timestamp;
     }
 
-    AdaptationAction[] public actions;
+    Adaptation[] public adaptations;
 
-    event AdaptationLogged(string project, string location);
+    event AdaptationLogged(string sector, string measure);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -26,13 +26,13 @@ contract TreatyToAdaptationLedger {
         admin = msg.sender;
     }
 
-    function logAdaptation(string memory project, string memory location) public onlyAdmin {
-        actions.push(AdaptationAction(project, location, block.timestamp));
-        emit AdaptationLogged(project, location);
+    function logAdaptation(string memory sector, string memory measure) public onlyAdmin {
+        adaptations.push(Adaptation(sector, measure, block.timestamp));
+        emit AdaptationLogged(sector, measure);
     }
 
-    function getAdaptation(uint256 index) public view returns (string memory project, string memory location, uint256 timestamp) {
-        AdaptationAction memory a = actions[index];
-        return (a.project, a.location, a.timestamp);
+    function getAdaptation(uint256 index) public view returns (string memory sector, string memory measure, uint256 timestamp) {
+        Adaptation memory a = adaptations[index];
+        return (a.sector, a.measure, a.timestamp);
     }
 }

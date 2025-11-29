@@ -2,20 +2,20 @@
 pragma solidity ^0.8.30;
 
 contract CodexToResilienceGuardrail {
-    string public batchID = "1321.9.133";
+    string public batchID = "1321.9.178";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Guardrail {
-        string clause;
+        string principle;     // dignity, sustainability, communal trust
         string description;
         uint256 timestamp;
     }
 
     Guardrail[] public guardrails;
 
-    event GuardrailCodified(string clause, string description);
+    event GuardrailCodified(string principle, string description);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -26,13 +26,13 @@ contract CodexToResilienceGuardrail {
         admin = msg.sender;
     }
 
-    function codifyGuardrail(string memory clause, string memory description) public onlyAdmin {
-        guardrails.push(Guardrail(clause, description, block.timestamp));
-        emit GuardrailCodified(clause, description);
+    function codifyGuardrail(string memory principle, string memory description) public onlyAdmin {
+        guardrails.push(Guardrail(principle, description, block.timestamp));
+        emit GuardrailCodified(principle, description);
     }
 
-    function getGuardrail(uint256 index) public view returns (string memory clause, string memory description, uint256 timestamp) {
+    function getGuardrail(uint256 index) public view returns (string memory principle, string memory description, uint256 timestamp) {
         Guardrail memory g = guardrails[index];
-        return (g.clause, g.description, g.timestamp);
+        return (g.principle, g.description, g.timestamp);
     }
 }
