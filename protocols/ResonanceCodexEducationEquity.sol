@@ -2,14 +2,14 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexEducationEquity {
-    string public batchID = "1321.9.166";
+    string public batchID = "1321.9.211";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // education equity, communal trust
-        string narrative;   // how reforms reshape consequence and validator-grade resonance
+        string theme;       // curriculum fairness, learning access, teacher-student dignity
+        string narrative;   // how education equity reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
 
