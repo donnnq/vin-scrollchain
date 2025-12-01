@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexConsumerSafety {
-    string public batchID = "1321.9.197";
+    string public batchID = "1321.9.216";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // anti-counterfeit, toxicity audit, market trust
+        string theme;       // product safety, recall audit, consumer dignity
         string narrative;   // how consumer safety reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
