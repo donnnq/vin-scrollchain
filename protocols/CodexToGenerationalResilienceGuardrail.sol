@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract CodexToGenerationalResilienceGuardrail {
-    string public batchID = "1321.9.200";
+    string public batchID = "1321.9.213";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Guardrail {
-        string principle;     // resilience, dignity, empowerment
+        string principle;     // resilience, dignity, equity
         string description;
         uint256 timestamp;
     }
