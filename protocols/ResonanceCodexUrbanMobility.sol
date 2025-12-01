@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexUrbanMobility {
-    string public batchID = "1321.9.193";
+    string public batchID = "1321.9.217";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // transport equity, traffic systems, infrastructure resilience
+        string theme;       // transport equity, traffic audit, city dignity
         string narrative;   // how urban mobility reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
