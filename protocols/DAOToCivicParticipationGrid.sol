@@ -2,20 +2,20 @@
 pragma solidity ^0.8.30;
 
 contract DAOToCivicParticipationGrid {
-    string public batchID = "1321.9.200";
+    string public batchID = "1321.9.222";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Participation {
-        string program;     // leadership camp, debate, volunteer work
-        string status;      // active, pending, audited
+        string initiative;   // student council, youth parliament, community project
+        string status;       // active, pending, audited
         uint256 timestamp;
     }
 
     Participation[] public participations;
 
-    event ParticipationLogged(string program, string status);
+    event ParticipationLogged(string initiative, string status);
 
     modifier onlyAdmin() {
         require(msg.sender == admin, "Not admin");
@@ -26,13 +26,13 @@ contract DAOToCivicParticipationGrid {
         admin = msg.sender;
     }
 
-    function logParticipation(string memory program, string memory status) public onlyAdmin {
-        participations.push(Participation(program, status, block.timestamp));
-        emit ParticipationLogged(program, status);
+    function logParticipation(string memory initiative, string memory status) public onlyAdmin {
+        participations.push(Participation(initiative, status, block.timestamp));
+        emit ParticipationLogged(initiative, status);
     }
 
-    function getParticipation(uint256 index) public view returns (string memory program, string memory status, uint256 timestamp) {
+    function getParticipation(uint256 index) public view returns (string memory initiative, string memory status, uint256 timestamp) {
         Participation memory p = participations[index];
-        return (p.program, p.status, p.timestamp);
+        return (p.initiative, p.status, p.timestamp);
     }
 }
