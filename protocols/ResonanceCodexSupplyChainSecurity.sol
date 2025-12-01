@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexSupplyChainSecurity {
-    string public batchID = "1321.9.198";
+    string public batchID = "1321.9.220";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // anti-tampering, imports/exports audit, trade resilience
+        string theme;       // package hygiene, credential audit, technical resilience
         string narrative;   // how supply chain security reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
