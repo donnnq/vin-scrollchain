@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexAuditTransparency {
-    string public batchID = "1321.9.218";
+    string public batchID = "1321.9.232";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // communal audits, governance clarity, oversight dignity
+        string theme;       // open audit, compliance ledger, accountability dignity
         string narrative;   // how audit transparency reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
