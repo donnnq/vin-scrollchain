@@ -2,14 +2,14 @@
 pragma solidity ^0.8.30;
 
 contract DAOToCurriculumFairnessGrid {
-    string public batchID = "1321.9.211";
+    string public batchID = "1321.9.237";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Curriculum {
         string subject;     // math, science, history
-        string status;      // fair, pending, audited
+        string status;      // fair, pending, ghost
         uint256 timestamp;
     }
 
