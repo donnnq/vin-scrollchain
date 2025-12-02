@@ -2,14 +2,14 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexClimateAdaptation {
-    string public batchID = "1321.9.168";
+    string public batchID = "1321.9.224";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // climate adaptation, communal resilience
-        string narrative;   // how adaptation projects reshape communal trust and validator-grade consequence
+        string theme;       // infrastructure equity, adaptation funds, planetary survival
+        string narrative;   // how climate adaptation reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
 
