@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexEducationSovereignty {
-    string public batchID = "1321.9.190";
+    string public batchID = "1321.9.225";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // curriculum equity, teacher dignity, youth empowerment
+        string theme;       // curriculum equity, teacher dignity, learning resilience
         string narrative;   // how education sovereignty reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
