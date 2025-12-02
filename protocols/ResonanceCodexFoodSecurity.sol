@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexFoodSecurity {
-    string public batchID = "1321.9.202";
+    string public batchID = "1321.9.227";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // agriculture sustainability, nutrition equity, food resilience
+        string theme;       // nutrition equity, supply chain audit, hunger resilience
         string narrative;   // how food security reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
