@@ -2,14 +2,14 @@
 pragma solidity ^0.8.30;
 
 contract TreatyToPowerGridAuditLedger {
-    string public batchID = "1321.9.226";
+    string public batchID = "1321.9.239";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct Grid {
-        string region;      // Luzon, Visayas, Mindanao
-        string status;      // audited, pending, ghost
+        string region;     // Luzon, Visayas, Mindanao
+        string status;     // audited, pending, ghost
         uint256 timestamp;
     }
 
