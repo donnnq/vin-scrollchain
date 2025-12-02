@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexAviationResilience {
-    string public batchID = "1321.9.209";
+    string public batchID = "1321.9.223";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // flight safety, air mobility audit, aviation resilience
+        string theme;       // flight safety, air mobility audit, aviation dignity
         string narrative;   // how aviation resilience reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
