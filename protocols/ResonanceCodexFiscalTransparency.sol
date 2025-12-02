@@ -2,13 +2,13 @@
 pragma solidity ^0.8.30;
 
 contract ResonanceCodexFiscalTransparency {
-    string public batchID = "1321.9.199";
+    string public batchID = "1321.9.230";
     string public steward = "Vinvin";
 
     address public admin;
 
     struct CodexEntry {
-        string theme;       // spending audits, taxation trust, finance equity
+        string theme;       // budget clarity, expenditure audit, governance dignity
         string narrative;   // how fiscal transparency reshapes communal trust and validator-grade consequence
         uint256 timestamp;
     }
