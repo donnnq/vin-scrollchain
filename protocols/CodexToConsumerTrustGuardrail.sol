@@ -2,7 +2,7 @@
 pragma solidity ^0.8.30;
 
 contract CodexToConsumerTrustGuardrail {
-    string public batchID = "1321.9.228";
+    string public batchID = "1321.9.240";
     string public steward = "Vinvin";
 
     address public admin;
