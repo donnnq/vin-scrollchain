@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract InnovationResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Support AI Innovation Without Driving It Overseas"
+        string topic;       // e.g. "Promote AI Innovation with Market Balance"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;

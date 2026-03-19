@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract FinancialSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Clarify Crypto Regulation"
-        string measure;     // e.g. "Define commodities vs. securities under CLARITY Act"
+        string principle;   // e.g. "Ensure AI Supports Financial Stability"
+        string measure;     // e.g. "Mandate audits of AI-driven trading systems"
         uint256 timestamp;
     }
 
