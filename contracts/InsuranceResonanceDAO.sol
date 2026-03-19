@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract InsuranceResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Stabilize Maritime Insurance Premiums"
+        string topic;       // e.g. "Include AI Coverage in Cyber Policies"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
