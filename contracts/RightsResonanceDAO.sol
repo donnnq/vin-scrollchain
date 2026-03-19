@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract RightsResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Ensure AI Systems Respect Human Rights"
+        string topic;       // e.g. "Ensure AI Upholds Human Rights Standards"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
