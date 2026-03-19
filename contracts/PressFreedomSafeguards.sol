@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract PressFreedomSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Freedom of the Press"
-        string measure;     // e.g. "Mandate AI tools to respect journalistic independence"
+        string principle;   // e.g. "Protect Journalistic Integrity"
+        string measure;     // e.g. "Mandate transparency in news ownership"
         uint256 timestamp;
     }
 
