@@ -2,21 +2,34 @@
 pragma solidity ^0.8.0;
 
 contract CooperationResonanceDAO {
-    struct Initiative {
+    struct Proposal {
         uint256 id;
-        string program;     // e.g. "Global Cooperation Charter"
-        string resonance;   // e.g. "Align governance with peace and solidarity"
+        string topic;       // e.g. "Establish International AI Governance Council"
+        uint256 votesFor;
+        uint256 votesAgainst;
         bool active;
     }
 
-    uint256 public initiativeCount;
-    mapping(uint256 => Initiative) public initiatives;
+    uint256 public proposalCount;
+    mapping(uint256 => Proposal) public proposals;
 
-    event InitiativeActivated(uint256 id, string program, string resonance);
+    event ProposalCreated(uint256 id, string topic);
+    event Voted(uint256 id, string side);
 
-    function activateInitiative(string memory program, string memory resonance) public {
-        initiativeCount++;
-        initiatives[initiativeCount] = Initiative(initiativeCount, program, resonance, true);
-        emit InitiativeActivated(initiativeCount, program, resonance);
+    function createProposal(string memory topic) public {
+        proposalCount++;
+        proposals[proposalCount] = Proposal(proposalCount, topic, 0, 0, true);
+        emit ProposalCreated(proposalCount, topic);
+    }
+
+    function vote(uint256 id, bool support) public {
+        require(proposals[id].active, "Proposal not active");
+        if (support) {
+            proposals[id].votesFor++;
+            emit Voted(id, "For");
+        } else {
+            proposals[id].votesAgainst++;
+            emit Voted(id, "Against");
+        }
     }
 }
