@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract ElectoralIntegrityAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Protect Electoral Integrity"
-        string mechanism;   // e.g. "Independent audits and transparent reporting"
+        string safeguard;   // e.g. "Ensure AI Does Not Undermine Elections"
+        string mechanism;   // e.g. "Mandate independent audits of AI election tools"
         uint256 timestamp;
     }
 
