@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract OversightResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Create Independent AI Oversight Board"
+        string topic;       // e.g. "Strengthen Human Oversight in AI Warfare"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
