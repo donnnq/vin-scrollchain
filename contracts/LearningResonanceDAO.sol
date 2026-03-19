@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract LearningResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Promote Verified Knowledge in AI Education"
+        string topic;       // e.g. "Integrate AI into Knowledge Sharing"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
