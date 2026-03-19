@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract LegalSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Ensure AI Compliance with Law"
-        string measure;     // e.g. "Mandate legal audits of AI systems"
+        string principle;   // e.g. "Ensure AI Respects Rule of Law"
+        string measure;     // e.g. "Mandate judicial oversight in AI legal tools"
         uint256 timestamp;
     }
 
