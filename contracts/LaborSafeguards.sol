@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract LaborSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Human Jobs from AI Replacement"
-        string measure;     // e.g. "Mandate limits on automation per company"
+        string principle;   // e.g. "Protect Workers from AI Displacement"
+        string measure;     // e.g. "Mandate retraining programs for affected employees"
         uint256 timestamp;
     }
 
