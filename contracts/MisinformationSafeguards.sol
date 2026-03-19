@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract MisinformationSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Filter Harmful Conspiracies"
-        string measure;     // e.g. "Mandate AI filters for misinformation content"
+        string principle;   // e.g. "Prevent Spread of Misinformation"
+        string measure;     // e.g. "Mandate fact-check filters in AI outputs"
         uint256 timestamp;
     }
 
