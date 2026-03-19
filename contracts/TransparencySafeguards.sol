@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract TransparencySafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Ensure AI Transparency"
-        string measure;     // e.g. "Mandate disclosure of AI decision-making processes"
+        string principle;   // e.g. "No Deception in AI Systems"
+        string measure;     // e.g. "Mandate clear disclosure of AI actions"
         uint256 timestamp;
     }
 
