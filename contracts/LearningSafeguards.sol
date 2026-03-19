@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract LearningSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Ensure AI Supports Learning"
-        string measure;     // e.g. "Mandate equitable access to AI tutoring tools"
+        string principle;   // e.g. "Ensure AI Supports Safe Learning"
+        string measure;     // e.g. "Mandate accuracy and clarity in educational AI outputs"
         uint256 timestamp;
     }
 

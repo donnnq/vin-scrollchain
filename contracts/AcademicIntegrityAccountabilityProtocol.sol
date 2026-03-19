@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract AcademicIntegrityAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Protect Academic Integrity"
-        string mechanism;   // e.g. "Mandate plagiarism checks and AI ethics in schools"
+        string safeguard;   // e.g. "Protect Academic Integrity in AI Education"
+        string mechanism;   // e.g. "Mandate plagiarism checks and citation standards"
         uint256 timestamp;
     }
 
