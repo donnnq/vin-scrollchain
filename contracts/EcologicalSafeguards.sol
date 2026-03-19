@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract EcologicalSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Environment from AI Impact"
-        string measure;     // e.g. "Mandate carbon audits for data centers"
+        string principle;   // e.g. "Protect Environment from AI Externalities"
+        string measure;     // e.g. "Mandate carbon audits for AI data centers"
         uint256 timestamp;
     }
 
