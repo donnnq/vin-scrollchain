@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract TransparencyResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Require AI to disclose confidence scores"
+        string topic;       // e.g. "Disclose Public Spending of Tax Revenues"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
