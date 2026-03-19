@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract DignitySafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Human Dignity"
-        string measure;     // e.g. "Ensure equal treatment under law"
+        string principle;   // e.g. "Protect Human Dignity in AI Use"
+        string measure;     // e.g. "Mandate respect for privacy and autonomy"
         uint256 timestamp;
     }
 
