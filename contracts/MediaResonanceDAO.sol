@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract MediaResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Investigate Fake News Networks"
+        string topic;       // e.g. "Expose Government Cover-ups in Media"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
