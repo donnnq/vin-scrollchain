@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract CyberSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect AI Systems from Cyber Attacks"
-        string measure;     // e.g. "Mandate encryption and secure communication channels"
+        string principle;   // e.g. "Protect Sensitive Data"
+        string measure;     // e.g. "Mandate encryption and privacy audits"
         uint256 timestamp;
     }
 

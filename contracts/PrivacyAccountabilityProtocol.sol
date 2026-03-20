@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract PrivacyAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "No User Tracking"
-        string mechanism;   // e.g. "Mandate independent audits for anonymity"
+        string safeguard;   // e.g. "Ensure Accountability in Data Privacy"
+        string mechanism;   // e.g. "Mandate audits for breaches and leaks"
         uint256 timestamp;
     }
 
