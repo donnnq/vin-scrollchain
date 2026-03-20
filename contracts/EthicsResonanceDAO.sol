@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract EthicsResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Mandate Ethical Standards in AI Development"
+        string topic;       // e.g. "Audit AI Bias and Transparency"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;

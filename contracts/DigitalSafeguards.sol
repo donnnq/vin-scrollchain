@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract DigitalSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Sensitive Digital Assets"
-        string measure;     // e.g. "Encrypt files and enforce strong access controls"
+        string principle;   // e.g. "Ensure Responsible AI Innovation"
+        string measure;     // e.g. "Mandate transparency on algorithmic impacts"
         uint256 timestamp;
     }
 
