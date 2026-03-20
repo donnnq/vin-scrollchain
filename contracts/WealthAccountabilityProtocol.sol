@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract WealthAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Transparent Wealth Stewardship"
-        string mechanism;   // e.g. "Community Audit of Investments"
+        string safeguard;   // e.g. "Prevent Inequality Based on Wealth"
+        string mechanism;   // e.g. "Mandate audits for financial fairness"
         uint256 timestamp;
     }
 

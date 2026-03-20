@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract JusticeResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Promote AI for Fair Legal Processes"
+        string topic;       // e.g. "Reduce Financial Burden in Membership"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;

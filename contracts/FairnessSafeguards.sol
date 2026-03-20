@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract FairnessSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Ensure AI Fairness"
-        string measure;     // e.g. "Mandate equal treatment across demographics"
+        string principle;   // e.g. "Ensure Equality Beyond Wealth"
+        string measure;     // e.g. "Mandate support for brethren in poverty"
         uint256 timestamp;
     }
 
