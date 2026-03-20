@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract FraternityResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Clarify Masonry Commitments to Petitioners"
+        string topic;       // e.g. "Clarify Catholic Prohibition Before Initiation"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
