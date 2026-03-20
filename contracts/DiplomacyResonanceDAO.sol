@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract DiplomacyResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Promote AI for Peaceful Negotiations"
+        string topic;       // e.g. "Support Peace Talks in Conflict Zones"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
