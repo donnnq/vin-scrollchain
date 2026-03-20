@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract CivicSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Electoral Integrity in AI Use"
-        string measure;     // e.g. "Mandate transparency in AI-assisted voting systems"
+        string principle;   // e.g. "Ensure Integrity in Voting"
+        string measure;     // e.g. "Mandate transparency on voter ID laws"
         uint256 timestamp;
     }
 
