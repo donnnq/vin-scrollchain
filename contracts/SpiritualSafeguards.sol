@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract SpiritualSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Promote Faith-Based Work Ethic"
-        string measure;     // e.g. "Encourage values of diligence and humility"
+        string principle;   // e.g. "Preserve Integrity in Faith Education"
+        string measure;     // e.g. "Mandate contextual audits on teachings"
         uint256 timestamp;
     }
 

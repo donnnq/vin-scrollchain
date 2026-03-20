@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract FaithResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Ban AI Misquoting in Sermons"
+        string topic;       // e.g. "Ensure Scripture Accuracy in Teaching"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
