@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract JusticeResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Reduce Financial Burden in Membership"
+        string topic;       // e.g. "Audit Housing & Healthcare Burdens on Gen Z"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
