@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract ClimateAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Transparent Climate Governance"
-        string mechanism;   // e.g. "Independent Climate Oversight Council"
+        string safeguard;   // e.g. "Ensure Accountability in Climate and Resource Equity"
+        string mechanism;   // e.g. "Mandate audits for carbon footprint, resource use, and sustainability"
         uint256 timestamp;
     }
 

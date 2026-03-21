@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract GreenResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Promote Renewable Energy in AI Infrastructure"
+        string topic;       // e.g. "Allocate Profits to Climate Action"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
