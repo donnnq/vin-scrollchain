@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract NutritionAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Equitable Access to Nutrition"
-        string mechanism;   // e.g. "Mandate audits for ecological food impact"
+        string safeguard;   // e.g. "Ensure Accountability in Nutrition Access"
+        string mechanism;   // e.g. "Mandate audits for food affordability and health impacts"
         uint256 timestamp;
     }
 

@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract AgricultureResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Invest in Regenerative Farming"
+        string topic;       // e.g. "Audit PE Takeovers in Meatpacking Industry"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
