@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract TruthAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Media Aligns with Public Truth"
-        string mechanism;   // e.g. "Mandate audits for disinformation campaigns"
+        string safeguard;   // e.g. "Ensure Accountability in Media Truth"
+        string mechanism;   // e.g. "Mandate audits for misinformation and bias"
         uint256 timestamp;
     }
 
