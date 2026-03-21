@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract DemocracyResonanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Debate Voter ID and Fraud Prevention"
+        string topic;       // e.g. "Audit Electoral Systems for Transparency"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
