@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract AuditSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Mandate Independent AI Audits"
-        string measure;     // e.g. "Require regular third-party reviews of AI systems"
+        string principle;   // e.g. "Protect Corporate Governance"
+        string measure;     // e.g. "Mandate independent audits and compliance checks"
         uint256 timestamp;
     }
 

@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract GovernanceAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure AI Companies Face Regulation"
-        string mechanism;   // e.g. "Mandate moratorium on new data centers until protections exist"
+        string safeguard;   // e.g. "Ensure Accountability in Corporate Governance"
+        string mechanism;   // e.g. "Mandate transparent reporting and regulatory compliance"
         uint256 timestamp;
     }
 
