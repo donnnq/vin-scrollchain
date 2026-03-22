@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract EquitySafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Essential Services from Predatory PE"
-        string measure;     // e.g. "Mandate transparency on leveraged buyouts"
+        string principle;   // e.g. "Protect Employee Equity"
+        string measure;     // e.g. "Mandate transparent stock distribution and fair bonuses"
         uint256 timestamp;
     }
 
