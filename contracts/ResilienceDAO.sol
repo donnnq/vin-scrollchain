@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract ResilienceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Mandate system stress tests and audits"
+        string topic;       // e.g. "Implement disaster recovery drills for airports"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
