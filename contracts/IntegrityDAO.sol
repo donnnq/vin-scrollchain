@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract IntegrityDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Audit logistics chain for smuggling prevention"
+        string topic;       // e.g. "Mandate transparent labeling and audits"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
