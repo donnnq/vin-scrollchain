@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract CitizenTrustAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in Cybersecurity Oversight"
-        string mechanism;   // e.g. "Mandate public breach reports and citizen oversight committees"
+        string safeguard;   // e.g. "Ensure Accountability in Transparency"
+        string mechanism;   // e.g. "Mandate transparent reporting of imports, exports, and energy costs"
         uint256 timestamp;
     }
 

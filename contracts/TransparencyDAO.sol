@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract TransparencyDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Mandate open reporting of ballot signatures"
+        string topic;       // e.g. "Mandate transparent audits of electricity generation and seaport logistics"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
