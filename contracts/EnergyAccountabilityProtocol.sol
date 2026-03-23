@@ -1,10 +1,11 @@
+// EnergyAccountabilityProtocol.sol
 pragma solidity ^0.8.0;
 
 contract EnergyAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in Energy Policy"
-        string mechanism;   // e.g. "Mandate transparent reporting of subsidies and conservation measures"
+        string safeguard;   // e.g. "Ensure Accountability in Energy Transition"
+        string mechanism;   // e.g. "Mandate transparent reporting of renewable adoption and affordability metrics"
         uint256 timestamp;
     }
 

@@ -1,10 +1,11 @@
+// EnergySafeguards.sol
 pragma solidity ^0.8.0;
 
 contract EnergySafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect National Energy Security"
-        string measure;     // e.g. "Mandate conservation and diversify supply sources"
+        string principle;   // e.g. "Promote Renewable Energy Adoption"
+        string measure;     // e.g. "Mandate incentives for solar, wind, and hydro projects"
         uint256 timestamp;
     }
 
