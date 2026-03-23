@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract JusticeSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Judicial Integrity"
-        string measure;     // e.g. "Mandate transparency and impartiality in court rulings"
+        string principle;   // e.g. "Protect Rule of Law"
+        string measure;     // e.g. "Mandate equal access to justice and fair trial rights"
         uint256 timestamp;
     }
 
