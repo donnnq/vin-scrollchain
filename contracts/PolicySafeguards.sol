@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract PolicySafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Establish Clear AI Policies"
-        string measure;     // e.g. "Mandate ethical guidelines for AI deployment"
+        string principle;   // e.g. "Protect Policy Integrity"
+        string measure;     // e.g. "Mandate transparency in drafting and enforcement of policies"
         uint256 timestamp;
     }
 
