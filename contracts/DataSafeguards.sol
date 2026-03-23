@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract DataSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect User Data Privacy"
-        string measure;     // e.g. "Mandate encryption and anonymization of personal data"
+        string principle;   // e.g. "Protect Data Ownership"
+        string measure;     // e.g. "Mandate user consent and transparency in data usage"
         uint256 timestamp;
     }
 
