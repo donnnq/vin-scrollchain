@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract ResilienceSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Ensure System Durability"
-        string measure;     // e.g. "Mandate redundancy and disaster recovery protocols"
+        string principle;   // e.g. "Protect Organizational Resilience"
+        string measure;     // e.g. "Mandate contingency planning and adaptive systems"
         uint256 timestamp;
     }
 
