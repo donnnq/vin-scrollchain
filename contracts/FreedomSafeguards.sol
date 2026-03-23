@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract FreedomSafeguards {
     struct Safeguard {
         uint256 id;
-        string principle;   // e.g. "Protect Enterprise Freedom"
-        string measure;     // e.g. "Mandate autonomy in profit-sharing and governance"
+        string principle;   // e.g. "Protect Civil Liberties"
+        string measure;     // e.g. "Mandate transparency and limits on government surveillance"
         uint256 timestamp;
     }
 

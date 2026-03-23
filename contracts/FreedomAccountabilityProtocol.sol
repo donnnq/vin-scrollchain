@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract FreedomAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure AI Does Not Violate Human Rights"
-        string mechanism;   // e.g. "Mandate independent audits of AI rights impact"
+        string safeguard;   // e.g. "Ensure Accountability in Civil Liberties Protection"
+        string mechanism;   // e.g. "Mandate transparent reporting of rights enforcement and citizen complaints"
         uint256 timestamp;
     }
 
