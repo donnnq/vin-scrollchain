@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract GovernanceAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in Enterprise Governance"
-        string mechanism;   // e.g. "Mandate transparent reporting of wages, bonuses, audits, and turnover rates"
+        string safeguard;   // e.g. "Ensure Accountability in Governance"
+        string mechanism;   // e.g. "Mandate transparent reporting of policies, audits, and compliance outcomes"
         uint256 timestamp;
     }
 
