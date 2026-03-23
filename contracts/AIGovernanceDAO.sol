@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract AIGovernanceDAO {
     struct Proposal {
         uint256 id;
-        string topic;       // e.g. "Allocate 20% of AI infra budget to grid upgrades"
+        string topic;       // e.g. "Implement transparency in AI agent operations"
         uint256 votesFor;
         uint256 votesAgainst;
         bool active;
