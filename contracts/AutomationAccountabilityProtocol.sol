@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract AutomationAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in AI-driven Economy"
-        string mechanism;   // e.g. "Mandate transparent reporting of job displacement and UBI outcomes"
+        string safeguard;   // e.g. "Ensure Accountability in Automation Projects"
+        string mechanism;   // e.g. "Mandate transparent reporting of automation costs, success rates, and workforce impact"
         uint256 timestamp;
     }
 
