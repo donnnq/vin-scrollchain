@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract InnovationAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in Tech Innovation"
-        string mechanism;   // e.g. "Mandate audits for ethical compliance in AI"
+        string safeguard;   // e.g. "Balance Risk and Reward in Innovation"
+        string mechanism;   // e.g. "Mandate transparent reporting of innovation outcomes and risk assessments"
         uint256 timestamp;
     }
 
