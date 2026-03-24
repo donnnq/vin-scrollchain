@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 contract PublicTrustAccountabilityProtocol {
     struct Rule {
         uint256 id;
-        string safeguard;   // e.g. "Ensure Accountability in Democratic Institutions"
-        string mechanism;   // e.g. "Mandate audits and disclosure of AI influence in elections"
+        string safeguard;   // e.g. "Ensure Accountability in Public Trust"
+        string mechanism;   // e.g. "Mandate transparent reporting of crisis committees and policy outcomes"
         uint256 timestamp;
     }
 
